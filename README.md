@@ -174,6 +174,12 @@ The repository includes a scheduled workflow at
 - commits updated generated artifacts
 - pushes changes with merge-based retry logic
 
+The repository also includes `.github/workflows/deploy-doc-site.yml` that:
+
+- runs after `Refresh Sponsored Jobs Report` completes successfully on the default branch
+- uploads `site/public/` as a Pages artifact
+- deploys the doc site to GitHub Pages
+
 ### Required repository secrets
 
 Configure these repository secrets (matching `provisional_do_not_push.sh`):
