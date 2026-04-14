@@ -212,6 +212,9 @@ provisional_do_not_push.sh
 #temporary files
 tmp_*
 
+# Generated raw pipeline payloads
+output/raw/
+
 # Hugo generated outputs
 public/
 .hugo_build.lock

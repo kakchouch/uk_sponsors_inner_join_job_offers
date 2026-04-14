@@ -30,3 +30,21 @@ logo = "UK"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[module]
+
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+
+  [[module.mounts]]
+    source = "../output/site/content"
+    target = "content"
+
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"

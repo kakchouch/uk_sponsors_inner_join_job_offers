@@ -36,8 +36,8 @@ Current API sources:
 ### Files
 
 - [fetch_job_offers.py](fetch_job_offers.py): Main Python script that reads source definitions, calls APIs, and exports a normalized JSON file.
-- [focus_locations.json](focus_locations.json): Shared curated city list used by the scheduled report refresh.
-- [job_sources.json](job_sources.json): Source registry and per-source defaults.
+- [input/focus_locations.json](input/focus_locations.json): Shared curated city list used by the scheduled report refresh.
+- [input/job_sources.json](input/job_sources.json): Source registry and per-source defaults.
 - [.env.example](.env.example): Required API credential variable names.
 - [requirements.txt](requirements.txt): Python dependencies.
 
@@ -69,7 +69,7 @@ $env:REED_API_KEY="your_reed_api_key"
 ### Run
 
 ```bash
-python fetch_job_offers.py --keywords "data analyst" --locations-file focus_locations.json --results-per-page 30
+python fetch_job_offers.py --keywords "data analyst" --locations-file input/focus_locations.json --results-per-page 30
 ```
 
 To scan the whole configured sites without keyword/location filtering:
@@ -79,21 +79,21 @@ python fetch_job_offers.py --results-per-page 100
 ```
 
 Useful options:
-- `--sources adzuna reed`: Select specific sources from [job_sources.json](job_sources.json).
-- `--locations-file focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
+- `--sources adzuna reed`: Select specific sources from [input/job_sources.json](input/job_sources.json).
+- `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results.
 - `--config path/to/custom_sources.json`: Use an alternative source registry.
-- `--output path/to/job_offers.json`: Write output to a custom file.
+- `--output path/to/job_offers.json`: Write output to a custom file. The default is `output/raw/job_offers.json`.
 - `--single-page`: Fetch only one page per source (legacy behavior).
 - `--max-pages 10`: Limit fetched pages per source when full pagination is enabled.
 
-The script exports a normalized JSON file (`job_offers.json` by default) containing:
+The script exports a normalized JSON file (`output/raw/job_offers.json` by default) containing:
 - `metadata`: run context (time, sources, query, count)
 - `offers`: unified job objects from all selected sources
 
 By default, the script now paginates through all available result pages for each selected source.
 By default, no keyword or location filter is applied, so it fetches all available job types.
-The scheduled site publication narrows the search using [focus_locations.json](focus_locations.json), which currently contains London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, and Belfast.
+The scheduled site publication narrows the search using [input/focus_locations.json](input/focus_locations.json), which currently contains London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, and Belfast.
 
 ## Script: Registered Sponsors Fetcher
 
@@ -112,10 +112,10 @@ python fetch_registered_sponsors.py
 
 Useful options:
 - `--page-url https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers`: Use a custom publication page URL.
-- `--output path/to/registered_sponsors.json`: Write output to a custom path.
+- `--output path/to/registered_sponsors.json`: Write output to a custom path. The default is `output/raw/registered_sponsors.json`.
 - `--timeout 30`: Set request timeout in seconds.
 
-The script exports a JSON file (`registered_sponsors.json` by default) containing:
+The script exports a JSON file (`output/raw/registered_sponsors.json` by default) containing:
 - `metadata`: run context (generation time, publication URL, CSV URL, original headers, count)
 - `sponsors`: normalized sponsor records from the latest GOV.UK CSV
 
@@ -131,7 +131,7 @@ and exports a Markdown report.
 ### Run
 
 ```bash
-python generate_sponsored_jobs_report.py --keywords "software engineer" --locations-file focus_locations.json
+python generate_sponsored_jobs_report.py --keywords "software engineer" --locations-file input/focus_locations.json
 ```
 
 To fetch all available job types before matching:
@@ -142,16 +142,28 @@ python generate_sponsored_jobs_report.py
 
 Useful options:
 - `--sources adzuna reed`: Select specific job sources.
-- `--locations-file focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
+- `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results before matching.
-- `--jobs-output tmp_job_offers.json`: Path for fetched offers JSON.
-- `--sponsors-output tmp_registered_sponsors.json`: Path for fetched sponsors JSON.
-- `--markdown-output sponsored_jobs_report.md`: Path for Markdown output file.
-- `--matched-json-output matched_sponsored_jobs.json`: Optional path for JSON output containing only matched records.
+- `--jobs-output output/raw/job_offers.json`: Path for fetched offers JSON.
+- `--sponsors-output output/raw/registered_sponsors.json`: Path for fetched sponsors JSON.
+- `--markdown-output output/reports/sponsored_jobs_report.md`: Path for Markdown output file.
+- `--matched-json-output output/reports/matched_sponsored_jobs.json`: Path for JSON output containing only matched records.
+- `--site-report-output output/site/content/report.md`: Path for Hugo-ready generated content.
 
 The script outputs:
-- fetched offers JSON (default: `tmp_job_offers.json`)
-- fetched sponsors JSON (default: `tmp_registered_sponsors.json`)
-- Markdown report (default: `sponsored_jobs_report.md`)
-- matched records JSON (optional, when `--matched-json-output` is provided)
+- fetched offers JSON (default: `output/raw/job_offers.json`)
+- fetched sponsors JSON (default: `output/raw/registered_sponsors.json`)
+- Markdown report (default: `output/reports/sponsored_jobs_report.md`)
+- matched records JSON (default: `output/reports/matched_sponsored_jobs.json`)
+- Hugo content page (default: `output/site/content/report.md`)
+
+## Output Layout
+
+All generated artifacts now live under the dedicated [output](output) directory:
+
+- `output/raw/`: transient fetch payloads for job offers and sponsors
+- `output/reports/`: tracked Markdown and matched-record exports
+- `output/site/content/`: tracked Hugo-ready generated content mounted into the site build
+
+The Hugo site reads the generated report from `output/site/content/report.md`, so the report publishing flow no longer writes generated content into the hand-maintained `site/content/` tree.
 

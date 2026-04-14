@@ -14,13 +14,13 @@ It does this by combining three lightweight steps:
 
 Searching from abroad can be noisy and time-consuming. This site highlights a smaller list of roles where the employer appears in the official sponsor register, so applicants can prioritize faster.
 
-The published report currently focuses on the city list defined in focus_locations.json: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, and Belfast.
+The published report currently focuses on the city list defined in input/focus_locations.json: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, and Belfast.
 
 ## Data and refresh model
 
-- The pipeline generates a Markdown report at sponsored_jobs_report.md.
-- The workflow syncs that report into site/content/report.md.
-- The scheduled refresh reads its city scope from focus_locations.json.
+- The pipeline generates a Markdown report at output/reports/sponsored_jobs_report.md.
+- The workflow commits generated Hugo-ready content from output/site/content/report.md.
+- The scheduled refresh reads its city scope from input/focus_locations.json.
 - The report page renders that Markdown content directly.
 
 ## Main scripts

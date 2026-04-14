@@ -40,12 +40,7 @@ jobs:
         run: |
           python generate_sponsored_jobs_report.py \
             --keywords "software engineer" \
-            --locations-file focus_locations.json \
-            --jobs-output "$RUNNER_TEMP/job_offers.json" \
-            --sponsors-output "$RUNNER_TEMP/registered_sponsors.json" \
-            --matched-json-output matched_sponsored_jobs.json \
-            --markdown-output sponsored_jobs_report.md \
-            --site-report-output site/content/report.md
+            --locations-file input/focus_locations.json
 
       - name: Commit changes if needed
         id: commit_changes
@@ -54,9 +49,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
-            matched_sponsored_jobs.json \
-            sponsored_jobs_report.md \
-            site/content/report.md
+            output/reports/matched_sponsored_jobs.json \
+            output/reports/sponsored_jobs_report.md \
+            output/site/content/report.md
 
           if git diff --cached --quiet; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
@@ -97,7 +92,7 @@ jobs:
 
             while IFS= read -r file_path; do
               case "${file_path}" in
-                matched_sponsored_jobs.json|sponsored_jobs_report.md|site/content/report.md)
+                output/reports/matched_sponsored_jobs.json|output/reports/sponsored_jobs_report.md|output/site/content/report.md)
                   git checkout --ours -- "${file_path}"
                   ;;
                 *)
