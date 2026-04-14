@@ -162,3 +162,33 @@ hugo --minify --source site
 ```
 
 The generated site is written to `site/public/`.
+
+## GitHub Automation Workflow
+
+The repository includes a scheduled workflow at
+`.github/workflows/refresh-sponsored-jobs.yml` that:
+
+- runs every 12 hours (and can be triggered manually)
+- runs `generate_sponsored_jobs_report.py`
+- rebuilds the Hugo static site (`site/public/`)
+- commits updated generated artifacts
+- pushes changes with merge-based retry logic
+
+### Required repository secrets
+
+Configure these repository secrets (matching `provisional_do_not_push.sh`):
+
+- `ADZUNA_APP_ID`
+- `ADZUNA_APP_KEY`
+- `REED_API_KEY`
+
+### Conflict handling policy
+
+When push conflicts happen, the workflow retries by:
+
+1. fetching latest remote changes
+2. merging remote branch changes (no rebase)
+3. resolving conflicts with generated outputs kept from the current run
+4. creating a merge commit and retrying push
+
+This intentionally avoids both rebase and squash strategies.
