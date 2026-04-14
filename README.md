@@ -170,19 +170,20 @@ The repository includes a scheduled workflow at
 
 - runs every 12 hours (and can be triggered manually)
 - runs `generate_sponsored_jobs_report.py`
-- rebuilds the Hugo static site (`site/public/`)
-- commits updated generated artifacts
+- writes intermediate fetch outputs to runner temp storage (not repo-tracked tmp files)
+- commits updated repository artifacts (`matched_sponsored_jobs.json` and `sponsored_jobs_report.md`)
 - pushes changes with merge-based retry logic
 
 The repository also includes `.github/workflows/deploy-doc-site.yml` that:
 
 - runs after `Refresh Sponsored Jobs Report` completes successfully on the default branch
+- rebuilds the Hugo static site (`site/public/`) from repository sources
 - uploads `site/public/` as a Pages artifact
 - deploys the doc site to GitHub Pages
 
 ### Required repository secrets
 
-Configure these repository secrets (matching `provisional_do_not_push.sh`):
+Configure these repository secrets:
 
 - `ADZUNA_APP_ID`
 - `ADZUNA_APP_KEY`
