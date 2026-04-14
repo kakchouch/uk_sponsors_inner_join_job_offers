@@ -36,6 +36,7 @@ Current API sources:
 ### Files
 
 - [fetch_job_offers.py](fetch_job_offers.py): Main Python script that reads source definitions, calls APIs, and exports a normalized JSON file.
+- [focus_locations.json](focus_locations.json): Shared curated city list used by the scheduled report refresh.
 - [job_sources.json](job_sources.json): Source registry and per-source defaults.
 - [.env.example](.env.example): Required API credential variable names.
 - [requirements.txt](requirements.txt): Python dependencies.
@@ -68,7 +69,7 @@ $env:REED_API_KEY="your_reed_api_key"
 ### Run
 
 ```bash
-python fetch_job_offers.py --keywords "data analyst" --location "London" --results-per-page 30
+python fetch_job_offers.py --keywords "data analyst" --locations-file focus_locations.json --results-per-page 30
 ```
 
 To scan the whole configured sites without keyword/location filtering:
@@ -79,6 +80,8 @@ python fetch_job_offers.py --results-per-page 100
 
 Useful options:
 - `--sources adzuna reed`: Select specific sources from [job_sources.json](job_sources.json).
+- `--locations-file focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
+- `--locations London Glasgow Manchester`: Query several cities separately and merge the results.
 - `--config path/to/custom_sources.json`: Use an alternative source registry.
 - `--output path/to/job_offers.json`: Write output to a custom file.
 - `--single-page`: Fetch only one page per source (legacy behavior).
@@ -90,6 +93,7 @@ The script exports a normalized JSON file (`job_offers.json` by default) contain
 
 By default, the script now paginates through all available result pages for each selected source.
 By default, no keyword or location filter is applied, so it fetches all available job types.
+The scheduled site publication narrows the search using [focus_locations.json](focus_locations.json), which currently contains London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, and Belfast.
 
 ## Script: Registered Sponsors Fetcher
 
@@ -127,7 +131,7 @@ and exports a Markdown report.
 ### Run
 
 ```bash
-python generate_sponsored_jobs_report.py --keywords "software engineer" --location "London"
+python generate_sponsored_jobs_report.py --keywords "software engineer" --locations-file focus_locations.json
 ```
 
 To fetch all available job types before matching:
@@ -138,6 +142,8 @@ python generate_sponsored_jobs_report.py
 
 Useful options:
 - `--sources adzuna reed`: Select specific job sources.
+- `--locations-file focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
+- `--locations London Glasgow Manchester`: Query several cities separately and merge the results before matching.
 - `--jobs-output tmp_job_offers.json`: Path for fetched offers JSON.
 - `--sponsors-output tmp_registered_sponsors.json`: Path for fetched sponsors JSON.
 - `--markdown-output sponsored_jobs_report.md`: Path for Markdown output file.

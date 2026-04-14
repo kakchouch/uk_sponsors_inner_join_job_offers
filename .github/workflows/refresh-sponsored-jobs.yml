@@ -40,7 +40,7 @@ jobs:
         run: |
           python generate_sponsored_jobs_report.py \
             --keywords "software engineer" \
-            --location "United Kingdom" \
+            --locations-file focus_locations.json \
             --jobs-output "$RUNNER_TEMP/job_offers.json" \
             --sponsors-output "$RUNNER_TEMP/registered_sponsors.json" \
             --matched-json-output matched_sponsored_jobs.json \
@@ -56,7 +56,7 @@ jobs:
           cat <<EOF > site/content/report.md
           +++
           title = "Latest Sponsored Jobs"
-          description = "Most recent matched records produced by the project pipeline."
+          description = "Most recent matched records produced by the project pipeline for the curated city list."
           lastmod = "${LAST_RESEARCH_AT}"
           last_research_at = "${LAST_RESEARCH_AT}"
           +++

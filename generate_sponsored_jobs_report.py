@@ -54,6 +54,23 @@ def parse_args() -> argparse.Namespace:
         default="",
         help="Optional location filter. Leave empty to avoid location filtering.",
     )
+    parser.add_argument(
+        "--locations",
+        nargs="*",
+        default=[],
+        help=(
+            "Optional list of locations to fetch separately and merge into one report. "
+            "Takes precedence over --location."
+        ),
+    )
+    parser.add_argument(
+        "--locations-file",
+        default="",
+        help=(
+            "Optional JSON file containing a 'locations' array. "
+            "Takes precedence over --locations and --location."
+        ),
+    )
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--results-per-page", type=int, default=20)
     parser.add_argument("--sources", nargs="*", default=[])
@@ -90,6 +107,10 @@ def run_job_fetch(args: argparse.Namespace) -> None:
         "--timeout",
         str(args.job_timeout),
     ]
+    if args.locations_file:
+        command.extend(["--locations-file", args.locations_file])
+    if args.locations:
+        command.extend(["--locations", *args.locations])
     if args.sources:
         command.extend(["--sources", *args.sources])
 
@@ -200,6 +221,7 @@ def render_markdown(
     generated_at = datetime.now(timezone.utc).isoformat()
     jobs_meta = jobs_payload.get("metadata", {})
     sponsors_meta = sponsors_payload.get("metadata", {})
+    searched_locations = jobs_meta.get("locations", [])
 
     lines: list[str] = [
         "# Sponsored Job Matches",
@@ -212,12 +234,20 @@ def render_markdown(
         f"- Job offers fetched: {jobs_meta.get('total_offers', 0)}",
         f"- Sponsors fetched: {sponsors_meta.get('total_sponsors', 0)}",
         f"- Matched rows: {len(matches)}",
-        "",
-        "## Matches",
-        "",
-        "| Company | Job Title | Location | Source | Sponsor Town/City | Route | Job URL |",
-        "|---|---|---|---|---|---|---|",
     ]
+
+    if searched_locations:
+        lines.append(f"- Search locations: {', '.join(searched_locations)}")
+
+    lines.extend(
+        [
+            "",
+            "## Matches",
+            "",
+            "| Company | Job Title | Location | Source | Sponsor Town/City | Route | Job URL |",
+            "|---|---|---|---|---|---|---|",
+        ]
+    )
 
     for item in matches:
         offer = item.offer
@@ -255,6 +285,7 @@ def render_matched_json_payload(
                 "total_sponsors", 0
             ),
             "matched_rows": len(matches),
+            "locations": jobs_payload.get("metadata", {}).get("locations", []),
         },
         "matches": [
             {

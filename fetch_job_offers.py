@@ -28,6 +28,63 @@ class SourceConfig:
     country: str | None = None
 
 
+def parse_locations(location: str, locations: list[str]) -> list[str]:
+    parsed_locations = [item.strip() for item in locations if item.strip()]
+    if parsed_locations:
+        return parsed_locations
+
+    if location.strip():
+        return [location.strip()]
+
+    return []
+
+
+def load_locations_file(locations_file: str) -> list[str]:
+    if not locations_file:
+        return []
+
+    with Path(locations_file).open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+
+    raw_locations = payload.get("locations", [])
+    if not isinstance(raw_locations, list):
+        raise ValueError("Locations file must contain a 'locations' list.")
+
+    return [str(item).strip() for item in raw_locations if str(item).strip()]
+
+
+def resolve_locations(
+    location: str, locations: list[str], locations_file: str
+) -> list[str]:
+    file_locations = load_locations_file(locations_file)
+    if file_locations:
+        return file_locations
+
+    return parse_locations(location, locations)
+
+
+def deduplicate_offers(offers: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduplicated: list[dict[str, Any]] = []
+    seen_keys: set[tuple[str, str, str, str, str, str]] = set()
+
+    for offer in offers:
+        dedupe_key = (
+            str(offer.get("source") or ""),
+            str(offer.get("external_id") or ""),
+            str(offer.get("url") or ""),
+            str(offer.get("title") or ""),
+            str(offer.get("company") or ""),
+            str(offer.get("location") or ""),
+        )
+        if dedupe_key in seen_keys:
+            continue
+
+        seen_keys.add(dedupe_key)
+        deduplicated.append(offer)
+
+    return deduplicated
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -43,6 +100,23 @@ def parse_args() -> argparse.Namespace:
         "--location",
         default="",
         help="Optional location filter. Leave empty to avoid location filtering.",
+    )
+    parser.add_argument(
+        "--locations",
+        nargs="*",
+        default=[],
+        help=(
+            "Optional list of locations to fetch separately and merge into one output. "
+            "Takes precedence over --location."
+        ),
+    )
+    parser.add_argument(
+        "--locations-file",
+        default="",
+        help=(
+            "Optional JSON file containing a 'locations' array. "
+            "Takes precedence over --locations and --location."
+        ),
     )
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--results-per-page", type=int, default=20)
@@ -129,14 +203,29 @@ def fetch_source_offers(
     source: SourceConfig, args: argparse.Namespace, session: requests.Session
 ) -> list[dict[str, Any]]:
     headers, auth_params = resolve_auth(source)
+    locations = resolve_locations(args.location, args.locations, args.locations_file)
 
-    if source.id == "adzuna":
-        return fetch_adzuna(source, args, session, headers, auth_params)
+    if not locations:
+        locations = [""]
 
-    if source.id == "reed":
-        return fetch_reed(source, args, session, headers, auth_params)
+    offers: list[dict[str, Any]] = []
 
-    raise ValueError(f"Unsupported source id: {source.id}")
+    for location in locations:
+        if source.id == "adzuna":
+            offers.extend(
+                fetch_adzuna(source, args, session, headers, auth_params, location)
+            )
+            continue
+
+        if source.id == "reed":
+            offers.extend(
+                fetch_reed(source, args, session, headers, auth_params, location)
+            )
+            continue
+
+        raise ValueError(f"Unsupported source id: {source.id}")
+
+    return deduplicate_offers(offers)
 
 
 def fetch_adzuna(
@@ -145,6 +234,7 @@ def fetch_adzuna(
     session: requests.Session,
     headers: dict[str, str],
     auth_params: dict[str, str],
+    location: str,
 ) -> list[dict[str, Any]]:
     per_page = min(args.results_per_page, 50)
     params = dict(source.query_defaults)
@@ -153,8 +243,8 @@ def fetch_adzuna(
         params["what"] = args.keywords.strip()
     else:
         params.pop("what", None)
-    if args.location.strip():
-        params["where"] = args.location.strip()
+    if location.strip():
+        params["where"] = location.strip()
     else:
         params.pop("where", None)
     params.update(auth_params)
@@ -199,6 +289,7 @@ def fetch_reed(
     session: requests.Session,
     headers: dict[str, str],
     auth_params: dict[str, str],
+    location: str,
 ) -> list[dict[str, Any]]:
     endpoint = f"{source.base_url}/search"
     per_page = min(args.results_per_page, 100)
@@ -208,8 +299,8 @@ def fetch_reed(
         base_params["keywords"] = args.keywords.strip()
     else:
         base_params.pop("keywords", None)
-    if args.location.strip():
-        base_params["locationName"] = args.location.strip()
+    if location.strip():
+        base_params["locationName"] = location.strip()
     else:
         base_params.pop("locationName", None)
     base_params.update(auth_params)
@@ -306,13 +397,17 @@ def export_offers(
     sources_used: list[str],
     keywords: str,
     location: str,
+    locations: list[str],
+    locations_file: str,
 ) -> None:
     output = {
         "metadata": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "sources": sources_used,
             "keywords": keywords,
-            "location": location,
+            "location": location or ", ".join(locations),
+            "locations": locations,
+            "locations_file": locations_file,
             "total_offers": len(offers),
         },
         "offers": offers,
@@ -347,6 +442,8 @@ def main() -> int:
         sources_used=used_sources,
         keywords=args.keywords,
         location=args.location,
+        locations=resolve_locations(args.location, args.locations, args.locations_file),
+        locations_file=args.locations_file,
     )
 
     print(f"Fetched {len(offers)} offers from {', '.join(used_sources)}")
