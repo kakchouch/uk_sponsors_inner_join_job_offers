@@ -15,6 +15,17 @@ DEFAULT_JOBS_OUTPUT = Path("tmp_job_offers.json")
 DEFAULT_SPONSORS_OUTPUT = Path("tmp_registered_sponsors.json")
 DEFAULT_MARKDOWN_OUTPUT = Path("sponsored_jobs_report.md")
 DEFAULT_MATCHED_JSON_OUTPUT = Path("matched_sponsored_jobs.json")
+DEFAULT_SITE_REPORT_OUTPUT = Path("site/content/report.md")
+
+_HUGO_FRONTMATTER = """\
++++
+title = "Latest Sponsored Jobs"
+description = "Most recent matched records produced by the project pipeline for the curated city list."
+lastmod = "{generated_at}"
+last_research_at = "{generated_at}"
++++
+
+"""
 
 LEGAL_SUFFIXES = {
     "co",
@@ -77,6 +88,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--jobs-output", default=str(DEFAULT_JOBS_OUTPUT))
     parser.add_argument("--sponsors-output", default=str(DEFAULT_SPONSORS_OUTPUT))
     parser.add_argument("--markdown-output", default=str(DEFAULT_MARKDOWN_OUTPUT))
+    parser.add_argument(
+        "--site-report-output",
+        default=None,
+        help=(
+            "Optional path to write the Hugo-formatted content page (frontmatter + "
+            "report body). Example: site/content/report.md"
+        ),
+    )
     parser.add_argument(
         "--matched-json-output",
         default=None,
@@ -213,12 +232,18 @@ def escape_markdown_cell(value: Any) -> str:
     return text.replace("|", "\\|").replace("\n", " ").strip()
 
 
+def render_hugo_content(markdown: str, generated_at: str) -> str:
+    return _HUGO_FRONTMATTER.format(generated_at=generated_at) + markdown
+
+
 def render_markdown(
     matches: list[MatchRecord],
     jobs_payload: dict[str, Any],
     sponsors_payload: dict[str, Any],
+    generated_at: str | None = None,
 ) -> str:
-    generated_at = datetime.now(timezone.utc).isoformat()
+    if generated_at is None:
+        generated_at = datetime.now(timezone.utc).isoformat()
     jobs_meta = jobs_payload.get("metadata", {})
     sponsors_meta = sponsors_payload.get("metadata", {})
     searched_locations = jobs_meta.get("locations", [])
@@ -310,10 +335,19 @@ def main() -> int:
     sponsors = sponsors_payload.get("sponsors", [])
 
     matches = match_offers_with_sponsors(offers, sponsors)
-    markdown = render_markdown(matches, jobs_payload, sponsors_payload)
+    generated_at = datetime.now(timezone.utc).isoformat()
+    markdown = render_markdown(matches, jobs_payload, sponsors_payload, generated_at)
 
     output_path = Path(args.markdown_output)
     output_path.write_text(markdown, encoding="utf-8")
+
+    if args.site_report_output:
+        site_path = Path(args.site_report_output)
+        site_path.parent.mkdir(parents=True, exist_ok=True)
+        site_path.write_text(
+            render_hugo_content(markdown, generated_at), encoding="utf-8"
+        )
+        print(f"Hugo content written to: {site_path}")
 
     if args.matched_json_output:
         matched_json_path = Path(args.matched_json_output)
