@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-04-14T18:33:57.109337+00:00",
+    "generated_at": "2026-04-14T19:04:47.552140+00:00",
     "job_offers_fetched": 20,
     "sponsors_fetched": 140986,
     "matched_rows": 30
@@ -124,6 +124,366 @@
         "county": "Manchester",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 56781721,
+        "title": "Software Developer Apprentice",
+        "company": "QA",
+        "location": "CM778YG",
+        "salary_min": 22000.0,
+        "salary_max": 22000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/04/2026",
+        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
+        "raw": {
+          "jobId": 56781721,
+          "employerId": 500373,
+          "employerName": "QA",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software Developer Apprentice",
+          "locationName": "CM778YG",
+          "minimumSalary": 22000.0,
+          "maximumSalary": 22000.0,
+          "currency": "GBP",
+          "expirationDate": "26/05/2026",
+          "date": "14/04/2026",
+          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
+          "applications": 0,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "QA Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Global Business Mobility: Senior or Specialist Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 56781721,
+        "title": "Software Developer Apprentice",
+        "company": "QA",
+        "location": "CM778YG",
+        "salary_min": 22000.0,
+        "salary_max": 22000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/04/2026",
+        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
+        "raw": {
+          "jobId": 56781721,
+          "employerId": 500373,
+          "employerName": "QA",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software Developer Apprentice",
+          "locationName": "CM778YG",
+          "minimumSalary": 22000.0,
+          "maximumSalary": 22000.0,
+          "currency": "GBP",
+          "expirationDate": "26/05/2026",
+          "date": "14/04/2026",
+          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
+          "applications": 0,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "QA Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 56781721,
+        "title": "Software Developer Apprentice",
+        "company": "QA",
+        "location": "CM778YG",
+        "salary_min": 22000.0,
+        "salary_max": 22000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/04/2026",
+        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
+        "raw": {
+          "jobId": 56781721,
+          "employerId": 500373,
+          "employerName": "QA",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software Developer Apprentice",
+          "locationName": "CM778YG",
+          "minimumSalary": 22000.0,
+          "maximumSalary": 22000.0,
+          "currency": "GBP",
+          "expirationDate": "26/05/2026",
+          "date": "14/04/2026",
+          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
+          "applications": 0,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "QA-UK LIMITED",
+        "town_city": "Middlesex",
+        "county": "",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 55925258,
+        "title": "Java Software Engineer",
+        "company": "Accenture",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/10/2025",
+        "url": "https://www.reed.co.uk/jobs/java-software-engineer/55925258",
+        "raw": {
+          "jobId": 55925258,
+          "employerId": 423247,
+          "employerName": "Accenture",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Java Software Engineer",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "26/05/2026",
+          "date": "14/10/2025",
+          "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
+          "applications": 274,
+          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Accenture (UK) Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 55925258,
+        "title": "Java Software Engineer",
+        "company": "Accenture",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/10/2025",
+        "url": "https://www.reed.co.uk/jobs/java-software-engineer/55925258",
+        "raw": {
+          "jobId": 55925258,
+          "employerId": 423247,
+          "employerName": "Accenture",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Java Software Engineer",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "26/05/2026",
+          "date": "14/10/2025",
+          "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
+          "applications": 274,
+          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Accenture (UK) Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Global Business Mobility: Senior or Specialist Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 55921921,
+        "title": "Software Engineer - Leeds",
+        "company": "Accenture",
+        "location": "Leeds",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/10/2025",
+        "url": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921",
+        "raw": {
+          "jobId": 55921921,
+          "employerId": 423247,
+          "employerName": "Accenture",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software Engineer - Leeds",
+          "locationName": "Leeds",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "26/05/2026",
+          "date": "14/10/2025",
+          "jobDescription": "Software Engineer Locations: Leeds Salary: Competitive salary and package (Depending on level of experience) Please Note: Any offer of employment is subject to satisfactory SC security clearance which requires 5 years continuous UK address history, typically including no periods of 30 consecutive days or more spent outside of the UK. Note: The above information relates to a specific client requirement Accenture is a leading global professional s... ",
+          "applications": 116,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Accenture (UK) Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 55921921,
+        "title": "Software Engineer - Leeds",
+        "company": "Accenture",
+        "location": "Leeds",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "14/10/2025",
+        "url": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921",
+        "raw": {
+          "jobId": 55921921,
+          "employerId": 423247,
+          "employerName": "Accenture",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software Engineer - Leeds",
+          "locationName": "Leeds",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "26/05/2026",
+          "date": "14/10/2025",
+          "jobDescription": "Software Engineer Locations: Leeds Salary: Competitive salary and package (Depending on level of experience) Please Note: Any offer of employment is subject to satisfactory SC security clearance which requires 5 years continuous UK address history, typically including no periods of 30 consecutive days or more spent outside of the UK. Note: The above information relates to a specific client requirement Accenture is a leading global professional s... ",
+          "applications": 116,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Accenture (UK) Limited",
+        "town_city": "London",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Global Business Mobility: Senior or Specialist Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 56702631,
+        "title": "Lead Software Engineer",
+        "company": "Sopra Steria",
+        "location": "Gloucester",
+        "salary_min": 55000.0,
+        "salary_max": 65000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "26/03/2026",
+        "url": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631",
+        "raw": {
+          "jobId": 56702631,
+          "employerId": 616491,
+          "employerName": "Sopra Steria",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Lead Software Engineer",
+          "locationName": "Gloucester",
+          "minimumSalary": 55000.0,
+          "maximumSalary": 65000.0,
+          "currency": "GBP",
+          "expirationDate": "07/05/2026",
+          "date": "26/03/2026",
+          "jobDescription": "Endpoint Engineer – ready for your next challenge? Do you enjoy solving complex technical problems, engineering secure and modern endpoint solutions, and working with a team who share your passion for doing things the right way? If you’re excited by the idea of shaping best-in-class endpoint platforms in a highly secure Defence environment, then this could be the perfect opportunity for you. Our Endpoint Engineering team is growing within our Ae... ",
+          "applications": 35,
+          "jobUrl": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Sopra Steria Limited",
+        "town_city": "Newcastle Upon Tyne",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "offer": {
+        "source": "reed",
+        "external_id": 56702631,
+        "title": "Lead Software Engineer",
+        "company": "Sopra Steria",
+        "location": "Gloucester",
+        "salary_min": 55000.0,
+        "salary_max": 65000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "26/03/2026",
+        "url": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631",
+        "raw": {
+          "jobId": 56702631,
+          "employerId": 616491,
+          "employerName": "Sopra Steria",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Lead Software Engineer",
+          "locationName": "Gloucester",
+          "minimumSalary": 55000.0,
+          "maximumSalary": 65000.0,
+          "currency": "GBP",
+          "expirationDate": "07/05/2026",
+          "date": "26/03/2026",
+          "jobDescription": "Endpoint Engineer – ready for your next challenge? Do you enjoy solving complex technical problems, engineering secure and modern endpoint solutions, and working with a team who share your passion for doing things the right way? If you’re excited by the idea of shaping best-in-class endpoint platforms in a highly secure Defence environment, then this could be the perfect opportunity for you. Our Endpoint Engineering team is growing within our Ae... ",
+          "applications": 35,
+          "jobUrl": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Sopra Steria Limited",
+        "town_city": "Newcastle Upon Tyne",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Global Business Mobility: Senior or Specialist Worker"
       }
     },
     {
@@ -489,281 +849,41 @@
     {
       "offer": {
         "source": "reed",
-        "external_id": 56781721,
-        "title": "Software Developer Apprentice",
-        "company": "QA",
-        "location": "CM778YG",
-        "salary_min": 22000.0,
-        "salary_max": 22000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/04/2026",
-        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
-        "raw": {
-          "jobId": 56781721,
-          "employerId": 500373,
-          "employerName": "QA",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Developer Apprentice",
-          "locationName": "CM778YG",
-          "minimumSalary": 22000.0,
-          "maximumSalary": 22000.0,
-          "currency": "GBP",
-          "expirationDate": "26/05/2026",
-          "date": "14/04/2026",
-          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
-          "applications": 0,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "QA Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 56781721,
-        "title": "Software Developer Apprentice",
-        "company": "QA",
-        "location": "CM778YG",
-        "salary_min": 22000.0,
-        "salary_max": 22000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/04/2026",
-        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
-        "raw": {
-          "jobId": 56781721,
-          "employerId": 500373,
-          "employerName": "QA",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Developer Apprentice",
-          "locationName": "CM778YG",
-          "minimumSalary": 22000.0,
-          "maximumSalary": 22000.0,
-          "currency": "GBP",
-          "expirationDate": "26/05/2026",
-          "date": "14/04/2026",
-          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
-          "applications": 0,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "QA Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 56781721,
-        "title": "Software Developer Apprentice",
-        "company": "QA",
-        "location": "CM778YG",
-        "salary_min": 22000.0,
-        "salary_max": 22000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/04/2026",
-        "url": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721",
-        "raw": {
-          "jobId": 56781721,
-          "employerId": 500373,
-          "employerName": "QA",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Developer Apprentice",
-          "locationName": "CM778YG",
-          "minimumSalary": 22000.0,
-          "maximumSalary": 22000.0,
-          "currency": "GBP",
-          "expirationDate": "26/05/2026",
-          "date": "14/04/2026",
-          "jobDescription": "About Its Lolly: Based in Braintree, Lolly is a leading software and technology firm in the hospitality sector producing a wide range of state-of-the-art technology solutions including robot waiters, facial verification, mobile apps, EPoS and payment solutions. Our mission is to make technology simple, by implementing the best solution, incorporating the most reliable intuitive technology and to follow this with first class after-sales customer ... ",
-          "applications": 0,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-developer-apprentice/56781721"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "QA-UK LIMITED",
-        "town_city": "Middlesex",
-        "county": "",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 55925258,
-        "title": "Java Software Engineer",
-        "company": "Accenture",
+        "external_id": 56783900,
+        "title": "Senior Software Engineer",
+        "company": "FDM Group",
         "location": "London",
         "salary_min": null,
         "salary_max": null,
         "currency": "GBP",
         "contract_type": null,
         "contract_time": null,
-        "posted_at": "14/10/2025",
-        "url": "https://www.reed.co.uk/jobs/java-software-engineer/55925258",
+        "posted_at": "14/04/2026",
+        "url": "https://www.reed.co.uk/jobs/senior-software-engineer/56783900",
         "raw": {
-          "jobId": 55925258,
-          "employerId": 423247,
-          "employerName": "Accenture",
+          "jobId": 56783900,
+          "employerId": 377422,
+          "employerName": "FDM Group",
           "employerProfileId": null,
           "employerProfileName": null,
-          "jobTitle": "Java Software Engineer",
+          "jobTitle": "Senior Software Engineer",
           "locationName": "London",
           "minimumSalary": null,
           "maximumSalary": null,
           "currency": null,
           "expirationDate": "26/05/2026",
-          "date": "14/10/2025",
-          "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
-          "applications": 274,
-          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
+          "date": "14/04/2026",
+          "jobDescription": "About The Role FDM is a global business and technology consultancy seeking a Senior Software Engineer to work for our client within the defence and national security technology sector. This is initially a 12-month contract with very good prospects to extend and will be a hybrid role based in London with a requirement to attend the office at least one day per week and with up to two days’ notice when required. Our client is a UK based technology ... ",
+          "applications": 10,
+          "jobUrl": "https://www.reed.co.uk/jobs/senior-software-engineer/56783900"
         }
       },
       "sponsor": {
-        "organisation_name": "Accenture (UK) Limited",
-        "town_city": "London",
-        "county": "NULL",
+        "organisation_name": "FDM Group Limited",
+        "town_city": "Brighton",
+        "county": "East Sussex",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 55925258,
-        "title": "Java Software Engineer",
-        "company": "Accenture",
-        "location": "London",
-        "salary_min": null,
-        "salary_max": null,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/10/2025",
-        "url": "https://www.reed.co.uk/jobs/java-software-engineer/55925258",
-        "raw": {
-          "jobId": 55925258,
-          "employerId": 423247,
-          "employerName": "Accenture",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Java Software Engineer",
-          "locationName": "London",
-          "minimumSalary": null,
-          "maximumSalary": null,
-          "currency": null,
-          "expirationDate": "26/05/2026",
-          "date": "14/10/2025",
-          "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
-          "applications": 274,
-          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Accenture (UK) Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 55921921,
-        "title": "Software Engineer - Leeds",
-        "company": "Accenture",
-        "location": "Leeds",
-        "salary_min": null,
-        "salary_max": null,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/10/2025",
-        "url": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921",
-        "raw": {
-          "jobId": 55921921,
-          "employerId": 423247,
-          "employerName": "Accenture",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Engineer - Leeds",
-          "locationName": "Leeds",
-          "minimumSalary": null,
-          "maximumSalary": null,
-          "currency": null,
-          "expirationDate": "26/05/2026",
-          "date": "14/10/2025",
-          "jobDescription": "Software Engineer Locations: Leeds Salary: Competitive salary and package (Depending on level of experience) Please Note: Any offer of employment is subject to satisfactory SC security clearance which requires 5 years continuous UK address history, typically including no periods of 30 consecutive days or more spent outside of the UK. Note: The above information relates to a specific client requirement Accenture is a leading global professional s... ",
-          "applications": 116,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Accenture (UK) Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 55921921,
-        "title": "Software Engineer - Leeds",
-        "company": "Accenture",
-        "location": "Leeds",
-        "salary_min": null,
-        "salary_max": null,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/10/2025",
-        "url": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921",
-        "raw": {
-          "jobId": 55921921,
-          "employerId": 423247,
-          "employerName": "Accenture",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Engineer - Leeds",
-          "locationName": "Leeds",
-          "minimumSalary": null,
-          "maximumSalary": null,
-          "currency": null,
-          "expirationDate": "26/05/2026",
-          "date": "14/10/2025",
-          "jobDescription": "Software Engineer Locations: Leeds Salary: Competitive salary and package (Depending on level of experience) Please Note: Any offer of employment is subject to satisfactory SC security clearance which requires 5 years continuous UK address history, typically including no periods of 30 consecutive days or more spent outside of the UK. Note: The above information relates to a specific client requirement Accenture is a leading global professional s... ",
-          "applications": 116,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer-leeds/55921921"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Accenture (UK) Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
       }
     },
     {
@@ -804,126 +924,6 @@
         "county": "Manchester",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 56783900,
-        "title": "Senior Software Engineer",
-        "company": "FDM Group",
-        "location": "London",
-        "salary_min": null,
-        "salary_max": null,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "14/04/2026",
-        "url": "https://www.reed.co.uk/jobs/senior-software-engineer/56783900",
-        "raw": {
-          "jobId": 56783900,
-          "employerId": 377422,
-          "employerName": "FDM Group",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Senior Software Engineer",
-          "locationName": "London",
-          "minimumSalary": null,
-          "maximumSalary": null,
-          "currency": null,
-          "expirationDate": "26/05/2026",
-          "date": "14/04/2026",
-          "jobDescription": "About The Role FDM is a global business and technology consultancy seeking a Senior Software Engineer to work for our client within the defence and national security technology sector. This is initially a 12-month contract with very good prospects to extend and will be a hybrid role based in London with a requirement to attend the office at least one day per week and with up to two days’ notice when required. Our client is a UK based technology ... ",
-          "applications": 8,
-          "jobUrl": "https://www.reed.co.uk/jobs/senior-software-engineer/56783900"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "FDM Group Limited",
-        "town_city": "Brighton",
-        "county": "East Sussex",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 56702631,
-        "title": "Lead Software Engineer",
-        "company": "Sopra Steria",
-        "location": "Gloucester",
-        "salary_min": 55000.0,
-        "salary_max": 65000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "26/03/2026",
-        "url": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631",
-        "raw": {
-          "jobId": 56702631,
-          "employerId": 616491,
-          "employerName": "Sopra Steria",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Lead Software Engineer",
-          "locationName": "Gloucester",
-          "minimumSalary": 55000.0,
-          "maximumSalary": 65000.0,
-          "currency": "GBP",
-          "expirationDate": "07/05/2026",
-          "date": "26/03/2026",
-          "jobDescription": "Endpoint Engineer – ready for your next challenge? Do you enjoy solving complex technical problems, engineering secure and modern endpoint solutions, and working with a team who share your passion for doing things the right way? If you’re excited by the idea of shaping best-in-class endpoint platforms in a highly secure Defence environment, then this could be the perfect opportunity for you. Our Endpoint Engineering team is growing within our Ae... ",
-          "applications": 35,
-          "jobUrl": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Sopra Steria Limited",
-        "town_city": "Newcastle Upon Tyne",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "offer": {
-        "source": "reed",
-        "external_id": 56702631,
-        "title": "Lead Software Engineer",
-        "company": "Sopra Steria",
-        "location": "Gloucester",
-        "salary_min": 55000.0,
-        "salary_max": 65000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "26/03/2026",
-        "url": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631",
-        "raw": {
-          "jobId": 56702631,
-          "employerId": 616491,
-          "employerName": "Sopra Steria",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Lead Software Engineer",
-          "locationName": "Gloucester",
-          "minimumSalary": 55000.0,
-          "maximumSalary": 65000.0,
-          "currency": "GBP",
-          "expirationDate": "07/05/2026",
-          "date": "26/03/2026",
-          "jobDescription": "Endpoint Engineer – ready for your next challenge? Do you enjoy solving complex technical problems, engineering secure and modern endpoint solutions, and working with a team who share your passion for doing things the right way? If you’re excited by the idea of shaping best-in-class endpoint platforms in a highly secure Defence environment, then this could be the perfect opportunity for you. Our Endpoint Engineering team is growing within our Ae... ",
-          "applications": 35,
-          "jobUrl": "https://www.reed.co.uk/jobs/lead-software-engineer/56702631"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Sopra Steria Limited",
-        "town_city": "Newcastle Upon Tyne",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
       }
     },
     {
@@ -1114,7 +1114,7 @@
           "expirationDate": "26/05/2026",
           "date": "14/04/2026",
           "jobDescription": "About us Birketts is a full service, UK Top 50 law firm. With a heritage spanning 160 years, we have more than 700 lawyers and legal professionals and over 600 staff based in Bristol, Cambridge, Chelmsford, Ipswich, London, Norwich and Sevenoaks. We advise businesses, government and public sector organisations and individuals in the UK and internationally across four principal practice groups: Real Estate, Corporate Services, Dispute Resolution ... ",
-          "applications": 3,
+          "applications": 4,
           "jobUrl": "https://www.reed.co.uk/jobs/senior-software-developer/56782846"
         }
       },
