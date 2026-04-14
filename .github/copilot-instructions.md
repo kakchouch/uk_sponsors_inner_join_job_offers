@@ -7,6 +7,7 @@
 1. Building the script
 2. Running it via a github workflow
 3. Publishing the match list in a regular basis to a lightweight, static github pages website
+4. Building analytics and data-visualization
 
 
 ## Coding principles

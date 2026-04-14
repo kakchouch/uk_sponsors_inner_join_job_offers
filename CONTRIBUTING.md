@@ -25,3 +25,14 @@ All proposed changes are reviewed by the maintainer before they are merged.
 ## Maintainer Review
 
 The maintainer performs the final review and decides whether a change is accepted.
+
+
+## Project Roadmap
+
+| Step | Deliverable | Status | Comment |
+|------|-------------|--------|---------|
+| 1 | Script development | Done | Completed |
+| 2 | GitHub Actions execution | Done | Automated workflow ready |
+| 3 | GitHub Pages publishing | Done | Match list published regularly |
+| 4 | Analytics and visualization | In progress | Needs further planning |
+| 5 | Next iteration | TBD | To be defined |
