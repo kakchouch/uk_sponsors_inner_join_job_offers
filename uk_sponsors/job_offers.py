@@ -98,6 +98,17 @@ def deduplicate_offers(offers: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return deduplicated
 
 
+def filter_offers_by_locations(
+    offers: list[dict[str, Any]], locations: list[str]
+) -> list[dict[str, Any]]:
+    lowered = [loc.lower() for loc in locations]
+    return [
+        offer
+        for offer in offers
+        if any(loc in (offer.get("location") or "").lower() for loc in lowered)
+    ]
+
+
 def load_sources(config_path: Path) -> list[SourceConfig]:
     with config_path.open("r", encoding="utf-8") as handle:
         raw = json.load(handle)
@@ -163,10 +174,13 @@ def fetch_source_offers(
     locations: list[str],
 ) -> list[dict[str, Any]]:
     headers, auth_params = resolve_auth(source)
-    locations_to_search = locations or [""]
+
+    # When multiple cities are requested, fetch UK-wide once and post-filter
+    # locally. This reduces N_cities × N_pages API calls to N_pages.
+    locations_to_fetch = [""] if len(locations) > 1 else (locations or [""])
     offers: list[dict[str, Any]] = []
 
-    for location in locations_to_search:
+    for location in locations_to_fetch:
         if source.id == "adzuna":
             offers.extend(
                 fetch_adzuna(source, request, session, headers, auth_params, location)
@@ -180,6 +194,9 @@ def fetch_source_offers(
             continue
 
         raise ValueError(f"Unsupported source id: {source.id}")
+
+    if len(locations) > 1:
+        offers = filter_offers_by_locations(offers, locations)
 
     return deduplicate_offers(offers)
 

@@ -40,7 +40,8 @@ jobs:
         run: |
           python generate_sponsored_jobs_report.py \
             --keywords "software engineer" \
-            --locations-file input/focus_locations.json
+            --locations-file input/focus_locations.json \
+            --max-pages 50
 
       - name: Commit changes if needed
         id: commit_changes
