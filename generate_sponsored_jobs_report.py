@@ -44,8 +44,16 @@ def parse_args() -> argparse.Namespace:
             "export a Markdown report."
         )
     )
-    parser.add_argument("--keywords", default="software engineer")
-    parser.add_argument("--location", default="United Kingdom")
+    parser.add_argument(
+        "--keywords",
+        default="",
+        help="Optional keywords filter. Leave empty to scan all job types.",
+    )
+    parser.add_argument(
+        "--location",
+        default="",
+        help="Optional location filter. Leave empty to avoid location filtering.",
+    )
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--results-per-page", type=int, default=20)
     parser.add_argument("--sources", nargs="*", default=[])

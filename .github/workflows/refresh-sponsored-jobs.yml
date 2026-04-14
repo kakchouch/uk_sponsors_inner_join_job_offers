@@ -2,7 +2,7 @@ name: Refresh Sponsored Jobs Report
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "17 3 * * 1,4"
   workflow_dispatch:
 
 permissions:

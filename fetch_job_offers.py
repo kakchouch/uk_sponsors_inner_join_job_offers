@@ -4,6 +4,7 @@ import argparse
 import base64
 import json
 import os
+from math import ceil
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -33,14 +34,36 @@ def parse_args() -> argparse.Namespace:
             "Fetch job offers from configured public APIs and export a normalized JSON file."
         )
     )
-    parser.add_argument("--keywords", default="software engineer")
-    parser.add_argument("--location", default="United Kingdom")
+    parser.add_argument(
+        "--keywords",
+        default="",
+        help="Optional keywords filter. Leave empty to scan all job types.",
+    )
+    parser.add_argument(
+        "--location",
+        default="",
+        help="Optional location filter. Leave empty to avoid location filtering.",
+    )
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--results-per-page", type=int, default=20)
     parser.add_argument("--sources", nargs="*", default=[])
     parser.add_argument("--config", default=str(DEFAULT_CONFIG_PATH))
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT_PATH))
     parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument(
+        "--single-page",
+        action="store_true",
+        help="Fetch only one page per source (keeps legacy behavior).",
+    )
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=0,
+        help=(
+            "Optional cap on pages fetched per source when not using --single-page. "
+            "0 means no cap."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -123,25 +146,51 @@ def fetch_adzuna(
     headers: dict[str, str],
     auth_params: dict[str, str],
 ) -> list[dict[str, Any]]:
-    endpoint = f"{source.base_url}/{source.country}/search/{args.page}"
+    per_page = min(args.results_per_page, 50)
     params = dict(source.query_defaults)
-    params.update(
-        {
-            "what": args.keywords,
-            "where": args.location,
-            "results_per_page": min(args.results_per_page, 50),
-        }
-    )
+    params["results_per_page"] = per_page
+    if args.keywords.strip():
+        params["what"] = args.keywords.strip()
+    else:
+        params.pop("what", None)
+    if args.location.strip():
+        params["where"] = args.location.strip()
+    else:
+        params.pop("where", None)
     params.update(auth_params)
 
-    response = session.get(
-        endpoint, params=params, headers=headers, timeout=args.timeout
-    )
-    response.raise_for_status()
+    def fetch_page(page_number: int) -> dict[str, Any]:
+        endpoint = f"{source.base_url}/{source.country}/search/{page_number}"
+        response = session.get(
+            endpoint, params=params, headers=headers, timeout=args.timeout
+        )
+        response.raise_for_status()
+        return response.json()
 
-    payload = response.json()
-    items = payload.get("results", [])
-    return [normalize_adzuna_item(item, source.id) for item in items]
+    first_payload = fetch_page(args.page)
+    first_items = first_payload.get("results", [])
+    offers = [normalize_adzuna_item(item, source.id) for item in first_items]
+
+    if args.single_page:
+        return offers
+
+    total_count = int(first_payload.get("count", 0) or 0)
+    total_pages = ceil(total_count / per_page) if per_page else 0
+    if total_pages <= args.page:
+        return offers
+
+    page_cap = total_pages
+    if args.max_pages > 0:
+        page_cap = min(page_cap, args.page + args.max_pages - 1)
+
+    for page_number in range(args.page + 1, page_cap + 1):
+        payload = fetch_page(page_number)
+        items = payload.get("results", [])
+        if not items:
+            break
+        offers.extend(normalize_adzuna_item(item, source.id) for item in items)
+
+    return offers
 
 
 def fetch_reed(
@@ -152,25 +201,53 @@ def fetch_reed(
     auth_params: dict[str, str],
 ) -> list[dict[str, Any]]:
     endpoint = f"{source.base_url}/search"
-    params = dict(source.query_defaults)
-    params.update(
-        {
-            "keywords": args.keywords,
-            "locationName": args.location,
-            "resultsToTake": min(args.results_per_page, 100),
-            "resultsToSkip": max(args.page - 1, 0) * args.results_per_page,
-        }
-    )
-    params.update(auth_params)
+    per_page = min(args.results_per_page, 100)
+    base_params = dict(source.query_defaults)
+    base_params["resultsToTake"] = per_page
+    if args.keywords.strip():
+        base_params["keywords"] = args.keywords.strip()
+    else:
+        base_params.pop("keywords", None)
+    if args.location.strip():
+        base_params["locationName"] = args.location.strip()
+    else:
+        base_params.pop("locationName", None)
+    base_params.update(auth_params)
 
-    response = session.get(
-        endpoint, params=params, headers=headers, timeout=args.timeout
-    )
-    response.raise_for_status()
+    def fetch_page(page_number: int) -> dict[str, Any]:
+        params = dict(base_params)
+        params["resultsToSkip"] = max(page_number - 1, 0) * per_page
+        response = session.get(
+            endpoint, params=params, headers=headers, timeout=args.timeout
+        )
+        response.raise_for_status()
+        return response.json()
 
-    payload = response.json()
-    items = payload.get("results", [])
-    return [normalize_reed_item(item, source.id) for item in items]
+    first_payload = fetch_page(args.page)
+    first_items = first_payload.get("results", [])
+    offers = [normalize_reed_item(item, source.id) for item in first_items]
+
+    if args.single_page:
+        return offers
+
+    total_count = int(first_payload.get("totalResults", 0) or 0)
+    total_pages = ceil(total_count / per_page) if per_page else 0
+
+    if total_pages <= args.page:
+        return offers
+
+    page_cap = total_pages
+    if args.max_pages > 0:
+        page_cap = min(page_cap, args.page + args.max_pages - 1)
+
+    for page_number in range(args.page + 1, page_cap + 1):
+        payload = fetch_page(page_number)
+        items = payload.get("results", [])
+        if not items:
+            break
+        offers.extend(normalize_reed_item(item, source.id) for item in items)
+
+    return offers
 
 
 def normalize_adzuna_item(item: dict[str, Any], source_id: str) -> dict[str, Any]:
