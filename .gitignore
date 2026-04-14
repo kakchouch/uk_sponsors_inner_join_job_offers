@@ -205,3 +205,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+provisional_do_not_push.md
+provisional_do_not_push.sh

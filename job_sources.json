@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "id": "adzuna",
+      "name": "Adzuna",
+      "enabled": true,
+      "base_url": "https://api.adzuna.com/v1/api/jobs",
+      "country": "gb",
+      "results_per_page": 20,
+      "auth": {
+        "type": "query",
+        "required_env": ["ADZUNA_APP_ID", "ADZUNA_APP_KEY"],
+        "mappings": {
+          "ADZUNA_APP_ID": "app_id",
+          "ADZUNA_APP_KEY": "app_key"
+        }
+      },
+      "query_defaults": {
+        "what": "software engineer",
+        "where": "United Kingdom"
+      }
+    },
+    {
+      "id": "reed",
+      "name": "Reed",
+      "enabled": true,
+      "base_url": "https://www.reed.co.uk/api/1.0",
+      "results_per_page": 25,
+      "auth": {
+        "type": "basic_api_key",
+        "required_env": ["REED_API_KEY"]
+      },
+      "query_defaults": {
+        "keywords": "software engineer",
+        "locationName": "United Kingdom"
+      }
+    }
+  ]
+}
