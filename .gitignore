@@ -207,3 +207,6 @@ marimo/_lsp/
 __marimo__/
 provisional_do_not_push.md
 provisional_do_not_push.sh
+
+#temporary files
+tmp_*
