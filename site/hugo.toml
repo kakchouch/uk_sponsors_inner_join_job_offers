@@ -1,0 +1,32 @@
+baseURL = "https://example.org/"
+languageCode = "en-gb"
+title = "UK Sponsor-Matched Jobs"
+theme = "risotto"
+
+[params]
+noindex = false
+
+[params.theme]
+palette = "material"
+
+[params.about]
+title = "UK Sponsor Matcher"
+description = "A lightweight project that matches UK job offers with licensed sponsor organisations."
+logo = "UK"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Project"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "report"
+    name = "Latest Sponsored Jobs"
+    url = "/report/"
+    weight = 20
+
+[markup.goldmark.renderer]
+unsafe = true

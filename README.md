@@ -131,3 +131,34 @@ The script outputs:
 - fetched sponsors JSON (default: `tmp_registered_sponsors.json`)
 - Markdown report (default: `sponsored_jobs_report.md`)
 - matched records JSON (optional, when `--matched-json-output` is provided)
+
+## Hugo Documentation Site
+
+This repository now includes a Hugo static site (theme: Risotto) that:
+- explains the project purpose and workflow
+- displays the latest matched list from `matched_sponsored_jobs.json`
+
+### Site files
+
+- `site/hugo.toml`: Hugo configuration
+- `site/content/_index.md`: project overview page
+- `site/content/report.md`: latest report page
+- `site/layouts/report/single.html`: custom report template reading JSON at build time
+- `site/static/css/custom.css`: table and overflow styling
+- `site/themes/risotto/`: vendored theme files (tracked as regular files, not a submodule)
+
+### Run locally
+
+```bash
+hugo server --source site
+```
+
+Open the local URL shown in the terminal (usually `http://localhost:1313`).
+
+### Build static output
+
+```bash
+hugo --minify --source site
+```
+
+The generated site is written to `site/public/`.

@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+thead th {
+  text-align: left;
+  position: sticky;
+  top: 0;
+  background: var(--base01);
+}
+
+th,
+td {
+  border: 1px solid var(--base03);
+  padding: 0.4rem 0.5rem;
+  vertical-align: top;
+}
+
+.jobs-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--base03);
+}
+
+.jobs-table-wrapper table {
+  min-width: 880px;
+}

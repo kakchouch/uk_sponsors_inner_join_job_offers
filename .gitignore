@@ -152,7 +152,8 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+# /site was previously used for mkdocs output; kept commented because this repo now stores Hugo source in site/
+# /site
 
 # mypy
 .mypy_cache/
@@ -210,3 +211,11 @@ provisional_do_not_push.sh
 
 #temporary files
 tmp_*
+
+# Hugo generated outputs
+public/
+.hugo_build.lock
+resources/_gen/
+site/public/
+site/.hugo_build.lock
+site/resources/_gen/
