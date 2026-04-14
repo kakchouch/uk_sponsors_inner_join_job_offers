@@ -103,3 +103,31 @@ Useful options:
 The script exports a JSON file (`registered_sponsors.json` by default) containing:
 - `metadata`: run context (generation time, publication URL, CSV URL, original headers, count)
 - `sponsors`: normalized sponsor records from the latest GOV.UK CSV
+
+## Script: Sponsor-Matched Markdown Report
+
+This script runs both fetchers, matches job offer companies against registered sponsor names,
+and exports a Markdown report.
+
+### File
+
+- [generate_sponsored_jobs_report.py](generate_sponsored_jobs_report.py): Runs both fetch scripts, performs matching, and writes a Markdown summary table.
+
+### Run
+
+```bash
+python generate_sponsored_jobs_report.py --keywords "software engineer" --location "London"
+```
+
+Useful options:
+- `--sources adzuna reed`: Select specific job sources.
+- `--jobs-output tmp_job_offers.json`: Path for fetched offers JSON.
+- `--sponsors-output tmp_registered_sponsors.json`: Path for fetched sponsors JSON.
+- `--markdown-output sponsored_jobs_report.md`: Path for Markdown output file.
+- `--matched-json-output matched_sponsored_jobs.json`: Optional path for JSON output containing only matched records.
+
+The script outputs:
+- fetched offers JSON (default: `tmp_job_offers.json`)
+- fetched sponsors JSON (default: `tmp_registered_sponsors.json`)
+- Markdown report (default: `sponsored_jobs_report.md`)
+- matched records JSON (optional, when `--matched-json-output` is provided)
