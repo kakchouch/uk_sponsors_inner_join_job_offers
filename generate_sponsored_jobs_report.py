@@ -204,6 +204,7 @@ def render_markdown(
     lines: list[str] = [
         "# Sponsored Job Matches",
         "",
+        f"Last research run (UTC): {generated_at}",
         f"Generated at: {generated_at}",
         "",
         "## Summary",

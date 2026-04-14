@@ -4,63 +4,14 @@
     </header>
 
     <div class="content__body">
-        {{ .Content }}
-
-        {{ $raw := readFile "../matched_sponsored_jobs.json" }}
-        {{ $data := $raw | transform.Unmarshal }}
-        {{ $metadata := $data.metadata }}
-        {{ $matches := default (slice) $data.matches }}
-
-        <h2>Latest Snapshot</h2>
-        <ul>
-            <li>Generated at: {{ $metadata.generated_at }}</li>
-            <li>Job offers fetched: {{ $metadata.job_offers_fetched }}</li>
-            <li>Sponsors fetched: {{ $metadata.sponsors_fetched }}</li>
-            <li>Matched rows: {{ $metadata.matched_rows }}</li>
-        </ul>
-
-        <h2>Matched Jobs</h2>
-        {{ if gt (len $matches) 0 }}
-            <div class="jobs-table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Job Title</th>
-                            <th>Location</th>
-                            <th>Source</th>
-                            <th>Sponsor Town/City</th>
-                            <th>Route</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{ range $matches }}
-                            <tr>
-                                <td>{{ .offer.company }}</td>
-                                <td>{{ .offer.title }}</td>
-                                <td>{{ .offer.location }}</td>
-                                <td>{{ .offer.source }}</td>
-                                <td>{{ .sponsor.town_city }}</td>
-                                <td>{{ .sponsor.route }}</td>
-                                <td>
-                                    {{ if .offer.url }}
-                                        <a href="{{ .offer.url }}" target="_blank" rel="noopener">Open</a>
-                                    {{ else }}
-                                        N/A
-                                    {{ end }}
-                                </td>
-                            </tr>
-                        {{ end }}
-                    </tbody>
-                </table>
-            </div>
-        {{ else }}
-            <p>No matched rows are currently available.</p>
+        {{ with .Params.last_research_at }}
+            <p><strong>Last research run (UTC):</strong> {{ . }}</p>
         {{ end }}
+
+        {{ .Content }}
     </div>
 {{ end }}
 
 {{ define "aside" }}
-    <p>This report is rendered from ../matched_sponsored_jobs.json at build time.</p>
+    <p>This report is rendered from Markdown content in site/content/report.md.</p>
 {{ end }}

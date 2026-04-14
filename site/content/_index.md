@@ -16,9 +16,9 @@ Searching from abroad can be noisy and time-consuming. This site highlights a sm
 
 ## Data and refresh model
 
-- The pipeline writes the latest match output to matched_sponsored_jobs.json.
-- This Hugo site reads that file at build time.
-- The report page therefore reflects the latest generated list in the repository.
+- The pipeline generates a Markdown report at sponsored_jobs_report.md.
+- The workflow syncs that report into site/content/report.md.
+- The report page renders that Markdown content directly.
 
 ## Main scripts
 

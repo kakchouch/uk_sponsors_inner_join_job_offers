@@ -46,6 +46,24 @@ jobs:
             --matched-json-output matched_sponsored_jobs.json \
             --markdown-output sponsored_jobs_report.md
 
+      - name: Sync markdown report into Hugo content page
+        run: |
+          LAST_RESEARCH_AT="$(grep -m1 '^Generated at:' sponsored_jobs_report.md | sed 's/^Generated at:[[:space:]]*//')"
+          if [[ -z "${LAST_RESEARCH_AT}" ]]; then
+            LAST_RESEARCH_AT="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          fi
+
+          cat <<EOF > site/content/report.md
+          +++
+          title = "Latest Sponsored Jobs"
+          description = "Most recent matched records produced by the project pipeline."
+          lastmod = "${LAST_RESEARCH_AT}"
+          last_research_at = "${LAST_RESEARCH_AT}"
+          +++
+
+          EOF
+          cat sponsored_jobs_report.md >> site/content/report.md
+
       - name: Commit changes if needed
         id: commit_changes
         run: |
@@ -54,7 +72,8 @@ jobs:
 
           git add \
             matched_sponsored_jobs.json \
-            sponsored_jobs_report.md
+            sponsored_jobs_report.md \
+            site/content/report.md
 
           if git diff --cached --quiet; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
@@ -95,7 +114,7 @@ jobs:
 
             while IFS= read -r file_path; do
               case "${file_path}" in
-                matched_sponsored_jobs.json|sponsored_jobs_report.md)
+                matched_sponsored_jobs.json|sponsored_jobs_report.md|site/content/report.md)
                   git checkout --ours -- "${file_path}"
                   ;;
                 *)
