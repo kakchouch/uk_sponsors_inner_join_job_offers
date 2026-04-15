@@ -141,6 +141,9 @@ The matcher now assigns a confidence score to each output row using this scale:
 - `0.50`: recruiter or ambiguous best-candidate match using `input/headhunters.json`
 - `0.20`: substring-only match
 
+### General Caveat
+Output job offers do not guarantee the company sponsors for those specific positions.
+
 ### File
 
 - [generate_sponsored_jobs_report.py](generate_sponsored_jobs_report.py): Runs both fetch scripts, performs matching, and writes a Markdown summary table.
