@@ -16,7 +16,7 @@
         }
       },
       "query_defaults": {
-        "what": "software engineer",
+        "what": "",
         "where": "United Kingdom"
       }
     },
@@ -31,7 +31,7 @@
         "required_env": ["REED_API_KEY"]
       },
       "query_defaults": {
-        "keywords": "software engineer",
+        "keywords": "",
         "locationName": "United Kingdom"
       }
     },
@@ -46,7 +46,7 @@
         "required_env": []
       },
       "query_defaults": {
-        "search": "software engineer",
+        "search": "",
         "location": "United Kingdom"
       }
     }
