@@ -175,7 +175,7 @@ The script outputs:
 - matched records JSON (default: `output/reports/matched_sponsored_jobs.json`)
 - Hugo content page (default: `output/site/content/report.md`)
 
-Matched rows now include `match_score` and `match_type` metadata in the JSON export, and the Markdown table includes the same scoring columns for review.
+Matched rows now include `quality_score`, `match_score`, and `match_type` metadata in the JSON export, and the Markdown table includes a `Quality Score` column for review.
 
 ## Output Layout
 

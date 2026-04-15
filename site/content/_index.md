@@ -4,6 +4,8 @@ title = "Project Overview"
 
 This project helps non-British jobseekers narrow their UK search to employers that are registered licensed sponsors.
 
+Repository: [uk_sponsors_inner_join_job_offers](https://github.com/kakchouch/uk_sponsors_inner_join_job_offers)
+
 It does this by combining three lightweight steps:
 
 1. Fetch public UK job offers from configured sources.

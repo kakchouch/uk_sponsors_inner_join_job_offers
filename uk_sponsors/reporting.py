@@ -532,6 +532,10 @@ def escape_markdown_cell(value: Any) -> str:
     return text.replace("|", "\\|").replace("\n", " ").strip()
 
 
+def format_quality_score(score: float) -> str:
+    return f"{score:.2f}"
+
+
 def render_hugo_content(markdown: str, generated_at: str) -> str:
     return _HUGO_FRONTMATTER.format(generated_at=generated_at) + markdown
 
@@ -567,7 +571,7 @@ def render_markdown(
             "",
             "## Matches",
             "",
-            "| Score | Match Type | Company | Job Title | Location | Source | Sponsor | Sponsor Town/City | Route | Job URL |",
+            "| Quality Score | Match Type | Company | Job Title | Location | Source | Sponsor | Sponsor Town/City | Route | Job URL |",
             "|---|---|---|---|---|---|---|---|---|---|",
         ]
     )
@@ -577,7 +581,7 @@ def render_markdown(
         sponsor = item.sponsor
         lines.append(
             "| "
-            f"{item.score:.2f} | "
+            f"{format_quality_score(item.score)} | "
             f"{escape_markdown_cell(item.match_type)} | "
             f"{escape_markdown_cell(offer.get('company'))} | "
             f"{escape_markdown_cell(offer.get('title'))} | "
@@ -616,6 +620,7 @@ def render_matched_json_payload(
         },
         "matches": [
             {
+                "quality_score": item.score,
                 "match_score": item.score,
                 "match_type": item.match_type,
                 "offer": item.offer,

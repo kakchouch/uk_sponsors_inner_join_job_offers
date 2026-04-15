@@ -4,6 +4,9 @@
     {{ with .logo_image }}<img class="about__logo" src="{{ . | absURL }}" alt="Logo">{{ end }}
 <h1 class="about__title">{{ .title }}</h1>
 {{ with .description }}<p class="about__description">{{ . | markdownify }}</p>{{ end }}
+{{ with $.Site.Params.repoURL }}
+<p class="about__description"><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Project repository</a></p>
+{{ end }}
 </div>
 {{ end }}
 

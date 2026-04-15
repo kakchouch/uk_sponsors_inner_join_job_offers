@@ -4,6 +4,7 @@ import base64
 import json
 import logging
 import os
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from math import ceil
@@ -14,6 +15,9 @@ import requests
 
 DEFAULT_CONFIG_PATH = Path("input/job_sources.json")
 LOGGER = logging.getLogger(__name__)
+TRANSIENT_HTTP_STATUS_CODES = {429, 500, 502, 503, 504}
+MAX_FETCH_RETRIES = 3
+RETRY_BACKOFF_SECONDS = 1.5
 
 
 @dataclass(frozen=True)
@@ -172,6 +176,57 @@ def resolve_auth(source: SourceConfig) -> tuple[dict[str, str], dict[str, str]]:
     return headers, query_params
 
 
+def fetch_json_with_retry(
+    session: requests.Session,
+    endpoint: str,
+    *,
+    params: dict[str, Any],
+    headers: dict[str, str],
+    timeout: int,
+    source_id: str,
+    page_number: int,
+) -> dict[str, Any]:
+    for attempt in range(1, MAX_FETCH_RETRIES + 1):
+        try:
+            response = session.get(
+                endpoint,
+                params=params,
+                headers=headers,
+                timeout=timeout,
+            )
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as error:
+            status_code = getattr(getattr(error, "response", None), "status_code", None)
+            is_transient_http = status_code in TRANSIENT_HTTP_STATUS_CODES
+            is_transport_error = isinstance(
+                error,
+                (
+                    requests.exceptions.ConnectionError,
+                    requests.exceptions.Timeout,
+                ),
+            )
+            should_retry = attempt < MAX_FETCH_RETRIES and (
+                is_transient_http or is_transport_error
+            )
+            if not should_retry:
+                raise
+
+            delay_seconds = RETRY_BACKOFF_SECONDS * attempt
+            LOGGER.warning(
+                "Retrying %s page %s after attempt %s failed with %s",
+                source_id,
+                page_number,
+                attempt,
+                status_code or error.__class__.__name__,
+            )
+            time.sleep(delay_seconds)
+
+    raise RuntimeError(
+        f"Exhausted retries while fetching {source_id} page {page_number}."
+    )
+
+
 def fetch_source_offers(
     source: SourceConfig,
     request: JobOffersRequest,
@@ -229,11 +284,15 @@ def fetch_adzuna(
 
     def fetch_page(page_number: int) -> dict[str, Any]:
         endpoint = f"{source.base_url}/{source.country}/search/{page_number}"
-        response = session.get(
-            endpoint, params=params, headers=headers, timeout=request.timeout
+        return fetch_json_with_retry(
+            session,
+            endpoint,
+            params=params,
+            headers=headers,
+            timeout=request.timeout,
+            source_id=source.id,
+            page_number=page_number,
         )
-        response.raise_for_status()
-        return response.json()
 
     first_payload = fetch_page(request.page)
     first_items = first_payload.get("results", [])
@@ -252,7 +311,16 @@ def fetch_adzuna(
         page_cap = min(page_cap, request.page + request.max_pages - 1)
 
     for page_number in range(request.page + 1, page_cap + 1):
-        payload = fetch_page(page_number)
+        try:
+            payload = fetch_page(page_number)
+        except requests.exceptions.RequestException as error:
+            LOGGER.warning(
+                "Stopping %s pagination at page %s after repeated fetch failures: %s",
+                source.id,
+                page_number,
+                error,
+            )
+            break
         items = payload.get("results", [])
         if not items:
             break
@@ -286,11 +354,15 @@ def fetch_reed(
     def fetch_page(page_number: int) -> dict[str, Any]:
         params = dict(base_params)
         params["resultsToSkip"] = max(page_number - 1, 0) * per_page
-        response = session.get(
-            endpoint, params=params, headers=headers, timeout=request.timeout
+        return fetch_json_with_retry(
+            session,
+            endpoint,
+            params=params,
+            headers=headers,
+            timeout=request.timeout,
+            source_id=source.id,
+            page_number=page_number,
         )
-        response.raise_for_status()
-        return response.json()
 
     first_payload = fetch_page(request.page)
     first_items = first_payload.get("results", [])
@@ -309,7 +381,16 @@ def fetch_reed(
         page_cap = min(page_cap, request.page + request.max_pages - 1)
 
     for page_number in range(request.page + 1, page_cap + 1):
-        payload = fetch_page(page_number)
+        try:
+            payload = fetch_page(page_number)
+        except requests.exceptions.RequestException as error:
+            LOGGER.warning(
+                "Stopping %s pagination at page %s after repeated fetch failures: %s",
+                source.id,
+                page_number,
+                error,
+            )
+            break
         items = payload.get("results", [])
         if not items:
             break

@@ -7,6 +7,9 @@
         {{ with .Params.last_research_at }}
             <p><strong>Last research run (UTC):</strong> {{ . }}</p>
         {{ end }}
+        {{ with .Site.Params.authoritativeBlobURL }}
+            <p><strong>Authoritative source:</strong> <a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub blob</a></p>
+        {{ end }}
 
         {{ .Content }}
     </div>
@@ -14,4 +17,7 @@
 
 {{ define "aside" }}
     <p>This report is rendered from generated Markdown content in output/site/content/report.md.</p>
+    {{ with .Site.Params.authoritativeBlobURL }}
+        <p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">View authoritative GitHub blob</a></p>
+    {{ end }}
 {{ end }}

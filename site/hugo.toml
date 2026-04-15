@@ -5,6 +5,8 @@ theme = "risotto"
 
 [params]
 noindex = false
+repoURL = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers"
+authoritativeBlobURL = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers/blob/main/output/reports/sponsored_jobs_report.md"
 
 [params.theme]
 palette = "material"
