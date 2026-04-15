@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-04-15T10:49:29.713813+00:00",
-    "job_offers_fetched": 174,
+    "generated_at": "2026-04-15T10:54:10.473002+00:00",
+    "job_offers_fetched": 178,
     "skipped_sources": [
       {
         "id": "adzuna",
@@ -15,7 +15,7 @@
       }
     ],
     "sponsors_fetched": 140993,
-    "matched_rows": 127,
+    "matched_rows": 131,
     "locations": [
       "London",
       "Glasgow",
@@ -320,7 +320,7 @@
           "expirationDate": "27/05/2026",
           "date": "14/10/2025",
           "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
-          "applications": 275,
+          "applications": 276,
           "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
         }
       },
@@ -363,7 +363,7 @@
           "expirationDate": "27/05/2026",
           "date": "14/10/2025",
           "jobDescription": "Role: Software Engineer (Java)&nbsp; Location: London Salary: Competitive salary and package (Depending on level of experience) Any offer of employment is subject to satisfactory BPSS and the candidate being granted a level of security clearance which typically&nbsp;requires 10&nbsp;years continuous UK address history, usually including no periods of 30 consecutive days or more spent outside of the UK, and a declaration of being a British passpo... ",
-          "applications": 275,
+          "applications": 276,
           "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/55925258"
         }
       },
@@ -1145,49 +1145,6 @@
         "organisation_name": "Adecco UK Limited",
         "town_city": "London",
         "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "quality_score": 1.0,
-      "match_score": 1.0,
-      "match_type": "exact_normalized",
-      "offer": {
-        "source": "reed",
-        "external_id": 56661045,
-        "title": "Backend Engineer",
-        "company": "AJ Bell",
-        "location": "Manchester",
-        "salary_min": null,
-        "salary_max": null,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "17/03/2026",
-        "url": "https://www.reed.co.uk/jobs/backend-engineer/56661045",
-        "raw": {
-          "jobId": 56661045,
-          "employerId": 566198,
-          "employerName": "AJ Bell",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Backend Engineer",
-          "locationName": "Manchester",
-          "minimumSalary": null,
-          "maximumSalary": null,
-          "currency": null,
-          "expirationDate": "28/04/2026",
-          "date": "17/03/2026",
-          "jobDescription": "Job Description We are recruiting a Backend Engineer within our Enterprise Architecture team to help us build event-driven solutions and democratise data access across our technology teams.&nbsp; &nbsp; &nbsp; Your first task will be to become proficient in cloud-native data and event streaming solutions.&nbsp; The next challenge for our team is to safely replace legacy workflows with event-driven architecture.&nbsp;&nbsp; You will join a vibran... ",
-          "applications": 35,
-          "jobUrl": "https://www.reed.co.uk/jobs/backend-engineer/56661045"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "AJ Bell Plc",
-        "town_city": "Salford Quays",
-        "county": "Manchester",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -1266,7 +1223,7 @@
           "expirationDate": "13/05/2026",
           "date": "01/04/2026",
           "jobDescription": "Job Description Reporting to the 2nd&nbsp;Line Support Team Leader,&nbsp;you will handle escalations from the Service Desk and&nbsp;be&nbsp;responsible for&nbsp;the creation&nbsp;and standardisation of automated tasks as well as&nbsp;the formalisation of procedures for the Service Desk Team.&nbsp;&nbsp; What does the job involve?&nbsp; Responsible for 2nd line support, both in person and remotely via MS Teams,&nbsp;phone&nbsp;and remote access t... ",
-          "applications": 34,
+          "applications": 35,
           "jobUrl": "https://www.reed.co.uk/jobs/second-line-support-engineer/56733572"
         }
       },
@@ -1413,92 +1370,6 @@
       "match_type": "exact_normalized",
       "offer": {
         "source": "reed",
-        "external_id": 56764638,
-        "title": "Software Engineer",
-        "company": "Harvey Nash",
-        "location": "London",
-        "salary_min": 85000.0,
-        "salary_max": 100000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "09/04/2026",
-        "url": "https://www.reed.co.uk/jobs/software-engineer/56764638",
-        "raw": {
-          "jobId": 56764638,
-          "employerId": 591760,
-          "employerName": "Harvey Nash",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Engineer",
-          "locationName": "London",
-          "minimumSalary": 85000.0,
-          "maximumSalary": 100000.0,
-          "currency": "GBP",
-          "expirationDate": "21/05/2026",
-          "date": "09/04/2026",
-          "jobDescription": "Software Engineer - Commodities firm - Permanent - London About the role: We're looking to hire a Software Engineer to join our growing Commercial Engineering team. This role sits close to the front office, giving you the opportunity to work directly with traders and business stakeholders on high-impact automation and technology solutions. You'll be responsible for designing and building scalable, end-to-end automation workflows, leveraging tech... ",
-          "applications": 57,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer/56764638"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Harvey Nash Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "quality_score": 1.0,
-      "match_score": 1.0,
-      "match_type": "exact_normalized",
-      "offer": {
-        "source": "reed",
-        "external_id": 56764638,
-        "title": "Software Engineer",
-        "company": "Harvey Nash",
-        "location": "London",
-        "salary_min": 85000.0,
-        "salary_max": 100000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "09/04/2026",
-        "url": "https://www.reed.co.uk/jobs/software-engineer/56764638",
-        "raw": {
-          "jobId": 56764638,
-          "employerId": 591760,
-          "employerName": "Harvey Nash",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Software Engineer",
-          "locationName": "London",
-          "minimumSalary": 85000.0,
-          "maximumSalary": 100000.0,
-          "currency": "GBP",
-          "expirationDate": "21/05/2026",
-          "date": "09/04/2026",
-          "jobDescription": "Software Engineer - Commodities firm - Permanent - London About the role: We're looking to hire a Software Engineer to join our growing Commercial Engineering team. This role sits close to the front office, giving you the opportunity to work directly with traders and business stakeholders on high-impact automation and technology solutions. You'll be responsible for designing and building scalable, end-to-end automation workflows, leveraging tech... ",
-          "applications": 57,
-          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer/56764638"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Harvey Nash Limited",
-        "town_city": "London",
-        "county": "NULL",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
-      }
-    },
-    {
-      "quality_score": 1.0,
-      "match_score": 1.0,
-      "match_type": "exact_normalized",
-      "offer": {
-        "source": "reed",
         "external_id": 56732116,
         "title": "Software Engineer - Fullstack Developer with Python and Angular",
         "company": "Harvey Nash",
@@ -1618,6 +1489,92 @@
         "organisation_name": "Hirexa Solutions UK Ltd",
         "town_city": "London",
         "county": "",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 1.0,
+      "match_score": 1.0,
+      "match_type": "exact_normalized",
+      "offer": {
+        "source": "reed",
+        "external_id": 56616980,
+        "title": "Senior Fullstack TypeScript Engineer – AWS Cloud",
+        "company": "KBC Technologies UK LTD",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "10/03/2026",
+        "url": "https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980",
+        "raw": {
+          "jobId": 56616980,
+          "employerId": 670361,
+          "employerName": "KBC Technologies UK LTD",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Senior Fullstack TypeScript Engineer – AWS Cloud",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "21/04/2026",
+          "date": "10/03/2026",
+          "jobDescription": "Senior Fullstack TypeScript Engineer – AWS Cloud Location: London | Hybrid We are looking for a Senior Fullstack TypeScript Engineer to join a fast-paced team building and operating mission-critical insurance applications . This is an opportunity to work on cutting-edge technology stacks and cloud-native architectures in a collaborative, high-impact environment. Key Responsibilities Develop front-end and back-end applications using TypeScript , ... ",
+          "applications": 89,
+          "jobUrl": "https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "KBC TECHNOLOGIES UK LIMITED",
+        "town_city": "BRENTFORD",
+        "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Global Business Mobility: UK Expansion Worker"
+      }
+    },
+    {
+      "quality_score": 1.0,
+      "match_score": 1.0,
+      "match_type": "exact_normalized",
+      "offer": {
+        "source": "reed",
+        "external_id": 56616980,
+        "title": "Senior Fullstack TypeScript Engineer – AWS Cloud",
+        "company": "KBC Technologies UK LTD",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "10/03/2026",
+        "url": "https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980",
+        "raw": {
+          "jobId": 56616980,
+          "employerId": 670361,
+          "employerName": "KBC Technologies UK LTD",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Senior Fullstack TypeScript Engineer – AWS Cloud",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "21/04/2026",
+          "date": "10/03/2026",
+          "jobDescription": "Senior Fullstack TypeScript Engineer – AWS Cloud Location: London | Hybrid We are looking for a Senior Fullstack TypeScript Engineer to join a fast-paced team building and operating mission-critical insurance applications . This is an opportunity to work on cutting-edge technology stacks and cloud-native architectures in a collaborative, high-impact environment. Key Responsibilities Develop front-end and back-end applications using TypeScript , ... ",
+          "applications": 89,
+          "jobUrl": "https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "KBC TECHNOLOGIES UK LIMITED",
+        "town_city": "BRENTFORD",
+        "county": "NULL",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -2015,6 +1972,49 @@
       "match_type": "exact_normalized",
       "offer": {
         "source": "reed",
+        "external_id": 56485048,
+        "title": "Senior BIM Coordinator - MEP",
+        "company": "NG Bailey",
+        "location": "Manchester",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "18/02/2026",
+        "url": "https://www.reed.co.uk/jobs/senior-bim-coordinator-mep/56485048",
+        "raw": {
+          "jobId": 56485048,
+          "employerId": 690770,
+          "employerName": "NG Bailey",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Senior BIM Coordinator - MEP",
+          "locationName": "Manchester",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "13/05/2026",
+          "date": "18/02/2026",
+          "jobDescription": "Senior BIM Coordinator Manchester - Hybrid Permanent Summary We are currently seeking a Senior BIM (Building Information Modelling) Coordinator to join a new team being created out of our Manchester office and have some line management duties. This role will be responsible for the production and maintenance of building drawings and models to assist in the overall design and construction process. This role is a great chance to join a new team tha... ",
+          "applications": 6,
+          "jobUrl": "https://www.reed.co.uk/jobs/senior-bim-coordinator-mep/56485048"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "NG Bailey",
+        "town_city": "Leeds",
+        "county": "Default",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 1.0,
+      "match_score": 1.0,
+      "match_type": "exact_normalized",
+      "offer": {
+        "source": "reed",
         "external_id": 56752569,
         "title": "Structural Engineer Composites",
         "company": "Oyster Yachts Limited",
@@ -2349,6 +2349,49 @@
         "organisation_name": "SAAB UK LIMITED",
         "town_city": "London",
         "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 1.0,
+      "match_score": 1.0,
+      "match_type": "exact_normalized",
+      "offer": {
+        "source": "reed",
+        "external_id": 56686518,
+        "title": "Azure Cloud Engineer (AVD) - Software Solution - Fully remote",
+        "company": "Salt Search",
+        "location": "London",
+        "salary_min": 250.0,
+        "salary_max": 350.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "23/03/2026",
+        "url": "https://www.reed.co.uk/jobs/azure-cloud-engineer-avd-software-solution-fully-remote/56686518",
+        "raw": {
+          "jobId": 56686518,
+          "employerId": 436122,
+          "employerName": "Salt Search",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Azure Cloud Engineer (AVD) - Software Solution - Fully remote",
+          "locationName": "London",
+          "minimumSalary": 250.0,
+          "maximumSalary": 350.0,
+          "currency": "GBP",
+          "expirationDate": "04/05/2026",
+          "date": "23/03/2026",
+          "jobDescription": "Azure Cloud Engineer (AVD) - Software Solution - Fully remote Daily rate: 250 - 350 Duration: 6 months Start: ASAP My client is looking for a freelance Cloud Operations Engineer to support our growing infrastructure and application deployment needs within Microsoft Azure. The ideal candidates will have strong hands-on experience with Azure services, a solid understanding of operational best practices, and familiarity with .NET desktop applicatio... ",
+          "applications": 119,
+          "jobUrl": "https://www.reed.co.uk/jobs/azure-cloud-engineer-avd-software-solution-fully-remote/56686518"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Salt Search Limited",
+        "town_city": "London",
+        "county": "",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -2956,87 +2999,44 @@
       }
     },
     {
-      "quality_score": 0.5,
-      "match_score": 0.5,
-      "match_type": "recruiter_or_ambiguous",
+      "quality_score": 0.85,
+      "match_score": 0.85,
+      "match_type": "fuzzy_strong",
       "offer": {
         "source": "reed",
-        "external_id": 56740389,
-        "title": "Cloud Infrastructure Architect",
-        "company": "Acorn Insurance",
-        "location": "Liverpool",
-        "salary_min": 75000.0,
-        "salary_max": 75000.0,
+        "external_id": 56686434,
+        "title": "Q&A Test Engineer",
+        "company": "DCS Recruitment",
+        "location": "London",
+        "salary_min": 50000.0,
+        "salary_max": 60000.0,
         "currency": "GBP",
         "contract_type": null,
         "contract_time": null,
-        "posted_at": "02/04/2026",
-        "url": "https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389",
+        "posted_at": "23/03/2026",
+        "url": "https://www.reed.co.uk/jobs/q-a-test-engineer/56686434",
         "raw": {
-          "jobId": 56740389,
-          "employerId": 655449,
-          "employerName": "Acorn Insurance",
+          "jobId": 56686434,
+          "employerId": 378875,
+          "employerName": "DCS Recruitment",
           "employerProfileId": null,
           "employerProfileName": null,
-          "jobTitle": "Cloud Infrastructure Architect",
-          "locationName": "Liverpool",
-          "minimumSalary": 75000.0,
-          "maximumSalary": 75000.0,
+          "jobTitle": "Q&A Test Engineer",
+          "locationName": "London",
+          "minimumSalary": 50000.0,
+          "maximumSalary": 60000.0,
           "currency": "GBP",
-          "expirationDate": "14/05/2026",
-          "date": "02/04/2026",
-          "jobDescription": "Job Title: Cloud Infrastructure Architect Location: Liverpool City Centre on a Hybrid working basis Salary: Up to 75,000 per annum DOE Job Type: Permanent, Full Time Working Hours: 37.5 hours per week, Monday-Friday 9.00am - 5.30pm Acorn is looking for a passionate Cloud Infrastructure Architect who will be responsible for designing, implementing, and optimising secure, scalable, and highly available cloud platforms. This role requires technical... ",
-          "applications": 32,
-          "jobUrl": "https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389"
+          "expirationDate": "04/05/2026",
+          "date": "23/03/2026",
+          "jobDescription": "QA &amp; Test Engineer - Runtime Assurance Systems Location: London (on-site at HQ) Employment Type: Permanent - Full Time? About the company The company is a fast-growing start-up building the Trust Layer for physical AI and autonomous systems - next-generation safety-tech designed to unlock the true benefits of AI for humanity. Its software enables assured, trustworthy deployment of both traditional deterministic autonomy and AI-driven control... ",
+          "applications": 132,
+          "jobUrl": "https://www.reed.co.uk/jobs/q-a-test-engineer/56686434"
         }
       },
       "sponsor": {
-        "organisation_name": "Acorn Insurance and Financial Services Limited",
-        "town_city": "Liverpool",
-        "county": "Merseyside",
-        "type_rating": "Worker (A rating)",
-        "route": "Global Business Mobility: Senior or Specialist Worker"
-      }
-    },
-    {
-      "quality_score": 0.5,
-      "match_score": 0.5,
-      "match_type": "recruiter_or_ambiguous",
-      "offer": {
-        "source": "reed",
-        "external_id": 56740389,
-        "title": "Cloud Infrastructure Architect",
-        "company": "Acorn Insurance",
-        "location": "Liverpool",
-        "salary_min": 75000.0,
-        "salary_max": 75000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "02/04/2026",
-        "url": "https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389",
-        "raw": {
-          "jobId": 56740389,
-          "employerId": 655449,
-          "employerName": "Acorn Insurance",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Cloud Infrastructure Architect",
-          "locationName": "Liverpool",
-          "minimumSalary": 75000.0,
-          "maximumSalary": 75000.0,
-          "currency": "GBP",
-          "expirationDate": "14/05/2026",
-          "date": "02/04/2026",
-          "jobDescription": "Job Title: Cloud Infrastructure Architect Location: Liverpool City Centre on a Hybrid working basis Salary: Up to 75,000 per annum DOE Job Type: Permanent, Full Time Working Hours: 37.5 hours per week, Monday-Friday 9.00am - 5.30pm Acorn is looking for a passionate Cloud Infrastructure Architect who will be responsible for designing, implementing, and optimising secure, scalable, and highly available cloud platforms. This role requires technical... ",
-          "applications": 32,
-          "jobUrl": "https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "Acorn Insurance and Financial Services Limited",
-        "town_city": "Liverpool",
-        "county": "Merseyside",
+        "organisation_name": "DSS Recruitment Ltd",
+        "town_city": "Northampton",
+        "county": "Northamptonshire",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -3692,92 +3692,6 @@
       "match_type": "recruiter_or_ambiguous",
       "offer": {
         "source": "reed",
-        "external_id": 56681549,
-        "title": "Senior Software Engineer",
-        "company": "Method Resourcing",
-        "location": "London",
-        "salary_min": 70000.0,
-        "salary_max": 85000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "20/03/2026",
-        "url": "https://www.reed.co.uk/jobs/senior-software-engineer/56681549",
-        "raw": {
-          "jobId": 56681549,
-          "employerId": 589273,
-          "employerName": "Method Resourcing",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Senior Software Engineer",
-          "locationName": "London",
-          "minimumSalary": 70000.0,
-          "maximumSalary": 85000.0,
-          "currency": "GBP",
-          "expirationDate": "01/05/2026",
-          "date": "20/03/2026",
-          "jobDescription": "Senior Full-Stack Engineer (Frontend-Leaning) London (Hybrid - 2 days/week in office) 70,000 - 85,000 + Benefits Method Resourcing are working with a London-based engineering team hiring a Senior Full-Stack Engineer with a strong frontend focus to join a project building a production-critical trading platform for a major enterprise client. This is a long-running, evolving system rather than a greenfield build, where the focus is on performance, ... ",
-          "applications": 77,
-          "jobUrl": "https://www.reed.co.uk/jobs/senior-software-engineer/56681549"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "IST Resourcing LTD",
-        "town_city": "Leeds",
-        "county": "",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "quality_score": 0.5,
-      "match_score": 0.5,
-      "match_type": "recruiter_or_ambiguous",
-      "offer": {
-        "source": "reed",
-        "external_id": 56681549,
-        "title": "Senior Software Engineer",
-        "company": "Method Resourcing",
-        "location": "London",
-        "salary_min": 70000.0,
-        "salary_max": 85000.0,
-        "currency": "GBP",
-        "contract_type": null,
-        "contract_time": null,
-        "posted_at": "20/03/2026",
-        "url": "https://www.reed.co.uk/jobs/senior-software-engineer/56681549",
-        "raw": {
-          "jobId": 56681549,
-          "employerId": 589273,
-          "employerName": "Method Resourcing",
-          "employerProfileId": null,
-          "employerProfileName": null,
-          "jobTitle": "Senior Software Engineer",
-          "locationName": "London",
-          "minimumSalary": 70000.0,
-          "maximumSalary": 85000.0,
-          "currency": "GBP",
-          "expirationDate": "01/05/2026",
-          "date": "20/03/2026",
-          "jobDescription": "Senior Full-Stack Engineer (Frontend-Leaning) London (Hybrid - 2 days/week in office) 70,000 - 85,000 + Benefits Method Resourcing are working with a London-based engineering team hiring a Senior Full-Stack Engineer with a strong frontend focus to join a project building a production-critical trading platform for a major enterprise client. This is a long-running, evolving system rather than a greenfield build, where the focus is on performance, ... ",
-          "applications": 77,
-          "jobUrl": "https://www.reed.co.uk/jobs/senior-software-engineer/56681549"
-        }
-      },
-      "sponsor": {
-        "organisation_name": "MJK Resourcing Ltd",
-        "town_city": "Luton",
-        "county": "",
-        "type_rating": "Worker (A rating)",
-        "route": "Skilled Worker"
-      }
-    },
-    {
-      "quality_score": 0.5,
-      "match_score": 0.5,
-      "match_type": "recruiter_or_ambiguous",
-      "offer": {
-        "source": "reed",
         "external_id": 56765108,
         "title": "Java 8 Software Engineer | £500 – £550 | Inside IR35 | 6 Months | Hybrid Remote",
         "company": "Opus Recruitment Solutions Ltd",
@@ -4079,6 +3993,49 @@
       "match_type": "recruiter_or_ambiguous",
       "offer": {
         "source": "reed",
+        "external_id": 56590440,
+        "title": "Java Software Engineer",
+        "company": "Sanderson",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "06/03/2026",
+        "url": "https://www.reed.co.uk/jobs/java-software-engineer/56590440",
+        "raw": {
+          "jobId": 56590440,
+          "employerId": 520034,
+          "employerName": "Sanderson",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Java Software Engineer",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "17/04/2026",
+          "date": "06/03/2026",
+          "jobDescription": "Java Developer - multiple roles 510/day Inside IR-35 6 month contract Active SC required Remote with occasional travel to London for client meetings only - expensable We are looking for experienced fullstack Java Software Engineers to support projects across UK Government and Law Enforcement. You'll work in multidisciplinary teams delivering secure, reliable and scalable systems. The role is hands-on and focused on building high quality software... ",
+          "applications": 76,
+          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/56590440"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Green Sanderson OpCo Ltd",
+        "town_city": "London",
+        "county": "",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 0.5,
+      "match_score": 0.5,
+      "match_type": "recruiter_or_ambiguous",
+      "offer": {
+        "source": "reed",
         "external_id": 56642521,
         "title": "Java Software Engineer",
         "company": "Sanderson",
@@ -4112,6 +4069,49 @@
         "organisation_name": "Green Sanderson OpCo Ltd",
         "town_city": "London",
         "county": "",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 0.5,
+      "match_score": 0.5,
+      "match_type": "recruiter_or_ambiguous",
+      "offer": {
+        "source": "reed",
+        "external_id": 56590440,
+        "title": "Java Software Engineer",
+        "company": "Sanderson",
+        "location": "London",
+        "salary_min": null,
+        "salary_max": null,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "06/03/2026",
+        "url": "https://www.reed.co.uk/jobs/java-software-engineer/56590440",
+        "raw": {
+          "jobId": 56590440,
+          "employerId": 520034,
+          "employerName": "Sanderson",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Java Software Engineer",
+          "locationName": "London",
+          "minimumSalary": null,
+          "maximumSalary": null,
+          "currency": null,
+          "expirationDate": "17/04/2026",
+          "date": "06/03/2026",
+          "jobDescription": "Java Developer - multiple roles 510/day Inside IR-35 6 month contract Active SC required Remote with occasional travel to London for client meetings only - expensable We are looking for experienced fullstack Java Software Engineers to support projects across UK Government and Law Enforcement. You'll work in multidisciplinary teams delivering secure, reliable and scalable systems. The role is hands-on and focused on building high quality software... ",
+          "applications": 76,
+          "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/56590440"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Sanderson Weatherall LLP",
+        "town_city": "London",
+        "county": "NULL",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -4585,6 +4585,92 @@
         "organisation_name": "Sanderson Weatherall LLP",
         "town_city": "London",
         "county": "NULL",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 0.5,
+      "match_score": 0.5,
+      "match_type": "recruiter_or_ambiguous",
+      "offer": {
+        "source": "reed",
+        "external_id": 56753983,
+        "title": "Graduate Software Engineer",
+        "company": "Spectrum IT Recruitment",
+        "location": "London",
+        "salary_min": 45000.0,
+        "salary_max": 50000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "07/04/2026",
+        "url": "https://www.reed.co.uk/jobs/graduate-software-engineer/56753983",
+        "raw": {
+          "jobId": 56753983,
+          "employerId": 375315,
+          "employerName": "Spectrum IT Recruitment",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Graduate Software Engineer",
+          "locationName": "London",
+          "minimumSalary": 45000.0,
+          "maximumSalary": 50000.0,
+          "currency": "GBP",
+          "expirationDate": "21/04/2026",
+          "date": "07/04/2026",
+          "jobDescription": "We're working with a forward-thinking technology company looking to hire a Graduate / Junior Software Engineer to join their growing team. This is a fantastic opportunity for someone early in their career to gain hands-on experience across a modern infrastructure stack, working on systems that are scalable, secure, and highly available. This is a hybrid role with the requirement to be in the London office 2 days per week. Our client offers good ... ",
+          "applications": 93,
+          "jobUrl": "https://www.reed.co.uk/jobs/graduate-software-engineer/56753983"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Starlit Recruitment Ltd",
+        "town_city": "Dudley",
+        "county": "West Midlands",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 0.5,
+      "match_score": 0.5,
+      "match_type": "recruiter_or_ambiguous",
+      "offer": {
+        "source": "reed",
+        "external_id": 56752438,
+        "title": "Infrastructure Software Engineer",
+        "company": "Spectrum IT Recruitment",
+        "location": "London",
+        "salary_min": 70000.0,
+        "salary_max": 80000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "07/04/2026",
+        "url": "https://www.reed.co.uk/jobs/infrastructure-software-engineer/56752438",
+        "raw": {
+          "jobId": 56752438,
+          "employerId": 375315,
+          "employerName": "Spectrum IT Recruitment",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Infrastructure Software Engineer",
+          "locationName": "London",
+          "minimumSalary": 70000.0,
+          "maximumSalary": 80000.0,
+          "currency": "GBP",
+          "expirationDate": "21/04/2026",
+          "date": "07/04/2026",
+          "jobDescription": "We are looking for an Infrastructure Software Engineer to help keep our clients' systems reliable, secure, and scalable. This is a hands-on role working across a broad stack - from Linux servers and networking to containers and big data platforms - with a strong focus on automation and problem-solving. The successful candidate must have strong on-prem experience and will ideally have a good mix of infrastructure and programming knowledge. This i... ",
+          "applications": 50,
+          "jobUrl": "https://www.reed.co.uk/jobs/infrastructure-software-engineer/56752438"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Starlit Recruitment Ltd",
+        "town_city": "Dudley",
+        "county": "West Midlands",
         "type_rating": "Worker (A rating)",
         "route": "Skilled Worker"
       }
@@ -4848,6 +4934,49 @@
       }
     },
     {
+      "quality_score": 0.5,
+      "match_score": 0.5,
+      "match_type": "recruiter_or_ambiguous",
+      "offer": {
+        "source": "reed",
+        "external_id": 56750773,
+        "title": "Software QA Engineer",
+        "company": "Spectrum IT Recruitment",
+        "location": "Brighton",
+        "salary_min": 50000.0,
+        "salary_max": 50000.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "07/04/2026",
+        "url": "https://www.reed.co.uk/jobs/software-qa-engineer/56750773",
+        "raw": {
+          "jobId": 56750773,
+          "employerId": 375315,
+          "employerName": "Spectrum IT Recruitment",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Software QA Engineer",
+          "locationName": "Brighton",
+          "minimumSalary": 50000.0,
+          "maximumSalary": 50000.0,
+          "currency": "GBP",
+          "expirationDate": "21/04/2026",
+          "date": "07/04/2026",
+          "jobDescription": "Excellent opportunity for a Software QA Engineer to join brilliant client's team based in Brighton. As a QA Engineer, you will be responsible for introducing and maintaining new technologies whilst utilising the latest industry software and practices. You'll become a vital part of an already successful software team who producing excellent software for a market leading company. The role will cover various aspects of the testing life cycle with a... ",
+          "applications": 68,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-qa-engineer/56750773"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Starlit Recruitment Ltd",
+        "town_city": "Dudley",
+        "county": "West Midlands",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
       "quality_score": 0.2,
       "match_score": 0.2,
       "match_type": "substring_only",
@@ -5009,6 +5138,49 @@
           "jobDescription": "Java Software Engineer 12 month contract Based in Bristol Offering 65ph Inside IR35 Do you have experience with Java? Do you have experience in RTOS? Do you want to work with an industry-leading company? If your answer to these is yes, then this could be the role for you! As the Java Software Engineer, you will be working alongside a market-leading Defence and Aerospace company who are constantly growing and developing. They are always looking t... ",
           "applications": 61,
           "jobUrl": "https://www.reed.co.uk/jobs/java-software-engineer/56607921"
+        }
+      },
+      "sponsor": {
+        "organisation_name": "Resource Limited",
+        "town_city": "Cardiff",
+        "county": "",
+        "type_rating": "Worker (A rating)",
+        "route": "Skilled Worker"
+      }
+    },
+    {
+      "quality_score": 0.2,
+      "match_score": 0.2,
+      "match_type": "substring_only",
+      "offer": {
+        "source": "reed",
+        "external_id": 56682481,
+        "title": "Senior Software Engineer",
+        "company": "Advanced Resource Managers Limited",
+        "location": "Bristol",
+        "salary_min": 55.0,
+        "salary_max": 60.0,
+        "currency": "GBP",
+        "contract_type": null,
+        "contract_time": null,
+        "posted_at": "20/03/2026",
+        "url": "https://www.reed.co.uk/jobs/senior-software-engineer/56682481",
+        "raw": {
+          "jobId": 56682481,
+          "employerId": 602011,
+          "employerName": "Advanced Resource Managers Limited",
+          "employerProfileId": null,
+          "employerProfileName": null,
+          "jobTitle": "Senior Software Engineer",
+          "locationName": "Bristol",
+          "minimumSalary": 55.0,
+          "maximumSalary": 60.0,
+          "currency": "GBP",
+          "expirationDate": "01/05/2026",
+          "date": "20/03/2026",
+          "jobDescription": "Senior Software Engineer 6 month contract Based in Bristol Offering 60ph Outside IR35 Do you have experience in version control and configuration management (Git, AWS)? Do you have experience in Python(pytest)? Do you want to work with an industry-leading company? If your answer to these is yes, then this could be the role for you! As the Senior Software Engineer, you will be working alongside a market-leading Defence and Aerospace company who a... ",
+          "applications": 50,
+          "jobUrl": "https://www.reed.co.uk/jobs/senior-software-engineer/56682481"
         }
       },
       "sponsor": {
@@ -5369,33 +5541,33 @@
       "match_type": "substring_only",
       "offer": {
         "source": "reed",
-        "external_id": 56709972,
-        "title": "Full Stack Engineer",
+        "external_id": 56653807,
+        "title": "Software Engineer",
         "company": "Searchability",
-        "location": "London",
-        "salary_min": 50000.0,
-        "salary_max": 75000.0,
+        "location": "Leeds",
+        "salary_min": 40000.0,
+        "salary_max": 60000.0,
         "currency": "GBP",
         "contract_type": null,
         "contract_time": null,
-        "posted_at": "27/03/2026",
-        "url": "https://www.reed.co.uk/jobs/full-stack-engineer/56709972",
+        "posted_at": "16/03/2026",
+        "url": "https://www.reed.co.uk/jobs/software-engineer/56653807",
         "raw": {
-          "jobId": 56709972,
+          "jobId": 56653807,
           "employerId": 429392,
           "employerName": "Searchability",
           "employerProfileId": null,
           "employerProfileName": null,
-          "jobTitle": "Full Stack Engineer",
-          "locationName": "London",
-          "minimumSalary": 50000.0,
-          "maximumSalary": 75000.0,
+          "jobTitle": "Software Engineer",
+          "locationName": "Leeds",
+          "minimumSalary": 40000.0,
+          "maximumSalary": 60000.0,
           "currency": "GBP",
-          "expirationDate": "08/05/2026",
-          "date": "27/03/2026",
-          "jobDescription": "FULL STACK ENGINEER - LONDON (WATERLOO, HYBRID) KEY POINTS Salary up to 75,000 Hybrid working - 3 days per week in Waterloo, London Python, FastAPI, PostgreSQL, React or Next.js End-to-end ownership across frontend and backend ABOUT THE CLIENT We're working with an ambitious AI-driven organisation building advanced analytics products within the sports sector. Due to continued growth, they're looking for a Full Stack Engineer with 3+ years' exper... ",
-          "applications": 76,
-          "jobUrl": "https://www.reed.co.uk/jobs/full-stack-engineer/56709972"
+          "expirationDate": "27/04/2026",
+          "date": "16/03/2026",
+          "jobDescription": "Software Developer - Remote Salary up to 60,000 + Benefits C#, ASP.NET, Vue, SQL, Git Mid to Senior level with excellent progression opportunities * 100% remote working * Fast-growing software house * Close-knit, collaborative team ABOUT THE CLIENT We are working with a fast-growing Software House with a fully distributed, remote-first team. The leadership team brings decades of hands-on development experience and remain actively involved in sha... ",
+          "applications": 148,
+          "jobUrl": "https://www.reed.co.uk/jobs/software-engineer/56653807"
         }
       },
       "sponsor": {
