@@ -1,13 +1,13 @@
 # Sponsored Job Matches
 
-Last research run (UTC): 2026-04-15T10:54:10.473002+00:00
-Generated at: 2026-04-15T10:54:10.473002+00:00
+Last research run (UTC): 2026-04-15T17:14:10.080193+00:00
+Generated at: 2026-04-15T17:14:10.080193+00:00
 
 ## Summary
 
 - Job offers fetched: 178
 - Sponsors fetched: 140993
-- Matched rows: 131
+- Matched rows: 129
 - Skipped job sources: 1
 - Skipped source detail: adzuna - Skipped after API cap/rate limit on page 1: Failed fetching adzuna page 1 after attempt 3: 429 Client Error: Too Many Requests for url: https://api.adzuna.com/v1/api/jobs/gb/search/1?what=software+engineer&results_per_page=20&app_id=b4038784&app_key=290390559599d5cc7a0daa602e5e4ab2
 - Incomplete job sources kept: 1
@@ -44,28 +44,25 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 1.00 | exact_normalized | Adecco | Fullstack Software Engineer (Agentic AI) | London | reed | Adecco UK Limited | London | Skilled Worker | https://www.reed.co.uk/jobs/fullstack-software-engineer-agentic-ai/56752836 |
 | 1.00 | exact_normalized | Adecco | Senior Software Engineer (Test) | Manchester | reed | Adecco UK Limited | London | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/senior-software-engineer-test/56758314 |
 | 1.00 | exact_normalized | Adecco | Senior Software Engineer (Test) | Manchester | reed | Adecco UK Limited | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer-test/56758314 |
+| 1.00 | exact_normalized | AJ Bell | Backend Engineer | Manchester | reed | AJ Bell Plc | Salford Quays | Skilled Worker | https://www.reed.co.uk/jobs/backend-engineer/56661045 |
 | 1.00 | exact_normalized | AJ Bell | Flutter Engineer | Manchester | reed | AJ Bell Plc | Salford Quays | Skilled Worker | https://www.reed.co.uk/jobs/flutter-engineer/56036568 |
 | 1.00 | exact_normalized | AJ Bell | Second Line Support Engineer | Manchester | reed | AJ Bell Plc | Salford Quays | Skilled Worker | https://www.reed.co.uk/jobs/second-line-support-engineer/56733572 |
 | 1.00 | exact_normalized | AJ Bell | Senior Software Engineer | Manchester | reed | AJ Bell Plc | Salford Quays | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/55768379 |
 | 1.00 | exact_normalized | AJ Bell | Software Engineer | Manchester | reed | AJ Bell Plc | Salford Quays | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer/55769471 |
 | 1.00 | exact_normalized | FDM Group | Senior Software Engineer | London | reed | FDM Group Limited | Brighton | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/56783900 |
+| 1.00 | exact_normalized | Harvey Nash | Software Engineer | London | reed | Harvey Nash Limited | London | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer/56764638 |
+| 1.00 | exact_normalized | Harvey Nash | Software Engineer | London | reed | Harvey Nash Limited | London | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/software-engineer/56764638 |
 | 1.00 | exact_normalized | Harvey Nash | Software Engineer - Fullstack Developer with Python and Angular | South West London | reed | Harvey Nash Limited | London | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer-fullstack-developer-with-python-and-angular/56732116 |
 | 1.00 | exact_normalized | Harvey Nash | Software Engineer - Fullstack Developer with Python and Angular | South West London | reed | Harvey Nash Limited | London | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/software-engineer-fullstack-developer-with-python-and-angular/56732116 |
-| 1.00 | exact_normalized | Hirexa Solutions UK | Mainframe Network Engineer | London | reed | Hirexa Solutions UK Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/mainframe-network-engineer/56073008 |
 | 1.00 | exact_normalized | KBC Technologies UK LTD | Senior Fullstack TypeScript Engineer – AWS Cloud | London | reed | KBC TECHNOLOGIES UK LIMITED | BRENTFORD | Global Business Mobility: UK Expansion Worker | https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980 |
 | 1.00 | exact_normalized | KBC Technologies UK LTD | Senior Fullstack TypeScript Engineer – AWS Cloud | London | reed | KBC TECHNOLOGIES UK LIMITED | BRENTFORD | Skilled Worker | https://www.reed.co.uk/jobs/senior-fullstack-typescript-engineer--aws-cloud/56616980 |
 | 1.00 | exact_normalized | Max Fordham LLP | SENIOR DATA ANALYST AND SOFTWARE DEVELOPER – EDINBURGH OR LONDON | Central London | reed | Max Fordham LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-data-analyst-and-software-developer--edinburgh-or-london/56732607 |
 | 1.00 | exact_normalized | Morgan McKinley | Frontend Software Engineer | London | reed | Morgan McKinley | London | Skilled Worker | https://www.reed.co.uk/jobs/frontend-software-engineer/56729087 |
 | 1.00 | exact_normalized | NG Bailey | Cost Engineer - MEP | Leeds | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/cost-engineer-mep/56705143 |
-| 1.00 | exact_normalized | NG Bailey | Geotechnical Engineer | Leeds | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/geotechnical-engineer/56160056 |
-| 1.00 | exact_normalized | NG Bailey | Geotechnical Engineer | London | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/geotechnical-engineer/56160057 |
 | 1.00 | exact_normalized | NG Bailey | Pre Construction Manager | Glasgow | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/pre-construction-manager/56702065 |
 | 1.00 | exact_normalized | NG Bailey | Pre Construction Manager | London | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/pre-construction-manager/56702064 |
 | 1.00 | exact_normalized | NG Bailey | Senior BIM Coordinator - MEP | Bristol | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/senior-bim-coordinator-mep/55608485 |
 | 1.00 | exact_normalized | NG Bailey | Senior BIM Coordinator - MEP | Leeds | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/senior-bim-coordinator-mep/56485047 |
-| 1.00 | exact_normalized | NG Bailey | Senior BIM Coordinator - MEP | Manchester | reed | NG Bailey | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/senior-bim-coordinator-mep/56485048 |
-| 1.00 | exact_normalized | Oyster Yachts Limited | Structural Engineer Composites | Southampton | reed | Oyster Yachts Limited | Southampton | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/structural-engineer-composites/56752569 |
-| 1.00 | exact_normalized | Oyster Yachts Limited | Structural Engineer Composites | Southampton | reed | Oyster Yachts Limited | Southampton | Skilled Worker | https://www.reed.co.uk/jobs/structural-engineer-composites/56752569 |
 | 1.00 | exact_normalized | Robert Half | AI Enablement Engineer | London | reed | Robert Half Limited | Solihull | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/ai-enablement-engineer/56707572 |
 | 1.00 | exact_normalized | Robert Half | AI Enablement Engineer | London | reed | Robert Half Limited | Solihull | Skilled Worker | https://www.reed.co.uk/jobs/ai-enablement-engineer/56707572 |
 | 1.00 | exact_normalized | Robert Half | Quality Assurance Engineer | London | reed | Robert Half Limited | Solihull | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/quality-assurance-engineer/56619879 |
@@ -87,7 +84,10 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 1.00 | exact_normalized | VERTICAL AEROSPACE GROUP LTD | Senior Actuation Systems Engineer | Bristol | reed | Vertical Aerospace Group Ltd | Bristol | Global Business Mobility: Service Supplier | https://www.reed.co.uk/jobs/senior-actuation-systems-engineer/56615538 |
 | 1.00 | exact_normalized | VERTICAL AEROSPACE GROUP LTD | Senior Actuation Systems Engineer | Bristol | reed | Vertical Aerospace Group Ltd | Bristol | Skilled Worker | https://www.reed.co.uk/jobs/senior-actuation-systems-engineer/56615538 |
 | 1.00 | exact_normalized | VERTICAL AEROSPACE GROUP LTD | Senior Actuation Systems Engineer | Bristol | reed | Vertical Aerospace Group Ltd | Bristol | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/senior-actuation-systems-engineer/56615538 |
-| 0.85 | fuzzy_strong | DCS Recruitment | Q&A Test Engineer | London | reed | DSS Recruitment Ltd | Northampton | Skilled Worker | https://www.reed.co.uk/jobs/q-a-test-engineer/56686434 |
+| 1.00 | exact_normalized | X4 Group | Senior Embedded Software Engineer | Southampton | reed | X4 Group Ltd | London | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/senior-embedded-software-engineer/56760500 |
+| 1.00 | exact_normalized | X4 Group | Senior Embedded Software Engineer | Southampton | reed | X4 Group Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-embedded-software-engineer/56760500 |
+| 0.50 | recruiter_or_ambiguous | Acorn Insurance | Cloud Infrastructure Architect | Liverpool | reed | Acorn Insurance and Financial Services Limited | Liverpool | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389 |
+| 0.50 | recruiter_or_ambiguous | Acorn Insurance | Cloud Infrastructure Architect | Liverpool | reed | Acorn Insurance and Financial Services Limited | Liverpool | Skilled Worker | https://www.reed.co.uk/jobs/cloud-infrastructure-architect/56740389 |
 | 0.50 | recruiter_or_ambiguous | Canada Life | Azure Platform Engineer | London | reed | CLFIS (UK ) Ltd - Canada Life | London | Global Business Mobility: Senior or Specialist Worker | https://www.reed.co.uk/jobs/azure-platform-engineer/56633381 |
 | 0.50 | recruiter_or_ambiguous | Canada Life | Azure Platform Engineer | London | reed | CLFIS (UK ) Ltd - Canada Life | London | Skilled Worker | https://www.reed.co.uk/jobs/azure-platform-engineer/56633381 |
 | 0.50 | recruiter_or_ambiguous | Futures | Electrical Design Engineer | Leeds | reed | GTI Futures Limited | Wallingford | Skilled Worker | https://www.reed.co.uk/jobs/electrical-design-engineer/56710809 |
@@ -103,6 +103,8 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 0.50 | recruiter_or_ambiguous | Method Resourcing | Lead Software Developer - Dynamics 365 & Power Platform | London | reed | MJK Resourcing Ltd | Luton | Skilled Worker | https://www.reed.co.uk/jobs/lead-software-developer-dynamics-365-power-platform/56691773 |
 | 0.50 | recruiter_or_ambiguous | Method Resourcing | Senior AI Software Engineer - AI Lab | London | reed | IST Resourcing LTD | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/senior-ai-software-engineer-ai-lab/56752502 |
 | 0.50 | recruiter_or_ambiguous | Method Resourcing | Senior AI Software Engineer - AI Lab | London | reed | MJK Resourcing Ltd | Luton | Skilled Worker | https://www.reed.co.uk/jobs/senior-ai-software-engineer-ai-lab/56752502 |
+| 0.50 | recruiter_or_ambiguous | Method Resourcing | Senior Software Engineer | London | reed | IST Resourcing LTD | Leeds | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/56681549 |
+| 0.50 | recruiter_or_ambiguous | Method Resourcing | Senior Software Engineer | London | reed | MJK Resourcing Ltd | Luton | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/56681549 |
 | 0.50 | recruiter_or_ambiguous | Opus Recruitment Solutions Ltd | Java 8 Software Engineer \| £500 – £550 \| Inside IR35 \| 6 Months \| Hybrid Remote | London | reed | SSP Recruitment Solutions Limited | Stirling | Skilled Worker | https://www.reed.co.uk/jobs/java-8-software-engineer--500--550--inside-ir35--6-months--hybrid-remote/56765108 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Client Implementation Engineer | Glasgow | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/client-implementation-engineer/56687268 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Client Implementation Engineer | Glasgow | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/client-implementation-engineer/56687268 |
@@ -110,12 +112,8 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 0.50 | recruiter_or_ambiguous | Sanderson | Cyber Software Engineer | Manchester | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/cyber-software-engineer/56635782 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Full Stack Software Engineer | Manchester | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/full-stack-software-engineer/56687347 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Full Stack Software Engineer | Manchester | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/full-stack-software-engineer/56687347 |
-| 0.50 | recruiter_or_ambiguous | Sanderson | Java Software Engineer | London | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/java-software-engineer/56590440 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Java Software Engineer | London | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/java-software-engineer/56642521 |
-| 0.50 | recruiter_or_ambiguous | Sanderson | Java Software Engineer | London | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/java-software-engineer/56590440 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Java Software Engineer | London | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/java-software-engineer/56642521 |
-| 0.50 | recruiter_or_ambiguous | Sanderson | SC DevOps Engineer | London | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/sc-devops-engineer/56591784 |
-| 0.50 | recruiter_or_ambiguous | Sanderson | SC DevOps Engineer | London | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/sc-devops-engineer/56591784 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Senior Java Engineer | London | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-java-engineer/56626261 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Senior Java Engineer | London | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-java-engineer/56626261 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Senior Software Developer | London | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-developer/56677253 |
@@ -124,19 +122,20 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 0.50 | recruiter_or_ambiguous | Sanderson | Senior Software Engineer | London | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/56768685 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Software Engineer | Glasgow | reed | Green Sanderson OpCo Ltd | London | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer/56718890 |
 | 0.50 | recruiter_or_ambiguous | Sanderson | Software Engineer | Glasgow | reed | Sanderson Weatherall LLP | London | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer/56718890 |
-| 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Graduate Software Engineer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/graduate-software-engineer/56753983 |
-| 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Infrastructure Software Engineer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/infrastructure-software-engineer/56752438 |
+| 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Infrastructure Software Engineer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/infrastructure-software-engineer/56787843 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | IT Support Engineer | Southampton | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/it-support-engineer/56782571 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Lead Full Stack Software Developer | Southampton | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/lead-full-stack-software-developer/56782025 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Principal Software Engineer | Southampton | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/principal-software-engineer/56736605 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Senior Software Developer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-developer/56587776 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Senior Software Developer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-developer/56750613 |
+| 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Senior Software Developer | London | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-developer/56787838 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Software Developer | Portsmouth | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/software-developer/56767413 |
 | 0.50 | recruiter_or_ambiguous | Spectrum IT Recruitment | Software QA Engineer | Brighton | reed | Starlit Recruitment Ltd | Dudley | Skilled Worker | https://www.reed.co.uk/jobs/software-qa-engineer/56750773 |
 | 0.20 | substring_only | Roc Search Limited | Senior Technical Lead (Software Development) | Bristol | reed | UK Search Limited | Chesterfield | Skilled Worker | https://www.reed.co.uk/jobs/senior-technical-lead-software-development/56579822 |
 | 0.20 | substring_only | Advanced Resource Managers Limited | Algorithm Engineer | Bristol | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/algorithm-engineer/56581901 |
 | 0.20 | substring_only | Advanced Resource Managers Limited | Embedded Software Engineer | Portsmouth | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/embedded-software-engineer/56666572 |
 | 0.20 | substring_only | Advanced Resource Managers Limited | Java Software Engineer | Bristol | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/java-software-engineer/56607921 |
+| 0.20 | substring_only | Advanced Resource Managers Limited | Lead Software Engineer | Bristol | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/lead-software-engineer/56682535 |
 | 0.20 | substring_only | Advanced Resource Managers Limited | Senior Software Engineer | Bristol | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/senior-software-engineer/56682481 |
 | 0.20 | substring_only | Advanced Resource Managers Limited | Systems Trials Engineer | Bristol | reed | Resource Limited | Cardiff | Skilled Worker | https://www.reed.co.uk/jobs/systems-trials-engineer/56752149 |
 | 0.20 | substring_only | Circle Recruitment | Full-Stack Software Engineer (Python / React) - Remote | London | reed | Circle | London | Skilled Worker | https://www.reed.co.uk/jobs/full-stack-software-engineer-python-react-remote/56656465 |
@@ -146,6 +145,5 @@ Generated at: 2026-04-15T10:54:10.473002+00:00
 | 0.20 | substring_only | Morgan Philips Specialist Recruitment | Head of Software Engineering | London | reed | Morgan Philips UK Limited | London | Skilled Worker | https://www.reed.co.uk/jobs/head-of-software-engineering/56690374 |
 | 0.20 | substring_only | Randstad Technologies | Full Stack Engineer /Software Engineer | London | reed | AD Technologies Ltd | Reading | Skilled Worker | https://www.reed.co.uk/jobs/full-stack-engineer-software-engineer/56722253 |
 | 0.20 | substring_only | Searchability | Backend Engineer | London | reed | UK Search Limited | Chesterfield | Skilled Worker | https://www.reed.co.uk/jobs/backend-engineer/56709971 |
-| 0.20 | substring_only | Searchability | Software Engineer | Leeds | reed | UK Search Limited | Chesterfield | Skilled Worker | https://www.reed.co.uk/jobs/software-engineer/56653807 |
-| 0.20 | substring_only | Tenth Revolution Group | Data Science Engineer | London | reed | volution Group Limited | Crawley | Skilled Worker | https://www.reed.co.uk/jobs/data-science-engineer/56755024 |
+| 0.20 | substring_only | Searchability | Full Stack Engineer | London | reed | UK Search Limited | Chesterfield | Skilled Worker | https://www.reed.co.uk/jobs/full-stack-engineer/56709972 |
 | 0.20 | substring_only | Tenth Revolution Group | Data Science Engineer | Manchester | reed | volution Group Limited | Crawley | Skilled Worker | https://www.reed.co.uk/jobs/data-science-engineer/56755030 |
