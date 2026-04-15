@@ -1,0 +1,186 @@
+{
+  "version": "2026-04",
+  "description": "Company alias mapping for sponsor matching (UK focus)",
+  "aliases": [
+    {
+      "canonical": "amazon uk services ltd",
+      "aliases": ["amazon", "amazon uk", "amazon eu", "amazon web services", "aws"]
+    },
+    {
+      "canonical": "google uk limited",
+      "aliases": ["google", "google uk", "alphabet"]
+    },
+    {
+      "canonical": "meta platforms ireland limited",
+      "aliases": ["meta", "facebook", "meta uk"]
+    },
+    {
+      "canonical": "microsoft limited",
+      "aliases": ["microsoft", "microsoft uk"]
+    },
+    {
+      "canonical": "apple uk limited",
+      "aliases": ["apple", "apple uk"]
+    },
+    {
+      "canonical": "netflix services uk limited",
+      "aliases": ["netflix"]
+    },
+    {
+      "canonical": "uber britannia limited",
+      "aliases": ["uber", "uber uk"]
+    },
+    {
+      "canonical": "deliveroo plc",
+      "aliases": ["deliveroo"]
+    },
+    {
+      "canonical": "revolut ltd",
+      "aliases": ["revolut"]
+    },
+    {
+      "canonical": "wise payments limited",
+      "aliases": ["wise", "transferwise"]
+    },
+    {
+      "canonical": "monzo bank limited",
+      "aliases": ["monzo"]
+    },
+    {
+      "canonical": "starling bank limited",
+      "aliases": ["starling", "starling bank"]
+    },
+    {
+      "canonical": "barclays bank plc",
+      "aliases": ["barclays"]
+    },
+    {
+      "canonical": "hsbc uk bank plc",
+      "aliases": ["hsbc", "hsbc uk"]
+    },
+    {
+      "canonical": "lloyds bank plc",
+      "aliases": ["lloyds", "lloyds banking group"]
+    },
+    {
+      "canonical": "natwest group plc",
+      "aliases": ["natwest", "rbs"]
+    },
+    {
+      "canonical": "goldman sachs international",
+      "aliases": ["goldman sachs"]
+    },
+    {
+      "canonical": "j.p. morgan securities plc",
+      "aliases": ["jp morgan", "jpmorgan", "j.p. morgan"]
+    },
+    {
+      "canonical": "morgan stanley & co. international plc",
+      "aliases": ["morgan stanley"]
+    },
+    {
+      "canonical": "blackrock investment management uk limited",
+      "aliases": ["blackrock"]
+    },
+    {
+      "canonical": "deloitte llp",
+      "aliases": ["deloitte"]
+    },
+    {
+      "canonical": "pricewaterhousecoopers llp",
+      "aliases": ["pwc", "pricewaterhousecoopers"]
+    },
+    {
+      "canonical": "ernst & young llp",
+      "aliases": ["ey", "ernst young", "ernst & young"]
+    },
+    {
+      "canonical": "kpmg llp",
+      "aliases": ["kpmg"]
+    },
+    {
+      "canonical": "accenture (uk) limited",
+      "aliases": ["accenture"]
+    },
+    {
+      "canonical": "capgemini uk plc",
+      "aliases": ["capgemini", "capgemini engineering"]
+    },
+    {
+      "canonical": "cognizant worldwide limited",
+      "aliases": ["cognizant"]
+    },
+    {
+      "canonical": "infosys limited",
+      "aliases": ["infosys"]
+    },
+    {
+      "canonical": "tata consultancy services limited",
+      "aliases": ["tcs", "tata consultancy services"]
+    },
+    {
+      "canonical": "wipro limited",
+      "aliases": ["wipro"]
+    },
+    {
+      "canonical": "ibm united kingdom limited",
+      "aliases": ["ibm"]
+    },
+    {
+      "canonical": "oracle corporation uk limited",
+      "aliases": ["oracle"]
+    },
+    {
+      "canonical": "salesforce.com emea limited",
+      "aliases": ["salesforce"]
+    },
+    {
+      "canonical": "sap uk limited",
+      "aliases": ["sap"]
+    },
+    {
+      "canonical": "siemens plc",
+      "aliases": ["siemens"]
+    },
+    {
+      "canonical": "philips electronics uk limited",
+      "aliases": ["philips"]
+    },
+    {
+      "canonical": "thales uk limited",
+      "aliases": ["thales"]
+    },
+    {
+      "canonical": "bae systems plc",
+      "aliases": ["bae systems"]
+    },
+    {
+      "canonical": "rolls-royce plc",
+      "aliases": ["rolls royce", "rolls-royce"]
+    },
+    {
+      "canonical": "jaguar land rover limited",
+      "aliases": ["jlr", "jaguar land rover"]
+    },
+    {
+      "canonical": "bt group plc",
+      "aliases": ["bt", "british telecom"]
+    },
+    {
+      "canonical": "vodafone limited",
+      "aliases": ["vodafone"]
+    },
+    {
+      "canonical": "sky uk limited",
+      "aliases": ["sky", "sky uk"]
+    },
+    {
+      "canonical": "bbc",
+      "aliases": ["bbc", "british broadcasting corporation"]
+    },
+    {
+      "canonical": "national health service",
+      "aliases": ["nhs"]
+    }
+  ]
+}

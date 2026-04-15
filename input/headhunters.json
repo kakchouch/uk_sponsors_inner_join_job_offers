@@ -1,0 +1,126 @@
+{
+  "version": "2026-04",
+  "description": "Major UK recruitment agencies for filtering / scoring job offers",
+  "agencies": [
+    {
+      "name": "Hays",
+      "aliases": ["hays", "hays recruitment", "hays specialist recruitment"]
+    },
+    {
+      "name": "Michael Page",
+      "aliases": ["michael page", "pagegroup", "page group", "michael page international"]
+    },
+    {
+      "name": "Robert Walters",
+      "aliases": ["robert walters", "robert walters plc"]
+    },
+    {
+      "name": "Reed",
+      "aliases": ["reed", "reed recruitment", "reed specialist recruitment"]
+    },
+    {
+      "name": "Randstad",
+      "aliases": ["randstad", "randstad uk"]
+    },
+    {
+      "name": "Adecco",
+      "aliases": ["adecco", "adecco uk"]
+    },
+    {
+      "name": "Manpower",
+      "aliases": ["manpower", "manpower uk"]
+    },
+    {
+      "name": "Morgan McKinley",
+      "aliases": ["morgan mckinley"]
+    },
+    {
+      "name": "Harvey Nash",
+      "aliases": ["harvey nash"]
+    },
+    {
+      "name": "Experis",
+      "aliases": ["experis"]
+    },
+    {
+      "name": "Nigel Frank",
+      "aliases": ["nigel frank", "nigel frank international"]
+    },
+    {
+      "name": "Frank Recruitment Group",
+      "aliases": ["frank recruitment group"]
+    },
+    {
+      "name": "TEKsystems",
+      "aliases": ["teksystems"]
+    },
+    {
+      "name": "Computer Futures",
+      "aliases": ["computer futures"]
+    },
+    {
+      "name": "Progressive Recruitment",
+      "aliases": ["progressive recruitment", "progressive"]
+    },
+    {
+      "name": "SR2",
+      "aliases": ["sr2", "sr2 socialy responsible recruitment"]
+    },
+    {
+      "name": "Understanding Recruitment",
+      "aliases": ["understanding recruitment"]
+    },
+    {
+      "name": "Explore Group",
+      "aliases": ["explore group", "explore recruitment"]
+    },
+    {
+      "name": "Opus Recruitment Solutions",
+      "aliases": ["opus recruitment", "opus recruitment solutions"]
+    },
+    {
+      "name": "Sanderson",
+      "aliases": ["sanderson", "sanderson recruitment"]
+    },
+    {
+      "name": "Futures",
+      "aliases": ["futures", "futures recruitment"]
+    },
+    {
+      "name": "Arrows Group",
+      "aliases": ["arrows", "arrows group"]
+    },
+    {
+      "name": "La Fosse",
+      "aliases": ["la fosse", "la fosse associates"]
+    },
+    {
+      "name": "Burns Sheehan",
+      "aliases": ["burns sheehan"]
+    },
+    {
+      "name": "Oliver Bernard",
+      "aliases": ["oliver bernard"]
+    },
+    {
+      "name": "Client Server",
+      "aliases": ["client server"]
+    },
+    {
+      "name": "Spectrum IT Recruitment",
+      "aliases": ["spectrum it", "spectrum it recruitment"]
+    },
+    {
+      "name": "Method Resourcing",
+      "aliases": ["method resourcing"]
+    },
+    {
+      "name": "SRGEurope",
+      "aliases": ["srg europe", "srgeurope"]
+    },
+    {
+      "name": "Recruitment Revolution",
+      "aliases": ["recruitment revolution"]
+    }
+  ]
+}

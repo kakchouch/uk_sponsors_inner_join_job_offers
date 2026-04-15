@@ -124,6 +124,13 @@ The script exports a JSON file (`output/raw/registered_sponsors.json` by default
 This script runs both fetchers, matches job offer companies against registered sponsor names,
 and exports a Markdown report.
 
+The matcher now assigns a confidence score to each output row using this scale:
+- `1.00`: exact normalized sponsor name match
+- `0.92`: alias table match from `input/alias_table.json`
+- `0.85`: strong fuzzy match
+- `0.50`: recruiter or ambiguous best-candidate match using `input/headhunters.json`
+- `0.20`: substring-only match
+
 ### File
 
 - [generate_sponsored_jobs_report.py](generate_sponsored_jobs_report.py): Runs both fetch scripts, performs matching, and writes a Markdown summary table.
@@ -156,6 +163,8 @@ The script outputs:
 - Markdown report (default: `output/reports/sponsored_jobs_report.md`)
 - matched records JSON (default: `output/reports/matched_sponsored_jobs.json`)
 - Hugo content page (default: `output/site/content/report.md`)
+
+Matched rows now include `match_score` and `match_type` metadata in the JSON export, and the Markdown table includes the same scoring columns for review.
 
 ## Output Layout
 
