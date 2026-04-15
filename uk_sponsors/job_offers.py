@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import logging
 import os
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -12,10 +13,12 @@ from typing import Any
 import requests
 
 DEFAULT_CONFIG_PATH = Path("input/job_sources.json")
+LOGGER = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
 class SourceConfig:
+    index: int
     id: str
     name: str
     enabled: bool
@@ -35,6 +38,7 @@ class JobOffersRequest:
     page: int = 1
     results_per_page: int = 20
     sources: tuple[str, ...] = ()
+    excluded_sources: tuple[str, ...] = ()
     config_path: Path = DEFAULT_CONFIG_PATH
     timeout: int = 20
     single_page: bool = False
@@ -114,9 +118,10 @@ def load_sources(config_path: Path) -> list[SourceConfig]:
         raw = json.load(handle)
 
     sources: list[SourceConfig] = []
-    for item in raw.get("sources", []):
+    for index, item in enumerate(raw.get("sources", []), start=1):
         sources.append(
             SourceConfig(
+                index=index,
                 id=item["id"],
                 name=item["name"],
                 enabled=item.get("enabled", True),
@@ -353,23 +358,57 @@ def normalize_reed_item(item: dict[str, Any], source_id: str) -> dict[str, Any]:
 
 
 def select_sources(
-    all_sources: list[SourceConfig], requested_sources: tuple[str, ...]
+    all_sources: list[SourceConfig],
+    requested_sources: tuple[str, ...],
+    excluded_sources: tuple[str, ...],
 ) -> list[SourceConfig]:
-    enabled_sources = [item for item in all_sources if item.enabled]
-    if not requested_sources:
-        return enabled_sources
+    def to_selector_set(values: tuple[str, ...]) -> set[str]:
+        return {item.strip().lower() for item in values if item.strip()}
 
-    requested_set = {item.strip().lower() for item in requested_sources}
-    return [item for item in enabled_sources if item.id.lower() in requested_set]
+    def source_matches(source: SourceConfig, selectors: set[str]) -> bool:
+        return source.id.lower() in selectors or str(source.index) in selectors
+
+    enabled_sources = [item for item in all_sources if item.enabled]
+    requested_set = to_selector_set(requested_sources)
+    excluded_set = to_selector_set(excluded_sources)
+
+    if requested_set:
+        selected_sources = [
+            item for item in enabled_sources if source_matches(item, requested_set)
+        ]
+    else:
+        selected_sources = enabled_sources
+
+    excluded_selected_sources = [
+        item for item in selected_sources if source_matches(item, excluded_set)
+    ]
+    if excluded_selected_sources:
+        excluded_labels = ", ".join(
+            f"{item.index}:{item.id}" for item in excluded_selected_sources
+        )
+        LOGGER.warning("Skipping excluded sources: %s", excluded_labels)
+
+    return [item for item in selected_sources if not source_matches(item, excluded_set)]
 
 
 def fetch_job_offers(
     request: JobOffersRequest, session: requests.Session
 ) -> tuple[list[dict[str, Any]], list[str], list[str]]:
     sources = load_sources(request.config_path)
-    selected_sources = select_sources(sources, request.sources)
+    selected_sources = select_sources(
+        sources,
+        request.sources,
+        request.excluded_sources,
+    )
 
     if not selected_sources:
+        enabled_sources = [item for item in sources if item.enabled]
+        if enabled_sources and request.excluded_sources:
+            raise RuntimeError(
+                "All selected enabled sources are excluded. "
+                "Adjust --exclude-sources (or --sources) and try again."
+            )
+
         raise RuntimeError(
             "No enabled source selected. Check --sources value and input/job_sources.json."
         )

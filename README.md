@@ -79,13 +79,23 @@ python fetch_job_offers.py --results-per-page 100
 ```
 
 Useful options:
-- `--sources adzuna reed`: Select specific sources from [input/job_sources.json](input/job_sources.json).
+- `--sources adzuna reed` or `--sources 1 2`: Select specific sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
+- `--exclude-sources reed` or `--exclude-sources 2`: Exclude one or more sources by id or index.
+- `--sources adzuna reed --exclude-sources reed`: Include then exclude (exclusion is applied last).
 - `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results.
 - `--config path/to/custom_sources.json`: Use an alternative source registry.
 - `--output path/to/job_offers.json`: Write output to a custom file. The default is `output/raw/job_offers.json`.
 - `--single-page`: Fetch only one page per source (legacy behavior).
 - `--max-pages 10`: Limit fetched pages per source when full pagination is enabled.
+
+Source index mapping is derived from the source order in [input/job_sources.json](input/job_sources.json). With the current default file:
+- `1`: `adzuna`
+- `2`: `reed`
+
+If a source is excluded, it is skipped before authentication checks. This means missing API credentials for excluded sources do not raise an error, and only a skip log message is emitted.
+
+If all enabled selected sources are excluded, the fetch pipeline stops early with a clear error instead of running with an empty source set.
 
 The script exports a normalized JSON file (`output/raw/job_offers.json` by default) containing:
 - `metadata`: run context (time, sources, query, count)
@@ -148,7 +158,8 @@ python generate_sponsored_jobs_report.py
 ```
 
 Useful options:
-- `--sources adzuna reed`: Select specific job sources.
+- `--sources adzuna reed` or `--sources 1 2`: Select specific job sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
+- `--exclude-sources reed` or `--exclude-sources 2`: Exclude one or more job sources by id or index.
 - `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results before matching.
 - `--jobs-output output/raw/job_offers.json`: Path for fetched offers JSON.

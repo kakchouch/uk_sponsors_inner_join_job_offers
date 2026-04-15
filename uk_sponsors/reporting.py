@@ -93,6 +93,7 @@ class ReportRequest:
     page: int = 1
     results_per_page: int = 20
     sources: tuple[str, ...] = ()
+    excluded_sources: tuple[str, ...] = ()
     config_path: Path = DEFAULT_CONFIG_PATH
     job_timeout: int = 20
     sponsor_timeout: int = 30
@@ -635,6 +636,7 @@ def build_report_artifacts(request: ReportRequest) -> ReportArtifacts:
             page=request.page,
             results_per_page=request.results_per_page,
             sources=request.sources,
+            excluded_sources=request.excluded_sources,
             config_path=request.config_path,
             timeout=request.job_timeout,
             single_page=request.single_page,

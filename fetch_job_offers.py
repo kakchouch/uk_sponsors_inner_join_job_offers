@@ -46,7 +46,24 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--page", type=int, default=1)
     parser.add_argument("--results-per-page", type=int, default=20)
-    parser.add_argument("--sources", nargs="*", default=[])
+    parser.add_argument(
+        "--sources",
+        nargs="*",
+        default=[],
+        help=(
+            "Optional list of source ids and/or numeric source indexes "
+            "from input/job_sources.json (example: --sources adzuna 2)."
+        ),
+    )
+    parser.add_argument(
+        "--exclude-sources",
+        nargs="*",
+        default=[],
+        help=(
+            "Optional list of source ids and/or numeric source indexes to skip. "
+            "Excluded sources are not queried."
+        ),
+    )
     parser.add_argument("--config", default=str(DEFAULT_CONFIG_PATH))
     parser.add_argument("--output", default=str(DEFAULT_JOBS_OUTPUT))
     parser.add_argument("--timeout", type=int, default=20)
@@ -78,6 +95,7 @@ def main() -> int:
             page=args.page,
             results_per_page=args.results_per_page,
             sources=tuple(args.sources),
+            excluded_sources=tuple(args.exclude_sources),
             config_path=Path(args.config),
             timeout=args.timeout,
             single_page=args.single_page,
