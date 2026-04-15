@@ -49,6 +49,61 @@ class JobOffersRequest:
     max_pages: int = 0
 
 
+@dataclass(frozen=True)
+class SkippedSource:
+    id: str
+    reason: str
+
+
+@dataclass(frozen=True)
+class IncompleteSource:
+    id: str
+    reason: str
+
+
+@dataclass(frozen=True)
+class SourceFetchResult:
+    offers: list[dict[str, Any]]
+    incomplete_reason: str | None = None
+
+
+class SourceCollectionError(RuntimeError):
+    def __init__(
+        self,
+        source_id: str,
+        page_number: int,
+        message: str,
+        *,
+        status_code: int | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.source_id = source_id
+        self.page_number = page_number
+        self.status_code = status_code
+
+
+def build_source_skip_reason(error: SourceCollectionError) -> str:
+    if error.status_code == 429:
+        return f"Skipped after API cap/rate limit on page {error.page_number}: {error}"
+
+    if error.status_code is not None:
+        return f"Skipped after fetch failure on page {error.page_number}: {error}"
+
+    return f"Skipped after transport failure on page {error.page_number}: {error}"
+
+
+def build_source_incomplete_reason(error: SourceCollectionError) -> str:
+    if error.status_code == 429:
+        return (
+            f"Incomplete after API cap/rate limit on page {error.page_number}: {error}"
+        )
+
+    if error.status_code is not None:
+        return f"Incomplete after fetch failure on page {error.page_number}: {error}"
+
+    return f"Incomplete after transport failure on page {error.page_number}: {error}"
+
+
 def parse_locations(location: str, locations: list[str]) -> list[str]:
     parsed_locations = [item.strip() for item in locations if item.strip()]
     if parsed_locations:
@@ -114,6 +169,28 @@ def filter_offers_by_locations(
         offer
         for offer in offers
         if any(loc in (offer.get("location") or "").lower() for loc in lowered)
+    ]
+
+
+def filter_offers_by_keywords(
+    offers: list[dict[str, Any]], keywords: str
+) -> list[dict[str, Any]]:
+    keyword = keywords.strip().lower()
+    if not keyword:
+        return offers
+
+    return [
+        offer
+        for offer in offers
+        if keyword
+        in " ".join(
+            [
+                str(offer.get("title") or ""),
+                str(offer.get("company") or ""),
+                str(offer.get("location") or ""),
+                str((offer.get("raw") or {}).get("description") or ""),
+            ]
+        ).lower()
     ]
 
 
@@ -186,6 +263,8 @@ def fetch_json_with_retry(
     source_id: str,
     page_number: int,
 ) -> dict[str, Any]:
+    last_error: requests.exceptions.RequestException | None = None
+
     for attempt in range(1, MAX_FETCH_RETRIES + 1):
         try:
             response = session.get(
@@ -197,6 +276,7 @@ def fetch_json_with_retry(
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as error:
+            last_error = error
             status_code = getattr(getattr(error, "response", None), "status_code", None)
             is_transient_http = status_code in TRANSIENT_HTTP_STATUS_CODES
             is_transport_error = isinstance(
@@ -210,7 +290,15 @@ def fetch_json_with_retry(
                 is_transient_http or is_transport_error
             )
             if not should_retry:
-                raise
+                raise SourceCollectionError(
+                    source_id,
+                    page_number,
+                    (
+                        f"Failed fetching {source_id} page {page_number} "
+                        f"after attempt {attempt}: {error}"
+                    ),
+                    status_code=status_code,
+                ) from error
 
             delay_seconds = RETRY_BACKOFF_SECONDS * attempt
             LOGGER.warning(
@@ -222,8 +310,12 @@ def fetch_json_with_retry(
             )
             time.sleep(delay_seconds)
 
-    raise RuntimeError(
-        f"Exhausted retries while fetching {source_id} page {page_number}."
+    detail = last_error or "unknown fetch error"
+    raise SourceCollectionError(
+        source_id,
+        page_number,
+        f"Exhausted retries while fetching {source_id} page {page_number}: {detail}",
+        status_code=getattr(getattr(last_error, "response", None), "status_code", None),
     )
 
 
@@ -232,25 +324,44 @@ def fetch_source_offers(
     request: JobOffersRequest,
     session: requests.Session,
     locations: list[str],
-) -> list[dict[str, Any]]:
+) -> SourceFetchResult:
     headers, auth_params = resolve_auth(source)
 
     # When multiple cities are requested, fetch UK-wide once and post-filter
     # locally. This reduces N_cities × N_pages API calls to N_pages.
     locations_to_fetch = [""] if len(locations) > 1 else (locations or [""])
     offers: list[dict[str, Any]] = []
+    incomplete_reason: str | None = None
 
     for location in locations_to_fetch:
         if source.id == "adzuna":
-            offers.extend(
-                fetch_adzuna(source, request, session, headers, auth_params, location)
+            location_result = fetch_adzuna(
+                source, request, session, headers, auth_params, location
             )
+            offers.extend(location_result.offers)
+            if location_result.incomplete_reason:
+                incomplete_reason = location_result.incomplete_reason
+                break
             continue
 
         if source.id == "reed":
-            offers.extend(
-                fetch_reed(source, request, session, headers, auth_params, location)
+            location_result = fetch_reed(
+                source, request, session, headers, auth_params, location
             )
+            offers.extend(location_result.offers)
+            if location_result.incomplete_reason:
+                incomplete_reason = location_result.incomplete_reason
+                break
+            continue
+
+        if source.id == "arbeitnow":
+            location_result = fetch_arbeitnow(
+                source, request, session, headers, auth_params, location
+            )
+            offers.extend(location_result.offers)
+            if location_result.incomplete_reason:
+                incomplete_reason = location_result.incomplete_reason
+                break
             continue
 
         raise ValueError(f"Unsupported source id: {source.id}")
@@ -258,7 +369,10 @@ def fetch_source_offers(
     if len(locations) > 1:
         offers = filter_offers_by_locations(offers, locations)
 
-    return deduplicate_offers(offers)
+    return SourceFetchResult(
+        offers=deduplicate_offers(offers),
+        incomplete_reason=incomplete_reason,
+    )
 
 
 def fetch_adzuna(
@@ -268,7 +382,7 @@ def fetch_adzuna(
     headers: dict[str, str],
     auth_params: dict[str, str],
     location: str,
-) -> list[dict[str, Any]]:
+) -> SourceFetchResult:
     per_page = min(request.results_per_page, 50)
     params = dict(source.query_defaults)
     params["results_per_page"] = per_page
@@ -299,26 +413,25 @@ def fetch_adzuna(
     offers = [normalize_adzuna_item(item, source.id) for item in first_items]
 
     if request.single_page:
-        return offers
+        return SourceFetchResult(offers=offers)
 
     total_count = int(first_payload.get("count", 0) or 0)
     total_pages = ceil(total_count / per_page) if per_page else 0
     if total_pages <= request.page:
-        return offers
+        return SourceFetchResult(offers=offers)
 
     page_cap = total_pages
     if request.max_pages > 0:
         page_cap = min(page_cap, request.page + request.max_pages - 1)
 
+    incomplete_reason: str | None = None
     for page_number in range(request.page + 1, page_cap + 1):
         try:
             payload = fetch_page(page_number)
-        except requests.exceptions.RequestException as error:
+        except SourceCollectionError as error:
+            incomplete_reason = build_source_incomplete_reason(error)
             LOGGER.warning(
-                "Stopping %s pagination at page %s after repeated fetch failures: %s",
-                source.id,
-                page_number,
-                error,
+                "Keeping partial %s results: %s", source.id, incomplete_reason
             )
             break
         items = payload.get("results", [])
@@ -326,7 +439,7 @@ def fetch_adzuna(
             break
         offers.extend(normalize_adzuna_item(item, source.id) for item in items)
 
-    return offers
+    return SourceFetchResult(offers=offers, incomplete_reason=incomplete_reason)
 
 
 def fetch_reed(
@@ -336,7 +449,7 @@ def fetch_reed(
     headers: dict[str, str],
     auth_params: dict[str, str],
     location: str,
-) -> list[dict[str, Any]]:
+) -> SourceFetchResult:
     endpoint = f"{source.base_url}/search"
     per_page = min(request.results_per_page, 100)
     base_params = dict(source.query_defaults)
@@ -369,26 +482,25 @@ def fetch_reed(
     offers = [normalize_reed_item(item, source.id) for item in first_items]
 
     if request.single_page:
-        return offers
+        return SourceFetchResult(offers=offers)
 
     total_count = int(first_payload.get("totalResults", 0) or 0)
     total_pages = ceil(total_count / per_page) if per_page else 0
     if total_pages <= request.page:
-        return offers
+        return SourceFetchResult(offers=offers)
 
     page_cap = total_pages
     if request.max_pages > 0:
         page_cap = min(page_cap, request.page + request.max_pages - 1)
 
+    incomplete_reason: str | None = None
     for page_number in range(request.page + 1, page_cap + 1):
         try:
             payload = fetch_page(page_number)
-        except requests.exceptions.RequestException as error:
+        except SourceCollectionError as error:
+            incomplete_reason = build_source_incomplete_reason(error)
             LOGGER.warning(
-                "Stopping %s pagination at page %s after repeated fetch failures: %s",
-                source.id,
-                page_number,
-                error,
+                "Keeping partial %s results: %s", source.id, incomplete_reason
             )
             break
         items = payload.get("results", [])
@@ -396,7 +508,7 @@ def fetch_reed(
             break
         offers.extend(normalize_reed_item(item, source.id) for item in items)
 
-    return offers
+    return SourceFetchResult(offers=offers, incomplete_reason=incomplete_reason)
 
 
 def normalize_adzuna_item(item: dict[str, Any], source_id: str) -> dict[str, Any]:
@@ -438,6 +550,103 @@ def normalize_reed_item(item: dict[str, Any], source_id: str) -> dict[str, Any]:
     }
 
 
+def fetch_arbeitnow(
+    source: SourceConfig,
+    request: JobOffersRequest,
+    session: requests.Session,
+    headers: dict[str, str],
+    auth_params: dict[str, str],
+    location: str,
+) -> SourceFetchResult:
+    base_params = dict(source.query_defaults)
+    base_params.update(auth_params)
+    if request.keywords.strip():
+        base_params["search"] = request.keywords.strip()
+    if location.strip():
+        base_params["location"] = location.strip()
+    if request.page > 1:
+        base_params["page"] = request.page
+
+    current_page = max(request.page, 1)
+    page_cap = 0
+    if request.max_pages > 0:
+        page_cap = current_page + request.max_pages - 1
+
+    def fetch_page(
+        endpoint: str, params: dict[str, Any], page_number: int
+    ) -> dict[str, Any]:
+        return fetch_json_with_retry(
+            session,
+            endpoint,
+            params=params,
+            headers=headers,
+            timeout=request.timeout,
+            source_id=source.id,
+            page_number=page_number,
+        )
+
+    payload = fetch_page(source.base_url, base_params, current_page)
+    items = payload.get("data", [])
+    offers = [normalize_arbeitnow_item(item, source.id) for item in items]
+
+    if request.single_page:
+        offers = filter_offers_by_keywords(offers, request.keywords)
+        if location.strip():
+            offers = filter_offers_by_locations(offers, [location])
+        return SourceFetchResult(offers=offers)
+
+    incomplete_reason: str | None = None
+    next_url = ((payload.get("links") or {}).get("next") or "").strip()
+
+    while next_url:
+        if page_cap and current_page >= page_cap:
+            break
+
+        current_page += 1
+        try:
+            payload = fetch_page(next_url, {}, current_page)
+        except SourceCollectionError as error:
+            incomplete_reason = build_source_incomplete_reason(error)
+            LOGGER.warning(
+                "Keeping partial %s results: %s", source.id, incomplete_reason
+            )
+            break
+
+        items = payload.get("data", [])
+        if not items:
+            break
+        offers.extend(normalize_arbeitnow_item(item, source.id) for item in items)
+        next_url = ((payload.get("links") or {}).get("next") or "").strip()
+
+    offers = filter_offers_by_keywords(offers, request.keywords)
+    if location.strip():
+        offers = filter_offers_by_locations(offers, [location])
+
+    return SourceFetchResult(offers=offers, incomplete_reason=incomplete_reason)
+
+
+def normalize_arbeitnow_item(item: dict[str, Any], source_id: str) -> dict[str, Any]:
+    return {
+        "source": source_id,
+        "external_id": item.get("slug") or item.get("url"),
+        "title": item.get("title"),
+        "company": item.get("company_name"),
+        "location": item.get("location"),
+        "salary_min": None,
+        "salary_max": None,
+        "currency": None,
+        "contract_type": (
+            ", ".join(item.get("job_types", []))
+            if isinstance(item.get("job_types"), list)
+            else item.get("job_types")
+        ),
+        "contract_time": None,
+        "posted_at": item.get("created_at"),
+        "url": item.get("url"),
+        "raw": item,
+    }
+
+
 def select_sources(
     all_sources: list[SourceConfig],
     requested_sources: tuple[str, ...],
@@ -472,9 +681,13 @@ def select_sources(
     return [item for item in selected_sources if not source_matches(item, excluded_set)]
 
 
-def fetch_job_offers(
-    request: JobOffersRequest, session: requests.Session
-) -> tuple[list[dict[str, Any]], list[str], list[str]]:
+def fetch_job_offers(request: JobOffersRequest, session: requests.Session) -> tuple[
+    list[dict[str, Any]],
+    list[str],
+    list[str],
+    list[SkippedSource],
+    list[IncompleteSource],
+]:
     sources = load_sources(request.config_path)
     selected_sources = select_sources(
         sources,
@@ -499,23 +712,48 @@ def fetch_job_offers(
     )
     offers: list[dict[str, Any]] = []
     used_sources: list[str] = []
+    skipped_sources: list[SkippedSource] = []
+    incomplete_sources: list[IncompleteSource] = []
 
     for source in selected_sources:
-        source_offers = fetch_source_offers(source, request, session, locations)
-        offers.extend(source_offers)
-        used_sources.append(source.id)
+        try:
+            source_result = fetch_source_offers(source, request, session, locations)
+        except SourceCollectionError as error:
+            skip_reason = build_source_skip_reason(error)
+            LOGGER.warning("Skipping source %s: %s", source.id, skip_reason)
+            skipped_sources.append(SkippedSource(id=source.id, reason=skip_reason))
+            continue
 
-    return offers, used_sources, locations
+        offers.extend(source_result.offers)
+        used_sources.append(source.id)
+        if source_result.incomplete_reason:
+            incomplete_sources.append(
+                IncompleteSource(id=source.id, reason=source_result.incomplete_reason)
+            )
+
+    return offers, used_sources, locations, skipped_sources, incomplete_sources
 
 
 def build_job_offers_payload(request: JobOffersRequest) -> dict[str, Any]:
     with requests.Session() as session:
-        offers, used_sources, locations = fetch_job_offers(request, session)
+        (
+            offers,
+            used_sources,
+            locations,
+            skipped_sources,
+            incomplete_sources,
+        ) = fetch_job_offers(request, session)
 
     return {
         "metadata": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "sources": used_sources,
+            "skipped_sources": [
+                {"id": item.id, "reason": item.reason} for item in skipped_sources
+            ],
+            "incomplete_sources": [
+                {"id": item.id, "reason": item.reason} for item in incomplete_sources
+            ],
             "keywords": request.keywords,
             "location": request.location or ", ".join(locations),
             "locations": locations,

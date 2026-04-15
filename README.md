@@ -32,6 +32,7 @@ Source databases are configured in JSON for easy extension.
 Current API sources:
 - Adzuna
 - Reed
+- Arbeitnow
 
 ### Files
 
@@ -79,9 +80,9 @@ python fetch_job_offers.py --results-per-page 100
 ```
 
 Useful options:
-- `--sources adzuna reed` or `--sources 1 2`: Select specific sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
+- `--sources adzuna reed arbeitnow` or `--sources 1 2 3`: Select specific sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
 - `--exclude-sources reed` or `--exclude-sources 2`: Exclude one or more sources by id or index.
-- `--sources adzuna reed --exclude-sources reed`: Include then exclude (exclusion is applied last).
+- `--sources adzuna reed arbeitnow --exclude-sources reed`: Include then exclude (exclusion is applied last).
 - `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results.
 - `--config path/to/custom_sources.json`: Use an alternative source registry.
@@ -92,8 +93,11 @@ Useful options:
 Source index mapping is derived from the source order in [input/job_sources.json](input/job_sources.json). With the current default file:
 - `1`: `adzuna`
 - `2`: `reed`
+- `3`: `arbeitnow`
 
 If a source is excluded, it is skipped before authentication checks. This means missing API credentials for excluded sources do not raise an error, and only a skip log message is emitted.
+
+If a selected source fails before returning any results, that source is skipped. If it fails only after some pages were already collected or hits an API cap mid-pagination, the partial results are kept and the source is marked as incomplete in metadata.
 
 If all enabled selected sources are excluded, the fetch pipeline stops early with a clear error instead of running with an empty source set.
 
@@ -161,7 +165,7 @@ python generate_sponsored_jobs_report.py
 ```
 
 Useful options:
-- `--sources adzuna reed` or `--sources 1 2`: Select specific job sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
+- `--sources adzuna reed arbeitnow` or `--sources 1 2 3`: Select specific job sources by id or by 1-based index from [input/job_sources.json](input/job_sources.json) order.
 - `--exclude-sources reed` or `--exclude-sources 2`: Exclude one or more job sources by id or index.
 - `--locations-file input/focus_locations.json`: Load the city list from a JSON file containing a `locations` array.
 - `--locations London Glasgow Manchester`: Query several cities separately and merge the results before matching.
@@ -179,6 +183,8 @@ The script outputs:
 - Hugo content page (default: `output/site/content/report.md`)
 
 Matched rows now include `quality_score`, `match_score`, and `match_type` metadata in the JSON export, and the Markdown table includes a `Quality Score` column for review.
+
+If a job source hits an API cap or its collection fails after retries, the report still completes. Fully failed sources are recorded as skipped, while partial sources remain in the dataset and are recorded as incomplete in the generated metadata and Markdown summary.
 
 ## Output Layout
 

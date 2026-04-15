@@ -34,6 +34,21 @@
         "keywords": "software engineer",
         "locationName": "United Kingdom"
       }
+    },
+    {
+      "id": "arbeitnow",
+      "name": "Arbeitnow",
+      "enabled": true,
+      "base_url": "https://www.arbeitnow.com/api/job-board-api",
+      "results_per_page": 100,
+      "auth": {
+        "type": "none",
+        "required_env": []
+      },
+      "query_defaults": {
+        "search": "software engineer",
+        "location": "United Kingdom"
+      }
     }
   ]
 }

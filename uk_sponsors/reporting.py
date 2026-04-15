@@ -563,6 +563,22 @@ def render_markdown(
         f"- Matched rows: {len(matches)}",
     ]
 
+    skipped_sources = jobs_meta.get("skipped_sources", [])
+    if skipped_sources:
+        lines.append(f"- Skipped job sources: {len(skipped_sources)}")
+        for item in skipped_sources:
+            lines.append(
+                f"- Skipped source detail: {item.get('id', 'unknown')} - {item.get('reason', '')}"
+            )
+
+    incomplete_sources = jobs_meta.get("incomplete_sources", [])
+    if incomplete_sources:
+        lines.append(f"- Incomplete job sources kept: {len(incomplete_sources)}")
+        for item in incomplete_sources:
+            lines.append(
+                f"- Incomplete source detail: {item.get('id', 'unknown')} - {item.get('reason', '')}"
+            )
+
     if searched_locations:
         lines.append(f"- Search locations: {', '.join(searched_locations)}")
 
@@ -611,6 +627,12 @@ def render_matched_json_payload(
             "generated_at": generated_at,
             "job_offers_fetched": jobs_payload.get("metadata", {}).get(
                 "total_offers", 0
+            ),
+            "skipped_sources": jobs_payload.get("metadata", {}).get(
+                "skipped_sources", []
+            ),
+            "incomplete_sources": jobs_payload.get("metadata", {}).get(
+                "incomplete_sources", []
             ),
             "sponsors_fetched": sponsors_payload.get("metadata", {}).get(
                 "total_sponsors", 0
