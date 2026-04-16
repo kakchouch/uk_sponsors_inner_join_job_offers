@@ -1,0 +1,143 @@
+{
+  "overview": {
+    "total_jobs": 178,
+    "matched_jobs": 87,
+    "high_confidence_jobs": 42,
+    "match_rate": 0.4888,
+    "high_confidence_rate": 0.236
+  },
+  "locations": [
+    {
+      "location": "London",
+      "count": 43
+    },
+    {
+      "location": "Manchester",
+      "count": 13
+    },
+    {
+      "location": "Bristol",
+      "count": 12
+    },
+    {
+      "location": "Leeds",
+      "count": 6
+    },
+    {
+      "location": "Southampton",
+      "count": 4
+    },
+    {
+      "location": "Glasgow",
+      "count": 3
+    },
+    {
+      "location": "Portsmouth",
+      "count": 3
+    },
+    {
+      "location": "Brighton",
+      "count": 1
+    },
+    {
+      "location": "Central London",
+      "count": 1
+    },
+    {
+      "location": "South West London",
+      "count": 1
+    }
+  ],
+  "employers": [
+    {
+      "company": "Accenture",
+      "count": 10
+    },
+    {
+      "company": "NG Bailey",
+      "count": 8
+    },
+    {
+      "company": "AJ Bell",
+      "count": 4
+    },
+    {
+      "company": "Smartbox Assistive Technology",
+      "count": 3
+    },
+    {
+      "company": "VERTICAL AEROSPACE GROUP LTD",
+      "count": 3
+    },
+    {
+      "company": "Adecco",
+      "count": 2
+    },
+    {
+      "company": "Robert Half",
+      "count": 2
+    },
+    {
+      "company": "FDM Group",
+      "count": 1
+    },
+    {
+      "company": "Harvey Nash",
+      "count": 1
+    },
+    {
+      "company": "Hirexa Solutions UK",
+      "count": 1
+    },
+    {
+      "company": "KBC Technologies UK LTD",
+      "count": 1
+    },
+    {
+      "company": "Max Fordham LLP",
+      "count": 1
+    },
+    {
+      "company": "Morgan McKinley",
+      "count": 1
+    },
+    {
+      "company": "Oyster Yachts Limited",
+      "count": 1
+    },
+    {
+      "company": "STACKSTUDIO DIGITAL LTD.",
+      "count": 1
+    },
+    {
+      "company": "Saab UK",
+      "count": 1
+    },
+    {
+      "company": "Salt Search",
+      "count": 1
+    }
+  ],
+  "scores": [
+    {
+      "label": "1.00 exact_normalized",
+      "count": 42
+    },
+    {
+      "label": "0.92 alias_table",
+      "count": 0
+    },
+    {
+      "label": "0.85 fuzzy_strong",
+      "count": 1
+    },
+    {
+      "label": "0.50 recruiter_or_ambiguous",
+      "count": 29
+    },
+    {
+      "label": "0.20 substring_only",
+      "count": 15
+    }
+  ]
+}
