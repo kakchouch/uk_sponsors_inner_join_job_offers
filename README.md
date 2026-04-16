@@ -186,6 +186,57 @@ Matched rows now include `quality_score`, `match_score`, and `match_type` metada
 
 If a job source hits an API cap or its collection fails after retries, the report still completes. Fully failed sources are recorded as skipped, while partial sources remain in the dataset and are recorded as incomplete in the generated metadata and Markdown summary.
 
+## Script: Market Analytics Generator
+
+This script generates aggregated market analytics from matched job offers, with all metrics weighted by match quality score.
+
+### Quality-Score Weighting
+
+All analytics aggregations (locations, employers, job titles, visa routes, seniority levels, and match quality distribution) are computed using **quality-score weighting**. This means:
+
+- Each job contribution to category totals is proportional to its match confidence score
+- A job with a 1.00 exact match (100% confidence) contributes 1.0 to aggregations
+- A job with a 0.92 alias match (92% confidence) contributes 0.92
+- A job with a 0.50 recruiter match (50% confidence) contributes 0.50
+- Lower-confidence matches contribute proportionally less weight
+
+This approach ensures that high-confidence sponsor matches have more influence on market trends than marginal matches, providing a more accurate representation of the job market for visa sponsorship.
+
+### Analytics Output
+
+The analytics generator produces:
+- **Market Analytics JSON** (`output/reports/market_analytics.json`): Complete category breakdowns with weighted and raw job counts
+- **Analytics Markdown** (`output/reports/market_analytics_report.md`): Human-readable summary with weighted totals
+- **Hugo-Ready Analytics Page** (`output/site/content/analytics.md`): Frontmatter + Markdown for the static site
+- **Charts (PNG)**: Six quality-score-weighted bar charts:
+  - Top locations (by weighted job count)
+  - Top employers (by weighted high-confidence job count)
+  - Match quality distribution (weighted)
+  - Top job title families (fuzzy-grouped, weighted)
+  - Visa routes (weighted)
+  - Job seniority levels (weighted)
+
+### Files
+
+- [generate_market_analytics.py](generate_market_analytics.py): Main script for analytics computation.
+- [uk_sponsors/analytics.py](uk_sponsors/analytics.py): Analytics engine with quality-score weighting logic.
+
+### Run
+
+```bash
+python generate_market_analytics.py --matched-json-input output/reports/matched_sponsored_jobs.json --keywords "software engineer"
+```
+
+Useful options:
+- `--matched-json-input`: Path to matched jobs JSON from the report generator (default: `output/reports/matched_sponsored_jobs.json`)
+- `--analytics-json-output`: Path for analytics JSON export (default: `output/reports/market_analytics.json`)
+- `--analytics-markdown-output`: Path for analytics Markdown (default: `output/reports/market_analytics_report.md`)
+- `--site-analytics-output`: Path for Hugo-ready content (default: `output/site/content/analytics.md`)
+- `--charts-output-dir`: Directory for PNG charts (default: `output/site/static/charts`)
+- `--keywords "software engineer"`: Filter analytics to jobs matching these keywords (for documentation/context only)
+
+The script outputs aggregated market metrics suitable for publication on a static website or inclusion in periodic reports.
+
 ## Output Layout
 
 All generated artifacts now live under the dedicated [output](output) directory:

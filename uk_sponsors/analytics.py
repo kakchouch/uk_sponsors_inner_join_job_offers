@@ -2,9 +2,11 @@ from __future__ import annotations
 
 from collections import Counter
 from datetime import datetime, timezone
+from difflib import SequenceMatcher
 from importlib import import_module
 from pathlib import Path
-from typing import Any, Iterable
+import re
+from typing import Any, Callable, Iterable
 
 from .json_io import ensure_parent_dir, write_json, write_text
 
@@ -18,10 +20,45 @@ DEFAULT_SITE_ANALYTICS_OUTPUT = OUTPUT_ROOT / "site" / "content" / "analytics.md
 
 HIGH_CONFIDENCE_SCORE = 0.92
 
+TITLE_GROUP_THRESHOLD = 0.78
+
+TITLE_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "for",
+    "of",
+    "the",
+    "to",
+    "with",
+}
+
+SENIORITY_PATTERNS: list[tuple[str, tuple[str, ...]]] = [
+    (
+        "Leadership",
+        (
+            "chief",
+            "cto",
+            "director",
+            "head",
+            "lead",
+            "manager",
+            "principal",
+            "staff",
+            "vp",
+        ),
+    ),
+    ("Senior", ("senior", "specialist", "sr")),
+    (
+        "Entry",
+        ("apprentice", "entry", "graduate", "intern", "junior", "trainee"),
+    ),
+]
+
 _ANALYTICS_FRONTMATTER = """\
 +++
 title = "Market Analytics"
-description = "Deduplicated market analytics for the latest sponsor-matched UK job run."
+description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
 lastmod = "{generated_at}"
 last_research_at = "{generated_at}"
 +++
@@ -103,6 +140,10 @@ def _extract_score(row: dict[str, Any]) -> float:
     return 0.0
 
 
+def _extract_weight(row: dict[str, Any]) -> float:
+    return max(0.0, min(1.0, _extract_score(row)))
+
+
 def _extract_match_type(row: dict[str, Any]) -> str:
     nested_match = _coerce_match(row)
     match_type = nested_match.get("match_type") or row.get("match_type")
@@ -115,6 +156,17 @@ def _extract_is_recruiter(row: dict[str, Any]) -> bool:
     if value is None:
         value = row.get("is_recruiter")
     return bool(value)
+
+
+def _extract_route(row: dict[str, Any]) -> str:
+    sponsor = row.get("sponsor", {})
+    if isinstance(sponsor, dict):
+        return _string_value(sponsor.get("route"))
+    return "Unknown"
+
+
+def _extract_title(row: dict[str, Any]) -> str:
+    return _string_value(_coerce_offer(row).get("title"))
 
 
 def _job_key(row: dict[str, Any]) -> tuple[str, str, str]:
@@ -146,24 +198,25 @@ def _deduplicate_matches(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return list(best_rows.values())
 
 
-def _sorted_counter_rows(
-    counter: Counter[str], field_name: str
+def _build_weighted_breakdown(
+    rows: list[dict[str, Any]],
+    key_func: Callable[[dict[str, Any]], str],
+    field_name: str,
 ) -> list[dict[str, Any]]:
-    return [
-        {field_name: label, "count": count}
-        for label, count in sorted(
-            counter.items(), key=lambda item: (-item[1], item[0])
-        )
-    ]
+    weighted_values: dict[str, float] = {}
+    raw_counts: Counter[str] = Counter()
+
+    for row in rows:
+        label = key_func(row)
+        raw_counts[label] += 1
+        weighted_values[label] = weighted_values.get(label, 0.0) + _extract_weight(row)
+
+    return _weighted_rows(weighted_values, raw_counts, field_name)
 
 
 def _score_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    counts = Counter()
-    known_labels: set[str] = set()
-
-    for score, match_type, label in SCORE_LABELS:
-        counts[label] = 0
-        known_labels.add(label)
+    weighted_values = {label: 0.0 for _, _, label in SCORE_LABELS}
+    raw_counts: Counter[str] = Counter({label: 0 for _, _, label in SCORE_LABELS})
 
     for row in rows:
         score = _extract_score(row)
@@ -176,17 +229,10 @@ def _score_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             ),
             f"{score:.2f} {match_type}",
         )
-        counts[label] += 1
-        known_labels.add(label)
+        raw_counts[label] += 1
+        weighted_values[label] = weighted_values.get(label, 0.0) + _extract_weight(row)
 
-    ordered_labels = [label for _, _, label in SCORE_LABELS]
-    extra_labels = sorted(
-        label for label in known_labels if label not in ordered_labels
-    )
-    return [
-        {"label": label, "count": counts[label]}
-        for label in ordered_labels + extra_labels
-    ]
+    return _weighted_rows(weighted_values, raw_counts, "label")
 
 
 def _build_dataset(
@@ -199,6 +245,190 @@ def _build_dataset(
     return all_matches, high_confidence_matches
 
 
+def _normalize_title_tokens(title: str) -> list[str]:
+    cleaned = re.sub(r"[^a-z0-9]+", " ", title.casefold())
+    return [
+        token for token in cleaned.split() if token and token not in TITLE_STOPWORDS
+    ]
+
+
+def _strip_seniority_tokens(tokens: list[str]) -> list[str]:
+    seniority_tokens = {
+        "apprentice",
+        "associate",
+        "chief",
+        "cto",
+        "director",
+        "entry",
+        "graduate",
+        "head",
+        "intern",
+        "junior",
+        "lead",
+        "manager",
+        "principal",
+        "senior",
+        "specialist",
+        "sr",
+        "staff",
+        "trainee",
+        "vp",
+    }
+    stripped = [token for token in tokens if token not in seniority_tokens]
+    return stripped or tokens
+
+
+def _title_similarity(left_tokens: list[str], right_tokens: list[str]) -> float:
+    left = " ".join(left_tokens)
+    right = " ".join(right_tokens)
+    if not left or not right:
+        return 0.0
+
+    left_set = set(left_tokens)
+    right_set = set(right_tokens)
+    overlap = len(left_set & right_set) / max(1, min(len(left_set), len(right_set)))
+    ratio = SequenceMatcher(None, left, right).ratio()
+    return max(overlap, ratio)
+
+
+def _weighted_rows(
+    weighted_values: dict[str, float],
+    raw_counts: Counter[str],
+    field_name: str,
+) -> list[dict[str, Any]]:
+    return [
+        {
+            field_name: label,
+            "weighted_count": round(weighted_values[label], 4),
+            "raw_count": raw_counts[label],
+        }
+        for label in sorted(
+            weighted_values,
+            key=lambda label: (-weighted_values[label], -raw_counts[label], label),
+        )
+    ]
+
+
+def _build_weighted_breakdown(
+    rows: list[dict[str, Any]],
+    key_func: Callable[[dict[str, Any]], str],
+    field_name: str,
+) -> list[dict[str, Any]]:
+    weighted_values: dict[str, float] = {}
+    raw_counts: Counter[str] = Counter()
+
+    for row in rows:
+        label = key_func(row)
+        raw_counts[label] += 1
+        weighted_values[label] = weighted_values.get(label, 0.0) + _extract_weight(row)
+
+    return _weighted_rows(weighted_values, raw_counts, field_name)
+
+
+def _choose_cluster_label(
+    weighted_variants: dict[str, float],
+    raw_variants: Counter[str],
+) -> str:
+    return sorted(
+        weighted_variants,
+        key=lambda label: (
+            -weighted_variants[label],
+            -raw_variants[label],
+            len(label),
+            label,
+        ),
+    )[0]
+
+
+def _title_similarity(left_tokens: list[str], right_tokens: list[str]) -> float:
+    left = " ".join(left_tokens)
+    right = " ".join(right_tokens)
+    if not left or not right:
+        return 0.0
+
+    left_set = set(left_tokens)
+    right_set = set(right_tokens)
+    overlap = len(left_set & right_set) / max(1, min(len(left_set), len(right_set)))
+    ratio = 0.0
+    try:
+        from difflib import SequenceMatcher
+
+        ratio = SequenceMatcher(None, left, right).ratio()
+    except ImportError:
+        ratio = 0.0
+
+    return max(overlap, ratio)
+
+
+def _cluster_titles(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    clusters: list[dict[str, Any]] = []
+
+    for row in rows:
+        raw_title = _extract_title(row)
+        tokens = _normalize_title_tokens(raw_title)
+        family_tokens = _strip_seniority_tokens(tokens)
+        if not family_tokens:
+            family_tokens = tokens
+
+        best_cluster: dict[str, Any] | None = None
+        best_score = 0.0
+        for cluster in clusters:
+            similarity = _title_similarity(
+                family_tokens,
+                cluster["family_tokens"],
+            )
+            if similarity >= TITLE_GROUP_THRESHOLD and similarity > best_score:
+                best_cluster = cluster
+                best_score = similarity
+
+        weight = _extract_weight(row)
+
+        if best_cluster is None:
+            clusters.append(
+                {
+                    "family_tokens": family_tokens,
+                    "weighted_count": weight,
+                    "raw_count": 1,
+                    "weighted_variants": {raw_title: weight},
+                    "raw_variants": Counter([raw_title]),
+                }
+            )
+            continue
+
+        best_cluster["weighted_count"] += weight
+        best_cluster["raw_count"] += 1
+        best_cluster["weighted_variants"][raw_title] = (
+            best_cluster["weighted_variants"].get(raw_title, 0.0) + weight
+        )
+        best_cluster["raw_variants"][raw_title] += 1
+
+    title_rows = []
+    for cluster in clusters:
+        title_rows.append(
+            {
+                "title": _choose_cluster_label(
+                    cluster["weighted_variants"],
+                    cluster["raw_variants"],
+                ),
+                "weighted_count": round(cluster["weighted_count"], 4),
+                "raw_count": cluster["raw_count"],
+            }
+        )
+
+    return sorted(
+        title_rows,
+        key=lambda item: (-item["weighted_count"], -item["raw_count"], item["title"]),
+    )
+
+
+def _classify_seniority(title: str) -> str:
+    lowered = title.casefold()
+    for label, markers in SENIORITY_PATTERNS:
+        if any(re.search(rf"\b{re.escape(marker)}\b", lowered) for marker in markers):
+            return label
+    return "Standard"
+
+
 def _format_rate(value: float) -> str:
     return f"{value * 100:.2f}%"
 
@@ -208,20 +438,24 @@ def _format_keywords(keywords: str) -> str:
     return cleaned if cleaned else "No keyword filter"
 
 
+def _format_weight(value: Any) -> str:
+    return f"{_safe_float(value):.2f}"
+
+
 def _top_rows(
     rows: list[dict[str, Any]], field_name: str, label: str, limit: int = 10
 ) -> list[str]:
     if not rows:
         return [
-            f"| No {label.lower()} available | Count |",
-            "|---|---|",
-            "| None | 0 |",
+            f"| No {label.lower()} available | Weighted score | Raw jobs |",
+            "|---|---|---|",
+            "| None | 0.00 | 0 |",
         ]
 
-    lines = [f"| {label} | Count |", "|---|---|"]
+    lines = [f"| {label} | Weighted score | Raw jobs |", "|---|---|---|"]
     for item in rows[:limit]:
         lines.append(
-            f"| {_string_value(item.get(field_name))} | {_safe_int(item.get('count'))} |"
+            f"| {_string_value(item.get(field_name))} | {_format_weight(item.get('weighted_count'))} | {_safe_int(item.get('raw_count'))} |"
         )
     return lines
 
@@ -249,6 +483,8 @@ def render_market_analytics_markdown(
         "",
         f"- Filtering keywords: {_format_keywords(keywords)}",
         "- Analytics are computed on unique jobs deduplicated by title + company + location.",
+        "- Every analytics entry, chart, and category table is weighted by the match quality score.",
+        "- A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.",
         f"- Raw matched rows before deduplication: {len(rows)}",
         f"- Unique matched jobs: {_safe_int(overview.get('matched_jobs'))}",
     ]
@@ -264,12 +500,16 @@ def render_market_analytics_markdown(
             "## Overview",
             "",
             f"- Total jobs fetched: {_safe_int(overview.get('total_jobs'))}",
-            f"- Matched jobs: {_safe_int(overview.get('matched_jobs'))}",
-            f"- High-confidence jobs: {_safe_int(overview.get('high_confidence_jobs'))}",
-            f"- Match rate: {_format_rate(_safe_float(overview.get('match_rate')))}",
-            f"- High-confidence rate: {_format_rate(_safe_float(overview.get('high_confidence_rate')))}",
+            f"- Unique matched jobs: {_safe_int(overview.get('matched_jobs'))}",
+            f"- High-confidence unique jobs: {_safe_int(overview.get('high_confidence_jobs'))}",
+            f"- Weighted matched jobs: {_format_weight(overview.get('weighted_matched_jobs'))}",
+            f"- Weighted high-confidence jobs: {_format_weight(overview.get('weighted_high_confidence_jobs'))}",
+            f"- Weighted match rate: {_format_rate(_safe_float(overview.get('match_rate')))}",
+            f"- Weighted high-confidence rate: {_format_rate(_safe_float(overview.get('high_confidence_rate')))}",
             "",
             "## Charts",
+            "",
+            "All charts below use quality-score-weighted totals rather than raw row counts.",
             "",
             "### Top Locations",
             "",
@@ -283,26 +523,38 @@ def render_market_analytics_markdown(
             "",
             "![Match quality chart](../charts/match_quality.png)",
             "",
+            "### Top Job Title Families",
+            "",
+            "![Top title families chart](../charts/top_titles.png)",
+            "",
+            "### Visa Routes",
+            "",
+            "![Visa routes chart](../charts/routes.png)",
+            "",
+            "### Title Seniority",
+            "",
+            "![Title seniority chart](../charts/seniority.png)",
+            "",
             "## Top Locations",
             "",
         ]
     )
     lines.extend(_top_rows(analytics.get("locations", []), "location", "Location"))
-    lines.extend(
-        [
-            "",
-            "## Top Employers (High Confidence)",
-            "",
-        ]
-    )
+    lines.extend(["", "## Top Employers (High Confidence)", ""])
     lines.extend(_top_rows(analytics.get("employers", []), "company", "Company"))
+    lines.extend(["", "## Top Job Title Families", ""])
+    lines.extend(_top_rows(analytics.get("titles", []), "title", "Title Family"))
+    lines.extend(["", "## Visa Routes", ""])
+    lines.extend(_top_rows(analytics.get("routes", []), "route", "Route"))
+    lines.extend(["", "## Title Seniority", ""])
+    lines.extend(_top_rows(analytics.get("seniority", []), "level", "Seniority"))
     lines.extend(
         [
             "",
             "## Match Quality Breakdown",
             "",
-            "| Label | Count |",
-            "|---|---|",
+            "| Label | Weighted score | Raw jobs |",
+            "|---|---|---|",
         ]
     )
 
@@ -310,10 +562,10 @@ def render_market_analytics_markdown(
     if score_rows:
         for item in score_rows:
             lines.append(
-                f"| {_string_value(item.get('label'))} | {_safe_int(item.get('count'))} |"
+                f"| {_string_value(item.get('label'))} | {_format_weight(item.get('weighted_count'))} | {_safe_int(item.get('raw_count'))} |"
             )
     else:
-        lines.append("| None | 0 |")
+        lines.append("| None | 0.00 | 0 |")
 
     lines.append("")
     return "\n".join(lines)
@@ -333,13 +585,13 @@ def build_market_analytics(matches: Any) -> dict[str, Any]:
 
     matched_jobs = len(all_matches)
     high_confidence_jobs = len(high_confidence_matches)
-
-    locations = Counter(
-        _string_value(_coerce_offer(row).get("location")) for row in all_matches
+    weighted_matched_jobs = round(
+        sum(_extract_weight(row) for row in all_matches),
+        4,
     )
-    employers = Counter(
-        _string_value(_coerce_offer(row).get("company"))
-        for row in high_confidence_matches
+    weighted_high_confidence_jobs = round(
+        sum(_extract_weight(row) for row in high_confidence_matches),
+        4,
     )
 
     return {
@@ -347,20 +599,44 @@ def build_market_analytics(matches: Any) -> dict[str, Any]:
             "total_jobs": total_jobs,
             "matched_jobs": matched_jobs,
             "high_confidence_jobs": high_confidence_jobs,
-            "match_rate": round(matched_jobs / total_jobs, 4) if total_jobs else 0.0,
+            "weighted_matched_jobs": weighted_matched_jobs,
+            "weighted_high_confidence_jobs": weighted_high_confidence_jobs,
+            "match_rate": (
+                round(weighted_matched_jobs / total_jobs, 4) if total_jobs else 0.0
+            ),
             "high_confidence_rate": (
-                round(high_confidence_jobs / total_jobs, 4) if total_jobs else 0.0
+                round(
+                    weighted_high_confidence_jobs / total_jobs,
+                    4,
+                )
+                if total_jobs
+                else 0.0
             ),
         },
-        "locations": _sorted_counter_rows(locations, "location"),
-        "employers": _sorted_counter_rows(employers, "company"),
+        "locations": _build_weighted_breakdown(
+            all_matches,
+            lambda row: _string_value(_coerce_offer(row).get("location")),
+            "location",
+        ),
+        "employers": _build_weighted_breakdown(
+            high_confidence_matches,
+            lambda row: _string_value(_coerce_offer(row).get("company")),
+            "company",
+        ),
+        "titles": _cluster_titles(all_matches),
+        "routes": _build_weighted_breakdown(all_matches, _extract_route, "route"),
+        "seniority": _build_weighted_breakdown(
+            all_matches,
+            lambda row: _classify_seniority(_extract_title(row)),
+            "level",
+        ),
         "scores": _score_counts(all_matches),
     }
 
 
 def _plot_bar_chart(
     labels: list[str],
-    counts: list[int],
+    counts: list[float],
     *,
     title: str,
     ylabel: str,
@@ -396,43 +672,61 @@ def generate_charts(
     matches: Any,
     output_dir: Path | str,
 ) -> None:
-    _, rows = _coerce_metadata_and_rows(matches)
-    all_matches, high_confidence_matches = _build_dataset(rows)
     charts_dir = Path(output_dir)
     charts_dir.mkdir(parents=True, exist_ok=True)
 
     top_locations = analytics.get("locations", [])[:10]
     _plot_bar_chart(
         labels=[_string_value(item.get("location")) for item in top_locations],
-        counts=[_safe_int(item.get("count")) for item in top_locations],
+        counts=[_safe_float(item.get("weighted_count")) for item in top_locations],
         title="Top Locations",
-        ylabel="Jobs",
+        ylabel="Weighted jobs",
         output_path=charts_dir / "top_locations.png",
     )
 
-    employer_counts = Counter(
-        _string_value(_coerce_offer(row).get("company"))
-        for row in high_confidence_matches
-    )
-    top_employers = sorted(
-        employer_counts.items(),
-        key=lambda item: (-item[1], item[0]),
-    )[:10]
+    top_employers = analytics.get("employers", [])[:10]
     _plot_bar_chart(
-        labels=[label for label, _ in top_employers],
-        counts=[count for _, count in top_employers],
+        labels=[_string_value(item.get("company")) for item in top_employers],
+        counts=[_safe_float(item.get("weighted_count")) for item in top_employers],
         title="Top High-Confidence Employers",
-        ylabel="Jobs",
+        ylabel="Weighted jobs",
         output_path=charts_dir / "top_employers.png",
     )
 
-    score_counts = analytics.get("scores", _score_counts(all_matches))
+    score_counts = analytics.get("scores", [])
     _plot_bar_chart(
         labels=[_string_value(item.get("label"), default="") for item in score_counts],
-        counts=[_safe_int(item.get("count")) for item in score_counts],
+        counts=[_safe_float(item.get("weighted_count")) for item in score_counts],
         title="Match Quality Distribution",
-        ylabel="Jobs",
+        ylabel="Weighted jobs",
         output_path=charts_dir / "match_quality.png",
+    )
+
+    top_titles = analytics.get("titles", [])[:10]
+    _plot_bar_chart(
+        labels=[_string_value(item.get("title")) for item in top_titles],
+        counts=[_safe_float(item.get("weighted_count")) for item in top_titles],
+        title="Top Job Title Families",
+        ylabel="Weighted jobs",
+        output_path=charts_dir / "top_titles.png",
+    )
+
+    route_counts = analytics.get("routes", [])
+    _plot_bar_chart(
+        labels=[_string_value(item.get("route")) for item in route_counts],
+        counts=[_safe_float(item.get("weighted_count")) for item in route_counts],
+        title="Visa Route Distribution",
+        ylabel="Weighted jobs",
+        output_path=charts_dir / "routes.png",
+    )
+
+    seniority_counts = analytics.get("seniority", [])
+    _plot_bar_chart(
+        labels=[_string_value(item.get("level")) for item in seniority_counts],
+        counts=[_safe_float(item.get("weighted_count")) for item in seniority_counts],
+        title="Title Seniority Distribution",
+        ylabel="Weighted jobs",
+        output_path=charts_dir / "seniority.png",
     )
 
 

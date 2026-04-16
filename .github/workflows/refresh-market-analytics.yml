@@ -69,8 +69,11 @@ jobs:
             output/reports/market_analytics_report.md \
             output/site/content/analytics.md \
             output/site/static/charts/match_quality.png \
+            output/site/static/charts/routes.png \
+            output/site/static/charts/seniority.png \
             output/site/static/charts/top_employers.png \
-            output/site/static/charts/top_locations.png
+            output/site/static/charts/top_locations.png \
+            output/site/static/charts/top_titles.png
 
           if git diff --cached --quiet; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
@@ -111,7 +114,7 @@ jobs:
 
             while IFS= read -r file_path; do
               case "${file_path}" in
-                output/reports/market_analytics.json|output/reports/market_analytics_report.md|output/site/content/analytics.md|output/site/static/charts/match_quality.png|output/site/static/charts/top_employers.png|output/site/static/charts/top_locations.png)
+                output/reports/market_analytics.json|output/reports/market_analytics_report.md|output/site/content/analytics.md|output/site/static/charts/match_quality.png|output/site/static/charts/routes.png|output/site/static/charts/seniority.png|output/site/static/charts/top_employers.png|output/site/static/charts/top_locations.png|output/site/static/charts/top_titles.png)
                   git checkout --ours -- "${file_path}"
                   ;;
                 *)

@@ -27,6 +27,15 @@ The published report currently focuses on the city list defined in input/focus_l
 - The scheduled refresh reads its city scope from input/focus_locations.json.
 - The report and analytics pages render generated Markdown content directly.
 
+### Quality-Score Weighting in Analytics
+
+All analytics metrics are computed using **quality-score weighting**. This means:
+- Each job's contribution to market totals is proportional to its match confidence
+- Exact matches (1.00 score) contribute fully; lower-confidence matches (0.20-0.92) contribute proportionally
+- Result: more accurate representation of sponsorship opportunities, with higher-confidence matches having greater influence
+
+Visit the [Market Analytics](/analytics/) page to see weighted job distributions by location, employer, title, visa route, and seniority.
+
 ## Main scripts
 
 - fetch_job_offers.py: Collects and normalizes job listings.
