@@ -21,9 +21,11 @@ The published report currently focuses on the city list defined in input/focus_l
 ## Data and refresh model
 
 - The pipeline generates a Markdown report at output/reports/sponsored_jobs_report.md.
+- The analytics step generates a Markdown report at output/reports/market_analytics_report.md.
 - The workflow commits generated Hugo-ready content from output/site/content/report.md.
+- The analytics workflow commits generated Hugo-ready content from output/site/content/analytics.md.
 - The scheduled refresh reads its city scope from input/focus_locations.json.
-- The report page renders that Markdown content directly.
+- The report and analytics pages render generated Markdown content directly.
 
 ## Main scripts
 
@@ -32,3 +34,5 @@ The published report currently focuses on the city list defined in input/focus_l
 - generate_sponsored_jobs_report.py: Runs both fetchers, matches records, and writes report artifacts.
 
 Go to Latest Sponsored Jobs in the menu to view the most recent match list.
+
+Go to Market Analytics in the menu to view the latest deduplicated summary charts and employer/location breakdowns.

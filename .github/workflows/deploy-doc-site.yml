@@ -2,7 +2,7 @@ name: Deploy Documentation Site
 
 on:
   workflow_run:
-    workflows: ["Refresh Sponsored Jobs Report"]
+    workflows: ["Refresh Market Analytics"]
     types:
       - completed
   workflow_dispatch:

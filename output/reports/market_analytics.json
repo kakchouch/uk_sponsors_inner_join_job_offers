@@ -1,18 +1,34 @@
 {
   "overview": {
-    "total_jobs": 178,
-    "matched_jobs": 87,
-    "high_confidence_jobs": 42,
-    "match_rate": 0.4888,
-    "high_confidence_rate": 0.236
+    "total_jobs": 692,
+    "matched_jobs": 312,
+    "high_confidence_jobs": 142,
+    "match_rate": 0.4509,
+    "high_confidence_rate": 0.2052
   },
   "locations": [
     {
+      "location": "London, UK",
+      "count": 118
+    },
+    {
       "location": "London",
-      "count": 43
+      "count": 44
+    },
+    {
+      "location": "The City, Central London",
+      "count": 37
+    },
+    {
+      "location": "Belfast, Northern Ireland",
+      "count": 14
     },
     {
       "location": "Manchester",
+      "count": 14
+    },
+    {
+      "location": "Bristol, South West England",
       "count": 13
     },
     {
@@ -20,11 +36,19 @@
       "count": 12
     },
     {
+      "location": "Manchester, Greater Manchester",
+      "count": 10
+    },
+    {
       "location": "Leeds",
       "count": 6
     },
     {
       "location": "Southampton",
+      "count": 5
+    },
+    {
+      "location": "Brighton, East Sussex",
       "count": 4
     },
     {
@@ -32,11 +56,43 @@
       "count": 3
     },
     {
+      "location": "Leeds, West Yorkshire",
+      "count": 3
+    },
+    {
       "location": "Portsmouth",
       "count": 3
     },
     {
+      "location": "Portsmouth, Hampshire",
+      "count": 3
+    },
+    {
+      "location": "Southampton, Hampshire",
+      "count": 3
+    },
+    {
+      "location": "Glasgow City Centre, Glasgow",
+      "count": 2
+    },
+    {
+      "location": "Glasgow, Scotland",
+      "count": 2
+    },
+    {
+      "location": "Barbican, Central London",
+      "count": 1
+    },
+    {
       "location": "Brighton",
+      "count": 1
+    },
+    {
+      "location": "Broadgate, Central London",
+      "count": 1
+    },
+    {
+      "location": "Canary Wharf, East London",
       "count": 1
     },
     {
@@ -44,14 +100,54 @@
       "count": 1
     },
     {
+      "location": "Fenchurch St, Central London",
+      "count": 1
+    },
+    {
+      "location": "H M Naval Base, Portsmouth",
+      "count": 1
+    },
+    {
+      "location": "Hulme, Manchester",
+      "count": 1
+    },
+    {
+      "location": "Liverpool",
+      "count": 1
+    },
+    {
+      "location": "Londonderry, Derry",
+      "count": 1
+    },
+    {
+      "location": "Redcliffe, Bristol",
+      "count": 1
+    },
+    {
+      "location": "Salford, Greater Manchester",
+      "count": 1
+    },
+    {
       "location": "South West London",
+      "count": 1
+    },
+    {
+      "location": "Stockport, Greater Manchester",
+      "count": 1
+    },
+    {
+      "location": "Victoria, South West London",
+      "count": 1
+    },
+    {
+      "location": "Waterloo, South East London",
       "count": 1
     }
   ],
   "employers": [
     {
       "company": "Accenture",
-      "count": 10
+      "count": 13
     },
     {
       "company": "NG Bailey",
@@ -59,7 +155,43 @@
     },
     {
       "company": "AJ Bell",
+      "count": 6
+    },
+    {
+      "company": "Wise",
+      "count": 6
+    },
+    {
+      "company": "Algolia",
       "count": 4
+    },
+    {
+      "company": "Chevalier Tech Limited",
+      "count": 4
+    },
+    {
+      "company": "Gravitas Recruitment Group  Ltd",
+      "count": 4
+    },
+    {
+      "company": "Harvey Nash",
+      "count": 4
+    },
+    {
+      "company": "TP ICAP Group Services Ltd",
+      "count": 4
+    },
+    {
+      "company": "Unity Software",
+      "count": 4
+    },
+    {
+      "company": "Morgan McKinley",
+      "count": 3
+    },
+    {
+      "company": "Ripple",
+      "count": 3
     },
     {
       "company": "Smartbox Assistive Technology",
@@ -74,19 +206,139 @@
       "count": 2
     },
     {
-      "company": "Robert Half",
+      "company": "Bazaarvoice Ltd",
+      "count": 2
+    },
+    {
+      "company": "BlackRock",
       "count": 2
     },
     {
       "company": "FDM Group",
+      "count": 2
+    },
+    {
+      "company": "Hunter Bond",
+      "count": 2
+    },
+    {
+      "company": "Intapp",
+      "count": 2
+    },
+    {
+      "company": "Quanta",
+      "count": 2
+    },
+    {
+      "company": "Thales",
+      "count": 2
+    },
+    {
+      "company": "Thales UK Limited",
+      "count": 2
+    },
+    {
+      "company": "Verifone",
+      "count": 2
+    },
+    {
+      "company": "Vix Technology",
+      "count": 2
+    },
+    {
+      "company": "Wave Talent",
+      "count": 2
+    },
+    {
+      "company": "X4 Group",
+      "count": 2
+    },
+    {
+      "company": "ripple",
+      "count": 2
+    },
+    {
+      "company": "Aflac Northern Ireland",
       "count": 1
     },
     {
-      "company": "Harvey Nash",
+      "company": "Anaplan",
       "count": 1
     },
     {
-      "company": "Hirexa Solutions UK",
+      "company": "Anduril Industries",
+      "count": 1
+    },
+    {
+      "company": "Applied Intuition",
+      "count": 1
+    },
+    {
+      "company": "Axle Energy",
+      "count": 1
+    },
+    {
+      "company": "Barclays UK",
+      "count": 1
+    },
+    {
+      "company": "Barings",
+      "count": 1
+    },
+    {
+      "company": "Bloxd",
+      "count": 1
+    },
+    {
+      "company": "CACI",
+      "count": 1
+    },
+    {
+      "company": "Cisco International Limited",
+      "count": 1
+    },
+    {
+      "company": "Complexio",
+      "count": 1
+    },
+    {
+      "company": "Dataiku",
+      "count": 1
+    },
+    {
+      "company": "Figma",
+      "count": 1
+    },
+    {
+      "company": "Flatiron Health",
+      "count": 1
+    },
+    {
+      "company": "Flight Centre",
+      "count": 1
+    },
+    {
+      "company": "Formula Recruitment",
+      "count": 1
+    },
+    {
+      "company": "Gearset",
+      "count": 1
+    },
+    {
+      "company": "Graphcore",
+      "count": 1
+    },
+    {
+      "company": "Great Yellow",
+      "count": 1
+    },
+    {
+      "company": "Information Tech Consultants",
+      "count": 1
+    },
+    {
+      "company": "Intuit",
       "count": 1
     },
     {
@@ -94,15 +346,51 @@
       "count": 1
     },
     {
+      "company": "Low Carbon Contracts Company",
+      "count": 1
+    },
+    {
+      "company": "MBDA UK",
+      "count": 1
+    },
+    {
+      "company": "Manpower",
+      "count": 1
+    },
+    {
       "company": "Max Fordham LLP",
       "count": 1
     },
     {
-      "company": "Morgan McKinley",
+      "company": "NatWest Group",
+      "count": 1
+    },
+    {
+      "company": "Natwest Group",
+      "count": 1
+    },
+    {
+      "company": "Omnea",
       "count": 1
     },
     {
       "company": "Oyster Yachts Limited",
+      "count": 1
+    },
+    {
+      "company": "Ping Identity",
+      "count": 1
+    },
+    {
+      "company": "PortSwigger",
+      "count": 1
+    },
+    {
+      "company": "Quantcast",
+      "count": 1
+    },
+    {
+      "company": "Robert Half",
       "count": 1
     },
     {
@@ -116,28 +404,60 @@
     {
       "company": "Salt Search",
       "count": 1
+    },
+    {
+      "company": "Searchable",
+      "count": 1
+    },
+    {
+      "company": "Smarkets",
+      "count": 1
+    },
+    {
+      "company": "Softwire Technology Limited",
+      "count": 1
+    },
+    {
+      "company": "Trafigura",
+      "count": 1
+    },
+    {
+      "company": "TransitionZero",
+      "count": 1
+    },
+    {
+      "company": "Tumelo",
+      "count": 1
+    },
+    {
+      "company": "mkodo",
+      "count": 1
+    },
+    {
+      "company": "unosquare",
+      "count": 1
     }
   ],
   "scores": [
     {
       "label": "1.00 exact_normalized",
-      "count": 42
+      "count": 139
     },
     {
       "label": "0.92 alias_table",
-      "count": 0
+      "count": 3
     },
     {
       "label": "0.85 fuzzy_strong",
-      "count": 1
+      "count": 3
     },
     {
       "label": "0.50 recruiter_or_ambiguous",
-      "count": 29
+      "count": 106
     },
     {
       "label": "0.20 substring_only",
-      "count": 15
+      "count": 61
     }
   ]
 }

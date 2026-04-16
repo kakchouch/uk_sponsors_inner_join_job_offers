@@ -7,6 +7,7 @@ theme = "risotto"
 noindex = false
 repoURL = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers"
 authoritativeBlobURL = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers/blob/main/output/reports/sponsored_jobs_report.md"
+analyticsBlobURL = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers/blob/main/output/reports/market_analytics_report.md"
 
 [params.theme]
 palette = "material"
@@ -29,6 +30,12 @@ logo = "UK"
     name = "Latest Sponsored Jobs"
     url = "/report/"
     weight = 20
+
+  [[menu.main]]
+    identifier = "analytics"
+    name = "Market Analytics"
+    url = "/analytics/"
+    weight = 30
 
 [markup.goldmark.renderer]
 unsafe = true

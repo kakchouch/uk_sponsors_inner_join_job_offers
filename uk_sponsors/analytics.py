@@ -1,17 +1,32 @@
 from __future__ import annotations
 
 from collections import Counter
+from datetime import datetime, timezone
 from importlib import import_module
 from pathlib import Path
 from typing import Any, Iterable
 
-from .json_io import ensure_parent_dir, write_json
+from .json_io import ensure_parent_dir, write_json, write_text
 
 OUTPUT_ROOT = Path("output")
 DEFAULT_MARKET_ANALYTICS_OUTPUT = OUTPUT_ROOT / "reports" / "market_analytics.json"
+DEFAULT_MARKET_ANALYTICS_MARKDOWN_OUTPUT = (
+    OUTPUT_ROOT / "reports" / "market_analytics_report.md"
+)
 DEFAULT_CHARTS_OUTPUT_DIR = OUTPUT_ROOT / "site" / "static" / "charts"
+DEFAULT_SITE_ANALYTICS_OUTPUT = OUTPUT_ROOT / "site" / "content" / "analytics.md"
 
 HIGH_CONFIDENCE_SCORE = 0.92
+
+_ANALYTICS_FRONTMATTER = """\
++++
+title = "Market Analytics"
+description = "Deduplicated market analytics for the latest sponsor-matched UK job run."
+lastmod = "{generated_at}"
+last_research_at = "{generated_at}"
++++
+
+"""
 
 SCORE_LABELS: list[tuple[float, str, str]] = [
     (1.00, "exact_normalized", "1.00 exact_normalized"),
@@ -184,6 +199,130 @@ def _build_dataset(
     return all_matches, high_confidence_matches
 
 
+def _format_rate(value: float) -> str:
+    return f"{value * 100:.2f}%"
+
+
+def _format_keywords(keywords: str) -> str:
+    cleaned = keywords.strip()
+    return cleaned if cleaned else "No keyword filter"
+
+
+def _top_rows(
+    rows: list[dict[str, Any]], field_name: str, label: str, limit: int = 10
+) -> list[str]:
+    if not rows:
+        return [
+            f"| No {label.lower()} available | Count |",
+            "|---|---|",
+            "| None | 0 |",
+        ]
+
+    lines = [f"| {label} | Count |", "|---|---|"]
+    for item in rows[:limit]:
+        lines.append(
+            f"| {_string_value(item.get(field_name))} | {_safe_int(item.get('count'))} |"
+        )
+    return lines
+
+
+def render_market_analytics_markdown(
+    analytics: dict[str, Any],
+    matches: Any,
+    *,
+    generated_at: str,
+    keywords: str = "",
+) -> str:
+    metadata, rows = _coerce_metadata_and_rows(matches)
+    overview = analytics.get("overview", {})
+    searched_locations = metadata.get("locations", [])
+    if not isinstance(searched_locations, list):
+        searched_locations = []
+
+    lines: list[str] = [
+        "# Market Analytics",
+        "",
+        f"Last research run (UTC): {generated_at}",
+        f"Generated at: {generated_at}",
+        "",
+        "## Scope",
+        "",
+        f"- Filtering keywords: {_format_keywords(keywords)}",
+        "- Analytics are computed on unique jobs deduplicated by title + company + location.",
+        f"- Raw matched rows before deduplication: {len(rows)}",
+        f"- Unique matched jobs: {_safe_int(overview.get('matched_jobs'))}",
+    ]
+
+    if searched_locations:
+        lines.append(
+            f"- Search locations: {', '.join(_string_value(item, default='') for item in searched_locations if _string_value(item, default=''))}"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Overview",
+            "",
+            f"- Total jobs fetched: {_safe_int(overview.get('total_jobs'))}",
+            f"- Matched jobs: {_safe_int(overview.get('matched_jobs'))}",
+            f"- High-confidence jobs: {_safe_int(overview.get('high_confidence_jobs'))}",
+            f"- Match rate: {_format_rate(_safe_float(overview.get('match_rate')))}",
+            f"- High-confidence rate: {_format_rate(_safe_float(overview.get('high_confidence_rate')))}",
+            "",
+            "## Charts",
+            "",
+            "### Top Locations",
+            "",
+            "![Top locations chart](../charts/top_locations.png)",
+            "",
+            "### Top Employers (High Confidence)",
+            "",
+            "![Top employers chart](../charts/top_employers.png)",
+            "",
+            "### Match Quality Distribution",
+            "",
+            "![Match quality chart](../charts/match_quality.png)",
+            "",
+            "## Top Locations",
+            "",
+        ]
+    )
+    lines.extend(_top_rows(analytics.get("locations", []), "location", "Location"))
+    lines.extend(
+        [
+            "",
+            "## Top Employers (High Confidence)",
+            "",
+        ]
+    )
+    lines.extend(_top_rows(analytics.get("employers", []), "company", "Company"))
+    lines.extend(
+        [
+            "",
+            "## Match Quality Breakdown",
+            "",
+            "| Label | Count |",
+            "|---|---|",
+        ]
+    )
+
+    score_rows = analytics.get("scores", [])
+    if score_rows:
+        for item in score_rows:
+            lines.append(
+                f"| {_string_value(item.get('label'))} | {_safe_int(item.get('count'))} |"
+            )
+    else:
+        lines.append("| None | 0 |")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_market_analytics_hugo_content(markdown: str, generated_at: str) -> str:
+    return _ANALYTICS_FRONTMATTER.format(generated_at=generated_at) + markdown
+
+
 def build_market_analytics(matches: Any) -> dict[str, Any]:
     metadata, rows = _coerce_metadata_and_rows(matches)
     all_matches, high_confidence_matches = _build_dataset(rows)
@@ -301,18 +440,37 @@ def save_market_analytics_outputs(
     matches: Any,
     *,
     json_output_path: Path | str = DEFAULT_MARKET_ANALYTICS_OUTPUT,
+    markdown_output_path: Path | str = DEFAULT_MARKET_ANALYTICS_MARKDOWN_OUTPUT,
+    site_markdown_output_path: Path | str = DEFAULT_SITE_ANALYTICS_OUTPUT,
     charts_output_dir: Path | str = DEFAULT_CHARTS_OUTPUT_DIR,
+    keywords: str = "",
 ) -> dict[str, Any]:
+    generated_at = datetime.now(timezone.utc).isoformat()
     analytics = build_market_analytics(matches)
     write_json(Path(json_output_path), analytics)
     generate_charts(analytics, matches, charts_output_dir)
+    markdown = render_market_analytics_markdown(
+        analytics,
+        matches,
+        generated_at=generated_at,
+        keywords=keywords,
+    )
+    write_text(Path(markdown_output_path), markdown)
+    write_text(
+        Path(site_markdown_output_path),
+        render_market_analytics_hugo_content(markdown, generated_at),
+    )
     return analytics
 
 
 __all__ = [
     "DEFAULT_CHARTS_OUTPUT_DIR",
     "DEFAULT_MARKET_ANALYTICS_OUTPUT",
+    "DEFAULT_MARKET_ANALYTICS_MARKDOWN_OUTPUT",
+    "DEFAULT_SITE_ANALYTICS_OUTPUT",
     "build_market_analytics",
     "generate_charts",
+    "render_market_analytics_hugo_content",
+    "render_market_analytics_markdown",
     "save_market_analytics_outputs",
 ]
