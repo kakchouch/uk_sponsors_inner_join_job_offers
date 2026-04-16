@@ -97,18 +97,23 @@ def _coerce_metadata_and_rows(
     return {}, []
 
 
-def _coerce_offer(row: dict[str, Any]) -> dict[str, Any]:
-    offer = row.get("offer", {})
-    if isinstance(offer, dict):
-        return offer
+def _coerce_dict(value: Any) -> dict[str, Any]:
+    """Safely coerce a value to dict, returning empty dict if not a dict."""
+    if isinstance(value, dict):
+        return value
     return {}
+
+
+def _coerce_offer(row: dict[str, Any]) -> dict[str, Any]:
+    return _coerce_dict(row.get("offer", {}))
 
 
 def _coerce_match(row: dict[str, Any]) -> dict[str, Any]:
-    match = row.get("match", {})
-    if isinstance(match, dict):
-        return match
-    return {}
+    return _coerce_dict(row.get("match", {}))
+
+
+def _coerce_sponsor(row: dict[str, Any]) -> dict[str, Any]:
+    return _coerce_dict(row.get("sponsor", {}))
 
 
 def _string_value(value: Any, *, default: str = "Unknown") -> str:
@@ -144,25 +149,36 @@ def _extract_weight(row: dict[str, Any]) -> float:
     return max(0.0, min(1.0, _extract_score(row)))
 
 
+def _extract_nested_value(
+    row: dict[str, Any],
+    nested_key: str,
+    field_names: tuple[str, ...],
+    converter: Callable[[Any], Any] = lambda x: x,
+    default: Any = None,
+) -> Any:
+    """Extract a field from nested structure or row, with type conversion."""
+    nested = _coerce_dict(row.get(nested_key, {}))
+    for field in field_names:
+        if field in nested:
+            return converter(nested.get(field))
+        if field in row:
+            return converter(row.get(field))
+    return default
+
+
 def _extract_match_type(row: dict[str, Any]) -> str:
-    nested_match = _coerce_match(row)
-    match_type = nested_match.get("match_type") or row.get("match_type")
-    return _string_value(match_type, default="unknown")
+    return _extract_nested_value(
+        row, "match", ("match_type",), _string_value, default="unknown"
+    )
 
 
 def _extract_is_recruiter(row: dict[str, Any]) -> bool:
-    nested_match = _coerce_match(row)
-    value = nested_match.get("is_recruiter")
-    if value is None:
-        value = row.get("is_recruiter")
-    return bool(value)
+    return _extract_nested_value(row, "match", ("is_recruiter",), bool, default=False)
 
 
 def _extract_route(row: dict[str, Any]) -> str:
-    sponsor = row.get("sponsor", {})
-    if isinstance(sponsor, dict):
-        return _string_value(sponsor.get("route"))
-    return "Unknown"
+    sponsor = _coerce_sponsor(row)
+    return _string_value(sponsor.get("route"))
 
 
 def _extract_title(row: dict[str, Any]) -> str:
@@ -631,6 +647,27 @@ def _plot_bar_chart(
     plt.close(figure)
 
 
+def _generate_category_chart(
+    analytics: dict[str, Any],
+    category: str,
+    label_field: str,
+    chart_title: str,
+    output_path: Path,
+    limit: int = 10,
+) -> None:
+    """Generate a bar chart for a category from analytics data."""
+    items = analytics.get(category, [])[:limit]
+    labels = [_string_value(item.get(label_field)) for item in items]
+    counts = [_safe_float(item.get("weighted_count")) for item in items]
+    _plot_bar_chart(
+        labels=labels,
+        counts=counts,
+        title=chart_title,
+        ylabel="Weighted jobs",
+        output_path=output_path,
+    )
+
+
 def generate_charts(
     analytics: dict[str, Any],
     matches: Any,
@@ -639,24 +676,32 @@ def generate_charts(
     charts_dir = Path(output_dir)
     charts_dir.mkdir(parents=True, exist_ok=True)
 
-    top_locations = analytics.get("locations", [])[:10]
-    _plot_bar_chart(
-        labels=[_string_value(item.get("location")) for item in top_locations],
-        counts=[_safe_float(item.get("weighted_count")) for item in top_locations],
-        title="Top Locations",
-        ylabel="Weighted jobs",
-        output_path=charts_dir / "top_locations.png",
-    )
+    # Chart configuration: (category, label_field, title, output_file, limit)
+    chart_configs = [
+        ("locations", "location", "Top Locations", "top_locations.png", 10),
+        (
+            "employers",
+            "company",
+            "Top High-Confidence Employers",
+            "top_employers.png",
+            10,
+        ),
+        ("titles", "title", "Top Job Title Families", "top_titles.png", 10),
+        ("routes", "route", "Visa Route Distribution", "routes.png", None),
+        ("seniority", "level", "Title Seniority Distribution", "seniority.png", None),
+    ]
 
-    top_employers = analytics.get("employers", [])[:10]
-    _plot_bar_chart(
-        labels=[_string_value(item.get("company")) for item in top_employers],
-        counts=[_safe_float(item.get("weighted_count")) for item in top_employers],
-        title="Top High-Confidence Employers",
-        ylabel="Weighted jobs",
-        output_path=charts_dir / "top_employers.png",
-    )
+    for category, label_field, title, filename, limit in chart_configs:
+        _generate_category_chart(
+            analytics,
+            category,
+            label_field,
+            title,
+            charts_dir / filename,
+            limit=limit or 10,
+        )
 
+    # Special handling for score chart (uses 'label' field instead)
     score_counts = analytics.get("scores", [])
     _plot_bar_chart(
         labels=[_string_value(item.get("label"), default="") for item in score_counts],
@@ -664,33 +709,6 @@ def generate_charts(
         title="Match Quality Distribution",
         ylabel="Weighted jobs",
         output_path=charts_dir / "match_quality.png",
-    )
-
-    top_titles = analytics.get("titles", [])[:10]
-    _plot_bar_chart(
-        labels=[_string_value(item.get("title")) for item in top_titles],
-        counts=[_safe_float(item.get("weighted_count")) for item in top_titles],
-        title="Top Job Title Families",
-        ylabel="Weighted jobs",
-        output_path=charts_dir / "top_titles.png",
-    )
-
-    route_counts = analytics.get("routes", [])
-    _plot_bar_chart(
-        labels=[_string_value(item.get("route")) for item in route_counts],
-        counts=[_safe_float(item.get("weighted_count")) for item in route_counts],
-        title="Visa Route Distribution",
-        ylabel="Weighted jobs",
-        output_path=charts_dir / "routes.png",
-    )
-
-    seniority_counts = analytics.get("seniority", [])
-    _plot_bar_chart(
-        labels=[_string_value(item.get("level")) for item in seniority_counts],
-        counts=[_safe_float(item.get("weighted_count")) for item in seniority_counts],
-        title="Title Seniority Distribution",
-        ylabel="Weighted jobs",
-        output_path=charts_dir / "seniority.png",
     )
 
 
