@@ -17,6 +17,11 @@ title = "UK Sponsor Matcher"
 description = "A lightweight project that matches UK job offers with licensed sponsor organisations."
 logo = "UK"
 
+    [[params.socialLinks]]
+      title = "GitHub"
+      url = "https://github.com/kakchouch/uk_sponsors_inner_join_job_offers"
+      icon = "fab fa-github"
+
 [menu]
 
   [[menu.main]]
