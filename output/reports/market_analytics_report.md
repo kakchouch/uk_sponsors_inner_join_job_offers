@@ -1,11 +1,11 @@
 # Market Analytics
 
-Last research run (UTC): 2026-04-16T19:36:59.091276+00:00
-Generated at: 2026-04-16T19:36:59.091276+00:00
+Last research run (UTC): 2026-04-16T19:40:29.515612+00:00
+Generated at: 2026-04-16T19:40:29.515612+00:00
 
 ## Scope
 
-- Filtering keywords: No keyword filter
+- Filtering keywords: software engineer
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
