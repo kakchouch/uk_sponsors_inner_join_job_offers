@@ -1,12 +1,12 @@
 {
   "overview": {
-    "total_jobs": 657,
-    "matched_jobs": 293,
-    "high_confidence_jobs": 124,
-    "weighted_matched_jobs": 193.31,
-    "weighted_high_confidence_jobs": 123.76,
-    "match_rate": 0.2942,
-    "high_confidence_rate": 0.1884
+    "total_jobs": 660,
+    "matched_jobs": 295,
+    "high_confidence_jobs": 128,
+    "weighted_matched_jobs": 196.91,
+    "weighted_high_confidence_jobs": 127.76,
+    "match_rate": 0.2983,
+    "high_confidence_rate": 0.1936
   },
   "locations": [
     {
@@ -15,29 +15,29 @@
       "raw_count": 115
     },
     {
+      "location": "London",
+      "weighted_count": 22.25,
+      "raw_count": 36
+    },
+    {
       "location": "The City, Central London",
       "weighted_count": 21.55,
       "raw_count": 40
     },
     {
-      "location": "London",
-      "weighted_count": 20.25,
-      "raw_count": 34
+      "location": "Belfast, Northern Ireland",
+      "weighted_count": 12.0,
+      "raw_count": 12
     },
     {
-      "location": "Belfast, Northern Ireland",
-      "weighted_count": 14.0,
-      "raw_count": 14
+      "location": "Manchester",
+      "weighted_count": 9.7,
+      "raw_count": 12
     },
     {
       "location": "Bristol, South West England",
       "weighted_count": 8.55,
       "raw_count": 15
-    },
-    {
-      "location": "Manchester",
-      "weighted_count": 8.2,
-      "raw_count": 11
     },
     {
       "location": "Manchester, Greater Manchester",
@@ -46,8 +46,13 @@
     },
     {
       "location": "Bristol",
-      "weighted_count": 6.8,
-      "raw_count": 10
+      "weighted_count": 6.4,
+      "raw_count": 8
+    },
+    {
+      "location": "Leeds",
+      "weighted_count": 3.7,
+      "raw_count": 5
     },
     {
       "location": "Brighton, East Sussex",
@@ -60,8 +65,8 @@
       "raw_count": 4
     },
     {
-      "location": "Leeds",
-      "weighted_count": 2.7,
+      "location": "Southampton",
+      "weighted_count": 2.5,
       "raw_count": 4
     },
     {
@@ -91,11 +96,6 @@
     },
     {
       "location": "Glasgow, Scotland",
-      "weighted_count": 1.0,
-      "raw_count": 2
-    },
-    {
-      "location": "Southampton",
       "weighted_count": 1.0,
       "raw_count": 2
     },
@@ -140,17 +140,17 @@
       "raw_count": 1
     },
     {
-      "location": "Brighton",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
       "location": "Fenchurch St, Central London",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
       "location": "H M Naval Base, Portsmouth",
+      "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "location": "Liverpool",
       "weighted_count": 0.5,
       "raw_count": 1
     },
@@ -172,12 +172,17 @@
   ],
   "employers": [
     {
-      "company": "AJ Bell",
-      "weighted_count": 5.0,
-      "raw_count": 5
+      "company": "NG Bailey",
+      "weighted_count": 8.0,
+      "raw_count": 8
     },
     {
-      "company": "NG Bailey",
+      "company": "AJ Bell",
+      "weighted_count": 6.0,
+      "raw_count": 6
+    },
+    {
+      "company": "Morgan McKinley",
       "weighted_count": 5.0,
       "raw_count": 5
     },
@@ -207,16 +212,6 @@
       "raw_count": 4
     },
     {
-      "company": "Morgan McKinley",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "TP ICAP Group Services Ltd",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
       "company": "Unity Software",
       "weighted_count": 4.0,
       "raw_count": 4
@@ -242,7 +237,7 @@
       "raw_count": 3
     },
     {
-      "company": "VERTICAL AEROSPACE GROUP LTD",
+      "company": "TP ICAP Group Services Ltd",
       "weighted_count": 3.0,
       "raw_count": 3
     },
@@ -282,6 +277,11 @@
       "raw_count": 2
     },
     {
+      "company": "VERTICAL AEROSPACE GROUP LTD",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
       "company": "Verifone",
       "weighted_count": 2.0,
       "raw_count": 2
@@ -293,6 +293,11 @@
     },
     {
       "company": "Wave Talent",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "company": "X4 Group",
       "weighted_count": 2.0,
       "raw_count": 2
     },
@@ -363,11 +368,6 @@
     },
     {
       "company": "Flight Centre",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Gearset",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -467,6 +467,11 @@
       "raw_count": 1
     },
     {
+      "company": "Saab UK",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
       "company": "Salt Search",
       "weighted_count": 1.0,
       "raw_count": 1
@@ -497,11 +502,6 @@
       "raw_count": 1
     },
     {
-      "company": "X4 Group",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
       "company": "mkodo",
       "weighted_count": 1.0,
       "raw_count": 1
@@ -520,18 +520,18 @@
   "titles": [
     {
       "title": "Software Engineer",
-      "weighted_count": 97.39,
-      "raw_count": 147
+      "weighted_count": 96.49,
+      "raw_count": 144
     },
     {
       "title": "Principal Software Engineer (Payments)",
-      "weighted_count": 11.12,
-      "raw_count": 13
+      "weighted_count": 10.62,
+      "raw_count": 12
     },
     {
       "title": "Senior Embedded Software Engineer",
-      "weighted_count": 8.75,
-      "raw_count": 16
+      "weighted_count": 9.75,
+      "raw_count": 17
     },
     {
       "title": "Software Engineering Manager",
@@ -539,14 +539,14 @@
       "raw_count": 12
     },
     {
-      "title": "Full Stack Software Engineer",
-      "weighted_count": 4.9,
-      "raw_count": 9
+      "title": "Principal AI Software Engineer",
+      "weighted_count": 4.4,
+      "raw_count": 8
     },
     {
       "title": "Software Engineer - Fullstack Developer with Python and Angular",
-      "weighted_count": 3.7,
-      "raw_count": 6
+      "weighted_count": 4.2,
+      "raw_count": 7
     },
     {
       "title": "Firmware Engineer",
@@ -564,6 +564,11 @@
       "raw_count": 4
     },
     {
+      "title": "Senior BIM Coordinator - MEP",
+      "weighted_count": 3.0,
+      "raw_count": 3
+    },
+    {
       "title": "Software Engineer (Python/React)",
       "weighted_count": 2.4,
       "raw_count": 6
@@ -574,12 +579,12 @@
       "raw_count": 3
     },
     {
-      "title": "Pre Construction Manager",
+      "title": "Geotechnical Engineer",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "title": "Principal Software Engineer (UI)",
+      "title": "Pre Construction Manager",
       "weighted_count": 2.0,
       "raw_count": 2
     },
@@ -599,6 +604,11 @@
       "raw_count": 4
     },
     {
+      "title": "Backend Engineer",
+      "weighted_count": 1.7,
+      "raw_count": 3
+    },
+    {
       "title": "Senior Software Engineer-Robotics",
       "weighted_count": 1.5,
       "raw_count": 3
@@ -607,11 +617,6 @@
       "title": "Software Engineer (Prop Trading Firm)",
       "weighted_count": 1.2,
       "raw_count": 3
-    },
-    {
-      "title": "Data Engineer",
-      "weighted_count": 1.1,
-      "raw_count": 4
     },
     {
       "title": "Electrical Design Engineer",
@@ -639,11 +644,6 @@
       "raw_count": 1
     },
     {
-      "title": "Avionic System Development & Test Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
       "title": "Azure Cloud Engineer (AVD) - Software Solution - Fully remote",
       "weighted_count": 1.0,
       "raw_count": 1
@@ -664,17 +664,17 @@
       "raw_count": 1
     },
     {
-      "title": "Geotechnical Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
       "title": "Manager 2, Software Engineering - Credit Karma - Intuit",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
       "title": "Manager Software Engineer - London Stock Exchange Group",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "title": "QA Engineer (New Delivery Projects)",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -699,11 +699,6 @@
       "raw_count": 1
     },
     {
-      "title": "Senior BIM Coordinator - MEP",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
       "title": "Senior Fullstack TypeScript Engineer – AWS Cloud",
       "weighted_count": 1.0,
       "raw_count": 1
@@ -715,6 +710,11 @@
     },
     {
       "title": "Senior Software Engineer - Business KYC",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "title": "Senior Software Engineer - UI, Connectors Platform",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -739,6 +739,11 @@
       "raw_count": 1
     },
     {
+      "title": "Data Engineer",
+      "weighted_count": 0.9,
+      "raw_count": 3
+    },
+    {
       "title": "Principal Software Engineer - Verification",
       "weighted_count": 0.85,
       "raw_count": 1
@@ -754,17 +759,27 @@
       "raw_count": 2
     },
     {
+      "title": "Full Stack Engineer /Software Engineer",
+      "weighted_count": 0.6,
+      "raw_count": 3
+    },
+    {
       "title": "2x Senior Software Engineers (SQL Server)",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "title": "Azure Platform Engineer",
+      "title": "Client Implementation Engineer",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "title": "Client Implementation Engineer",
+      "title": "Cloud Infrastructure Architect",
+      "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "title": "IT Support Engineer",
       "weighted_count": 0.5,
       "raw_count": 1
     },
@@ -804,17 +819,7 @@
       "raw_count": 1
     },
     {
-      "title": "Full Stack Engineer /Software Engineer",
-      "weighted_count": 0.4,
-      "raw_count": 2
-    },
-    {
       "title": "Algorithm Engineer",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "title": "Backend Engineer",
       "weighted_count": 0.2,
       "raw_count": 1
     }
@@ -822,13 +827,13 @@
   "routes": [
     {
       "route": "Skilled Worker",
-      "weighted_count": 125.55,
-      "raw_count": 210
+      "weighted_count": 129.15,
+      "raw_count": 212
     },
     {
       "route": "Global Business Mobility: Senior or Specialist Worker",
-      "weighted_count": 48.76,
-      "raw_count": 60
+      "weighted_count": 49.76,
+      "raw_count": 61
     },
     {
       "route": "Global Business Mobility: Graduate Trainee",
@@ -847,8 +852,8 @@
     },
     {
       "route": "Global Business Mobility: Service Supplier",
-      "weighted_count": 3.0,
-      "raw_count": 3
+      "weighted_count": 2.0,
+      "raw_count": 2
     },
     {
       "route": "International Sportsperson",
@@ -864,18 +869,18 @@
   "seniority": [
     {
       "level": "Standard",
-      "weighted_count": 106.26,
-      "raw_count": 163
+      "weighted_count": 108.76,
+      "raw_count": 165
     },
     {
       "level": "Senior",
-      "weighted_count": 53.7,
-      "raw_count": 77
+      "weighted_count": 56.0,
+      "raw_count": 79
     },
     {
       "level": "Leadership",
-      "weighted_count": 29.35,
-      "raw_count": 48
+      "weighted_count": 28.15,
+      "raw_count": 46
     },
     {
       "level": "Entry",
@@ -886,8 +891,8 @@
   "scores": [
     {
       "label": "1.00 exact_normalized",
-      "weighted_count": 121.0,
-      "raw_count": 121
+      "weighted_count": 125.0,
+      "raw_count": 125
     },
     {
       "label": "0.50 recruiter_or_ambiguous",
@@ -896,8 +901,8 @@
     },
     {
       "label": "0.20 substring_only",
-      "weighted_count": 11.6,
-      "raw_count": 58
+      "weighted_count": 11.2,
+      "raw_count": 56
     },
     {
       "label": "0.85 fuzzy_strong",
