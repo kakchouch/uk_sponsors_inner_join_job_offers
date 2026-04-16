@@ -1,24 +1,14 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
-<<<<<<< HEAD
-lastmod = "2026-04-16T19:46:34.956554+00:00"
-last_research_at = "2026-04-16T19:46:34.956554+00:00"
-=======
-lastmod = "2026-04-16T19:40:29.515612+00:00"
-last_research_at = "2026-04-16T19:40:29.515612+00:00"
->>>>>>> 60cf173306a49d6c22baa75685ff38095299090c
+lastmod = "2026-04-16T19:52:03.944603+00:00"
+last_research_at = "2026-04-16T19:52:03.944603+00:00"
 +++
 
 # Market Analytics
 
-<<<<<<< HEAD
-Last research run (UTC): 2026-04-16T19:46:34.956554+00:00
-Generated at: 2026-04-16T19:46:34.956554+00:00
-=======
-Last research run (UTC): 2026-04-16T19:40:29.515612+00:00
-Generated at: 2026-04-16T19:40:29.515612+00:00
->>>>>>> 60cf173306a49d6c22baa75685ff38095299090c
+Last research run (UTC): 2026-04-16T19:52:03.944603+00:00
+Generated at: 2026-04-16T19:52:03.944603+00:00
 
 ## Scope
 
@@ -26,19 +16,19 @@ Generated at: 2026-04-16T19:40:29.515612+00:00
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 525
-- Unique matched jobs: 312
+- Raw matched rows before deduplication: 487
+- Unique matched jobs: 293
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 692
-- Unique matched jobs: 312
-- High-confidence unique jobs: 142
-- Weighted matched jobs: 209.51
-- Weighted high-confidence jobs: 141.76
-- Weighted match rate: 30.28%
-- Weighted high-confidence rate: 20.49%
+- Total jobs fetched: 657
+- Unique matched jobs: 293
+- High-confidence unique jobs: 124
+- Weighted matched jobs: 193.31
+- Weighted high-confidence jobs: 123.76
+- Weighted match rate: 29.42%
+- Weighted high-confidence rate: 18.84%
 
 ## Charts
 
@@ -72,29 +62,29 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Location | Weighted score | Raw jobs |
 |---|---|---|
-| London, UK | 78.71 | 118 |
-| London | 28.95 | 44 |
-| The City, Central London | 19.70 | 37 |
+| London, UK | 77.21 | 115 |
+| The City, Central London | 21.55 | 40 |
+| London | 20.25 | 34 |
 | Belfast, Northern Ireland | 14.00 | 14 |
-| Manchester | 11.20 | 14 |
+| Bristol, South West England | 8.55 | 15 |
+| Manchester | 8.20 | 11 |
 | Manchester, Greater Manchester | 8.20 | 10 |
-| Bristol | 8.00 | 12 |
-| Bristol, South West England | 7.20 | 13 |
-| Leeds | 4.70 | 6 |
-| Southampton | 3.50 | 5 |
+| Bristol | 6.80 | 10 |
+| Brighton, East Sussex | 3.50 | 4 |
+| Glasgow | 3.00 | 4 |
 
 ## Top Employers (High Confidence)
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| Accenture | 13.00 | 13 |
-| NG Bailey | 8.00 | 8 |
-| AJ Bell | 6.00 | 6 |
-| Wise | 6.00 | 6 |
+| AJ Bell | 5.00 | 5 |
+| NG Bailey | 5.00 | 5 |
+| Wise | 5.00 | 5 |
 | Algolia | 4.00 | 4 |
 | Chevalier Tech Limited | 4.00 | 4 |
 | Gravitas Recruitment Group  Ltd | 4.00 | 4 |
 | Harvey Nash | 4.00 | 4 |
+| Morgan McKinley | 4.00 | 4 |
 | TP ICAP Group Services Ltd | 4.00 | 4 |
 | Unity Software | 4.00 | 4 |
 
@@ -102,44 +92,45 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Software Engineer | 99.74 | 150 |
-| Senior Software Engineer-Robotics | 12.32 | 16 |
-| Senior Embedded Software Engineer | 10.25 | 17 |
-| Frontend Software Engineer | 7.00 | 13 |
+| Software Engineer | 97.39 | 147 |
+| Principal Software Engineer (Payments) | 11.12 | 13 |
+| Senior Embedded Software Engineer | 8.75 | 16 |
 | Software Engineering Manager | 6.30 | 12 |
-| Software Engineer - Fullstack Developer with Python and Angular | 4.20 | 7 |
-| Software Engineer - Manchester | 4.00 | 4 |
+| Full Stack Software Engineer | 4.90 | 9 |
+| Software Engineer - Fullstack Developer with Python and Angular | 3.70 | 6 |
 | Firmware Engineer | 3.50 | 5 |
-| Principal AI Software Engineer | 3.40 | 5 |
 | Software Engineer - Search Platform | 3.35 | 4 |
+| Frontend Software Engineer | 3.20 | 4 |
+| Software Engineer (Python/React) | 2.40 | 6 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 135.75 | 220 |
-| Global Business Mobility: Senior or Specialist Worker | 54.26 | 69 |
-| Global Business Mobility: Graduate Trainee | 6.00 | 8 |
-| Religious Worker | 6.00 | 6 |
+| Skilled Worker | 125.55 | 210 |
+| Global Business Mobility: Senior or Specialist Worker | 48.76 | 60 |
+| Global Business Mobility: Graduate Trainee | 5.50 | 7 |
+| Religious Worker | 5.00 | 5 |
 | Global Business Mobility: UK Expansion Worker | 4.00 | 5 |
 | Global Business Mobility: Service Supplier | 3.00 | 3 |
+| International Sportsperson | 1.00 | 2 |
 | Creative Worker | 0.50 | 1 |
 
 ## Title Seniority
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 115.16 | 174 |
-| Senior | 59.05 | 83 |
-| Leadership | 30.30 | 49 |
-| Entry | 5.00 | 6 |
+| Standard | 106.26 | 163 |
+| Senior | 53.70 | 77 |
+| Leadership | 29.35 | 48 |
+| Entry | 4.00 | 5 |
 
 ## Match Quality Breakdown
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 139.00 | 139 |
-| 0.50 recruiter_or_ambiguous | 53.00 | 106 |
-| 0.20 substring_only | 12.20 | 61 |
+| 1.00 exact_normalized | 121.00 | 121 |
+| 0.50 recruiter_or_ambiguous | 52.00 | 104 |
+| 0.20 substring_only | 11.60 | 58 |
+| 0.85 fuzzy_strong | 5.95 | 7 |
 | 0.92 alias_table | 2.76 | 3 |
-| 0.85 fuzzy_strong | 2.55 | 3 |
