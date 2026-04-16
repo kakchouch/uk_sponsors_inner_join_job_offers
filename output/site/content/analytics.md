@@ -1,18 +1,28 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
+<<<<<<< HEAD
 lastmod = "2026-04-16T19:46:34.956554+00:00"
 last_research_at = "2026-04-16T19:46:34.956554+00:00"
+=======
+lastmod = "2026-04-16T19:40:29.515612+00:00"
+last_research_at = "2026-04-16T19:40:29.515612+00:00"
+>>>>>>> 60cf173306a49d6c22baa75685ff38095299090c
 +++
 
 # Market Analytics
 
+<<<<<<< HEAD
 Last research run (UTC): 2026-04-16T19:46:34.956554+00:00
 Generated at: 2026-04-16T19:46:34.956554+00:00
+=======
+Last research run (UTC): 2026-04-16T19:40:29.515612+00:00
+Generated at: 2026-04-16T19:40:29.515612+00:00
+>>>>>>> 60cf173306a49d6c22baa75685ff38095299090c
 
 ## Scope
 
-- Filtering keywords: No keyword filter
+- Filtering keywords: software engineer
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
