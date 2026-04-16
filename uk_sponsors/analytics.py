@@ -309,22 +309,6 @@ def _weighted_rows(
     ]
 
 
-def _build_weighted_breakdown(
-    rows: list[dict[str, Any]],
-    key_func: Callable[[dict[str, Any]], str],
-    field_name: str,
-) -> list[dict[str, Any]]:
-    weighted_values: dict[str, float] = {}
-    raw_counts: Counter[str] = Counter()
-
-    for row in rows:
-        label = key_func(row)
-        raw_counts[label] += 1
-        weighted_values[label] = weighted_values.get(label, 0.0) + _extract_weight(row)
-
-    return _weighted_rows(weighted_values, raw_counts, field_name)
-
-
 def _choose_cluster_label(
     weighted_variants: dict[str, float],
     raw_variants: Counter[str],
@@ -338,26 +322,6 @@ def _choose_cluster_label(
             label,
         ),
     )[0]
-
-
-def _title_similarity(left_tokens: list[str], right_tokens: list[str]) -> float:
-    left = " ".join(left_tokens)
-    right = " ".join(right_tokens)
-    if not left or not right:
-        return 0.0
-
-    left_set = set(left_tokens)
-    right_set = set(right_tokens)
-    overlap = len(left_set & right_set) / max(1, min(len(left_set), len(right_set)))
-    ratio = 0.0
-    try:
-        from difflib import SequenceMatcher
-
-        ratio = SequenceMatcher(None, left, right).ratio()
-    except ImportError:
-        ratio = 0.0
-
-    return max(overlap, ratio)
 
 
 def _cluster_titles(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
