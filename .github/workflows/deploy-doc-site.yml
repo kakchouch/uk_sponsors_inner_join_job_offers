@@ -29,16 +29,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout repository at triggering commit
+      - name: Checkout repository at latest branch head
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.event.workflow_run.head_branch || github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.147.9"
+          hugo-version: "0.157.0"
           extended: true
+
+      - name: Validate generated markdown has no merge markers
+        run: |
+          if grep -R -n -E '<<<<<<<|=======|>>>>>>>' output/site/content output/reports/market_analytics_report.md; then
+            echo "Merge conflict markers detected in generated analytics content."
+            exit 1
+          fi
 
       - name: Build Hugo site
         run: hugo --minify --source site
