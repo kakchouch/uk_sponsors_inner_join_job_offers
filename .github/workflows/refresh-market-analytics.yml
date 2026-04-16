@@ -10,7 +10,7 @@ on:
       keywords:
         description: Keyword filter label to include in the analytics report
         required: false
-        default: software engineer
+        default: ""
 
 permissions:
   contents: write
@@ -37,9 +37,6 @@ jobs:
       - name: Set analytics keyword label
         run: |
           keywords="${{ github.event.inputs.keywords }}"
-          if [ -z "$keywords" ]; then
-            keywords="software engineer"
-          fi
           echo "FILTER_KEYWORDS=$keywords" >> "$GITHUB_ENV"
 
       - name: Set up Python

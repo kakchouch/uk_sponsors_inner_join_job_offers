@@ -39,7 +39,6 @@ jobs:
           REED_API_KEY: ${{ secrets.REED_API_KEY }}
         run: |
           python generate_sponsored_jobs_report.py \
-            --keywords "software engineer" \
             --locations-file input/focus_locations.json \
             --max-pages 50
 

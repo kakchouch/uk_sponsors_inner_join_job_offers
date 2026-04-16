@@ -1,34 +1,34 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
-lastmod = "2026-04-16T20:04:47.688301+00:00"
-last_research_at = "2026-04-16T20:04:47.688301+00:00"
+lastmod = "2026-04-16T20:07:45.071008+00:00"
+last_research_at = "2026-04-16T20:07:45.071008+00:00"
 +++
 
 # Market Analytics
 
-Last research run (UTC): 2026-04-16T20:04:47.688301+00:00
-Generated at: 2026-04-16T20:04:47.688301+00:00
+Last research run (UTC): 2026-04-16T20:07:45.071008+00:00
+Generated at: 2026-04-16T20:07:45.071008+00:00
 
 ## Scope
 
-- Filtering keywords: software engineer
+- Filtering keywords: No keyword filter
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 491
-- Unique matched jobs: 295
+- Raw matched rows before deduplication: 492
+- Unique matched jobs: 293
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 660
-- Unique matched jobs: 295
-- High-confidence unique jobs: 128
-- Weighted matched jobs: 196.91
-- Weighted high-confidence jobs: 127.76
-- Weighted match rate: 29.83%
-- Weighted high-confidence rate: 19.36%
+- Total jobs fetched: 672
+- Unique matched jobs: 293
+- High-confidence unique jobs: 125
+- Weighted matched jobs: 194.71
+- Weighted high-confidence jobs: 124.76
+- Weighted match rate: 28.97%
+- Weighted high-confidence rate: 18.57%
 
 ## Charts
 
@@ -63,13 +63,13 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 | Location | Weighted score | Raw jobs |
 |---|---|---|
 | London, UK | 77.21 | 115 |
-| London | 22.25 | 36 |
-| The City, Central London | 21.55 | 40 |
-| Belfast, Northern Ireland | 12.00 | 12 |
-| Manchester | 9.70 | 12 |
+| The City, Central London | 22.55 | 41 |
+| London | 20.85 | 33 |
+| Manchester | 10.20 | 13 |
+| Belfast, Northern Ireland | 9.00 | 9 |
 | Bristol, South West England | 8.55 | 15 |
 | Manchester, Greater Manchester | 8.20 | 10 |
-| Bristol | 6.40 | 8 |
+| Bristol | 6.60 | 9 |
 | Leeds | 3.70 | 5 |
 | Brighton, East Sussex | 3.50 | 4 |
 
@@ -77,7 +77,7 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| NG Bailey | 8.00 | 8 |
+| NG Bailey | 7.00 | 7 |
 | AJ Bell | 6.00 | 6 |
 | Morgan McKinley | 5.00 | 5 |
 | Wise | 5.00 | 5 |
@@ -92,27 +92,27 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Software Engineer | 96.49 | 144 |
-| Principal Software Engineer (Payments) | 10.62 | 12 |
+| Software Engineer | 94.99 | 143 |
 | Senior Embedded Software Engineer | 9.75 | 17 |
+| Principal Software Engineer (Payments) | 9.62 | 11 |
 | Software Engineering Manager | 6.30 | 12 |
-| Principal AI Software Engineer | 4.40 | 8 |
+| Full Stack Software Engineer | 4.90 | 9 |
 | Software Engineer - Fullstack Developer with Python and Angular | 4.20 | 7 |
-| Firmware Engineer | 3.50 | 5 |
 | Software Engineer - Search Platform | 3.35 | 4 |
 | Frontend Software Engineer | 3.20 | 4 |
-| Senior BIM Coordinator - MEP | 3.00 | 3 |
+| Firmware Engineer | 3.00 | 4 |
+| Infrastructure Software Engineer | 3.00 | 4 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 129.15 | 212 |
-| Global Business Mobility: Senior or Specialist Worker | 49.76 | 61 |
+| Skilled Worker | 129.45 | 212 |
+| Global Business Mobility: Senior or Specialist Worker | 47.26 | 59 |
 | Global Business Mobility: Graduate Trainee | 5.50 | 7 |
 | Religious Worker | 5.00 | 5 |
-| Global Business Mobility: UK Expansion Worker | 4.00 | 5 |
-| Global Business Mobility: Service Supplier | 2.00 | 2 |
+| Global Business Mobility: UK Expansion Worker | 3.00 | 4 |
+| Global Business Mobility: Service Supplier | 3.00 | 3 |
 | International Sportsperson | 1.00 | 2 |
 | Creative Worker | 0.50 | 1 |
 
@@ -120,8 +120,8 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 108.76 | 165 |
-| Senior | 56.00 | 79 |
+| Standard | 110.06 | 166 |
+| Senior | 52.50 | 76 |
 | Leadership | 28.15 | 46 |
 | Entry | 4.00 | 5 |
 
@@ -129,8 +129,8 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 125.00 | 125 |
-| 0.50 recruiter_or_ambiguous | 52.00 | 104 |
-| 0.20 substring_only | 11.20 | 56 |
+| 1.00 exact_normalized | 122.00 | 122 |
+| 0.50 recruiter_or_ambiguous | 53.00 | 106 |
+| 0.20 substring_only | 11.00 | 55 |
 | 0.85 fuzzy_strong | 5.95 | 7 |
 | 0.92 alias_table | 2.76 | 3 |

@@ -155,7 +155,7 @@ Output job offers do not guarantee the company sponsors for those specific posit
 ### Run
 
 ```bash
-python generate_sponsored_jobs_report.py --keywords "software engineer" --locations-file input/focus_locations.json
+python generate_sponsored_jobs_report.py --locations-file input/focus_locations.json
 ```
 
 To fetch all available job types before matching:
@@ -224,7 +224,7 @@ The analytics generator produces:
 ### Run
 
 ```bash
-python generate_market_analytics.py --matched-json-input output/reports/matched_sponsored_jobs.json --keywords "software engineer"
+python generate_market_analytics.py --matched-json-input output/reports/matched_sponsored_jobs.json
 ```
 
 Useful options:
@@ -233,7 +233,7 @@ Useful options:
 - `--analytics-markdown-output`: Path for analytics Markdown (default: `output/reports/market_analytics_report.md`)
 - `--site-analytics-output`: Path for Hugo-ready content (default: `output/site/content/analytics.md`)
 - `--charts-output-dir`: Directory for PNG charts (default: `output/site/static/charts`)
-- `--keywords "software engineer"`: Filter analytics to jobs matching these keywords (for documentation/context only)
+- `--keywords "<your keywords>"`: Optional filter label included for analytics context
 
 The script outputs aggregated market metrics suitable for publication on a static website or inclusion in periodic reports.
 
