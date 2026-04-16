@@ -60,5 +60,9 @@ unsafe = true
     target = "layouts"
 
   [[module.mounts]]
+    source = "../output/site/static"
+    target = "static"
+
+  [[module.mounts]]
     source = "static"
     target = "static"

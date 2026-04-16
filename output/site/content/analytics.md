@@ -1,14 +1,14 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
-lastmod = "2026-04-16T19:36:59.091276+00:00"
-last_research_at = "2026-04-16T19:36:59.091276+00:00"
+lastmod = "2026-04-16T19:46:34.956554+00:00"
+last_research_at = "2026-04-16T19:46:34.956554+00:00"
 +++
 
 # Market Analytics
 
-Last research run (UTC): 2026-04-16T19:36:59.091276+00:00
-Generated at: 2026-04-16T19:36:59.091276+00:00
+Last research run (UTC): 2026-04-16T19:46:34.956554+00:00
+Generated at: 2026-04-16T19:46:34.956554+00:00
 
 ## Scope
 
@@ -36,27 +36,27 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 ### Top Locations
 
-![Top locations chart](../charts/top_locations.png)
+![Top locations chart](/charts/top_locations.png)
 
 ### Top Employers (High Confidence)
 
-![Top employers chart](../charts/top_employers.png)
+![Top employers chart](/charts/top_employers.png)
 
 ### Match Quality Distribution
 
-![Match quality chart](../charts/match_quality.png)
+![Match quality chart](/charts/match_quality.png)
 
 ### Top Job Title Families
 
-![Top title families chart](../charts/top_titles.png)
+![Top title families chart](/charts/top_titles.png)
 
 ### Visa Routes
 
-![Visa routes chart](../charts/routes.png)
+![Visa routes chart](/charts/routes.png)
 
 ### Title Seniority
 
-![Title seniority chart](../charts/seniority.png)
+![Title seniority chart](/charts/seniority.png)
 
 ## Top Locations
 
