@@ -1,0 +1,8 @@
+{{- $src := .Destination | safeURL -}}
+{{- if not (or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "data:")) -}}
+  {{- if hasPrefix $src "/" -}}
+    {{- $src = strings.TrimPrefix "/" $src -}}
+  {{- end -}}
+  {{- $src = $src | relURL -}}
+{{- end -}}
+<img src="{{ $src }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
