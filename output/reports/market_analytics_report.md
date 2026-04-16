@@ -1,12 +1,7 @@
 # Market Analytics
 
-<<<<<<< HEAD
 Last research run (UTC): 2026-04-16T19:46:34.956554+00:00
 Generated at: 2026-04-16T19:46:34.956554+00:00
-=======
-Last research run (UTC): 2026-04-16T19:40:29.515612+00:00
-Generated at: 2026-04-16T19:40:29.515612+00:00
->>>>>>> 60cf173306a49d6c22baa75685ff38095299090c
 
 ## Scope
 
