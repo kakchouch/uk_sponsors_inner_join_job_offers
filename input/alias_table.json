@@ -181,6 +181,10 @@
     {
       "canonical": "national health service",
       "aliases": ["nhs"]
+    },
+    {
+      "canonical": "Hays",
+      "aliases": ["HAYS"]
     }
   ]
 }
