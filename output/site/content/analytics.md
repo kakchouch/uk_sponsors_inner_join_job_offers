@@ -1,14 +1,14 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
-lastmod = "2026-04-17T09:51:07.966723+00:00"
-last_research_at = "2026-04-17T09:51:07.966723+00:00"
+lastmod = "2026-04-17T19:28:57.115923+00:00"
+last_research_at = "2026-04-17T19:28:57.115923+00:00"
 +++
 
 # Market Analytics
 
-Last research run (UTC): 2026-04-17T09:51:07.966723+00:00
-Generated at: 2026-04-17T09:51:07.966723+00:00
+Last research run (UTC): 2026-04-17T19:28:57.115923+00:00
+Generated at: 2026-04-17T19:28:57.115923+00:00
 
 ## Scope
 
@@ -92,16 +92,16 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Other | 23.80 | 28 |
-| Finance / Accounting | 23.00 | 24 |
+| Finance / Accounting | 30.00 | 31 |
+| Operations / Project Management | 9.90 | 12 |
+| Education / Teaching | 4.80 | 8 |
 | Banking / Financial Services | 4.00 | 4 |
 | Data / AI | 3.90 | 6 |
-| Education / Teaching | 3.60 | 6 |
+| Transport | 3.50 | 4 |
+| DevOps / Cloud | 3.00 | 3 |
 | Security | 3.00 | 3 |
 | Software Engineering | 3.00 | 3 |
-| Administration / Office | 2.00 | 2 |
-| Construction | 2.00 | 2 |
-| Legal | 2.00 | 2 |
+| Real Estate / Property | 2.20 | 3 |
 
 ## Visa Routes
 

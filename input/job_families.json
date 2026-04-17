@@ -8,7 +8,7 @@
     {
       "family_id": "software_engineering",
       "label": "Software Engineering",
-      "matches": ["software engineer", "developer", "backend", "frontend", "full stack", "web developer", "application developer"]
+      "matches": ["software engineer", "developer", "backend", "frontend", "full stack", "web developer", "application developer", "software architect", "enterprise architect"]
     },
     {
       "family_id": "data_ai",
@@ -18,18 +18,18 @@
     {
       "family_id": "devops_cloud",
       "label": "DevOps / Cloud",
-      "matches": ["devops", "sre", "cloud", "platform engineer", "infrastructure", "kubernetes", "aws", "azure"]
+      "matches": ["devops", "sre", "cloud", "platform engineer", "infrastructure", "kubernetes", "aws", "azure", "network architect", "infrastructure architect", "platform architect", "technical author"]
     },
     {
       "family_id": "security",
       "label": "Security",
-      "matches": ["security", "cyber", "infosec", "appsec", "soc"]
+      "matches": ["security", "cyber", "infosec", "appsec", "soc", "security architect"]
     },
 
     {
       "family_id": "finance_accounting",
       "label": "Finance / Accounting",
-      "matches": ["accountant", "finance", "financial analyst", "controller", "audit", "tax", "payroll"]
+      "matches": ["accountant", "finance", "financial analyst", "controller", "audit", "tax", "payroll", "fp&a", "treasury", "equity research", "credit control", "sox", "technical accounting"]
     },
     {
       "family_id": "banking_financial_services",
@@ -51,6 +51,11 @@
       "label": "Consulting",
       "matches": ["consultant", "advisory", "strategy consultant", "management consultant"]
     },
+    {
+      "family_id": "operations_project_mgmt",
+      "label": "Operations / Project Management",
+      "matches": ["project manager", "team leader", "operations manager", "commissioning", "contracts manager", "head of", "manager"]
+    },
 
 
 
@@ -67,7 +72,7 @@
     {
       "family_id": "customer_success_support",
       "label": "Customer Support / Success",
-      "matches": ["customer support", "customer service", "support agent", "call centre", "customer success"]
+      "matches": ["customer support", "customer service", "support agent", "call centre", "customer success", "case management", "supported living"]
     },
 
 
@@ -80,7 +85,7 @@
     {
       "family_id": "administration",
       "label": "Administration / Office",
-      "matches": ["administrator", "admin", "office manager", "executive assistant", "pa", "secretary"]
+      "matches": ["administrator", "admin", "office manager", "executive assistant", "pa", "secretary", "team assistant"]
     },
 
 
@@ -116,7 +121,7 @@
     {
       "family_id": "allied_health",
       "label": "Allied Health",
-      "matches": ["physiotherapist", "radiographer", "pharmacist", "therapist", "occupational therapist"]
+      "matches": ["physiotherapist", "radiographer", "pharmacist", "therapist", "occupational therapist", "optical", "optician"]
     },
 
 
@@ -124,7 +129,7 @@
     {
       "family_id": "education_teaching",
       "label": "Education / Teaching",
-      "matches": ["teacher", "teaching", "school", "primary teacher", "secondary teacher"]
+      "matches": ["teacher", "teaching", "school", "primary teacher", "secondary teacher", "tutor", "educator"]
     },
     {
       "family_id": "higher_education",
@@ -137,12 +142,37 @@
     {
       "family_id": "construction",
       "label": "Construction",
-      "matches": ["construction", "site manager", "building", "contractor"]
+      "matches": ["construction", "site manager", "building", "contractor", "building architect", "construction architect"]
     },
     {
       "family_id": "civil_engineering",
       "label": "Civil Engineering",
       "matches": ["civil engineer", "structural engineer", "geotechnical", "bim", "quantity surveyor"]
+    },
+    {
+      "family_id": "electrical_engineering",
+      "label": "Electrical Engineering",
+      "matches": ["electrical engineer", "electrician", "power engineer", "electrical design"]
+    },
+    {
+      "family_id": "mechanical_engineering",
+      "label": "Mechanical Engineering",
+      "matches": ["mechanical engineer", "mep engineer", "hvac", "thermodynamics"]
+    },
+    {
+      "family_id": "energy_utilities",
+      "label": "Energy / Utilities",
+      "matches": ["energy engineer", "utilities", "renewable energy", "power generation", "transmission engineer"]
+    },
+    {
+      "family_id": "automotive_engineering",
+      "label": "Automotive / Aerospace",
+      "matches": ["automotive engineer", "aerospace engineer", "aviation engineer", "aircraft", "propulsion"]
+    },
+    {
+      "family_id": "chemical_process",
+      "label": "Chemical / Process Engineering",
+      "matches": ["chemical engineer", "process engineer", "chemical processing", "refinery"]
     },
 
     {
@@ -181,7 +211,17 @@
     {
       "family_id": "transport",
       "label": "Transport",
-      "matches": ["driver", "delivery driver", "transport", "rail", "aviation"]
+      "matches": ["driver", "delivery driver", "transport", "rail", "aviation", "linesman", "linesperson", "mot tester"]
+    },
+    {
+      "family_id": "skilled_trades",
+      "label": "Skilled Trades",
+      "matches": ["plumber", "carpenter", "welder", "tradesperson", "fitter"]
+    },
+    {
+      "family_id": "real_estate_property",
+      "label": "Real Estate / Property",
+      "matches": ["surveyor", "valuation", "lettings", "property manager", "estate agent"]
     }
 
   ],

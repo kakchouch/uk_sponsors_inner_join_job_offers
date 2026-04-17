@@ -259,14 +259,19 @@
   ],
   "titles": [
     {
-      "title": "Other",
-      "weighted_count": 23.8,
-      "raw_count": 28
+      "title": "Finance / Accounting",
+      "weighted_count": 30.0,
+      "raw_count": 31
     },
     {
-      "title": "Finance / Accounting",
-      "weighted_count": 23.0,
-      "raw_count": 24
+      "title": "Operations / Project Management",
+      "weighted_count": 9.9,
+      "raw_count": 12
+    },
+    {
+      "title": "Education / Teaching",
+      "weighted_count": 4.8,
+      "raw_count": 8
     },
     {
       "title": "Banking / Financial Services",
@@ -279,9 +284,14 @@
       "raw_count": 6
     },
     {
-      "title": "Education / Teaching",
-      "weighted_count": 3.6,
-      "raw_count": 6
+      "title": "Transport",
+      "weighted_count": 3.5,
+      "raw_count": 4
+    },
+    {
+      "title": "DevOps / Cloud",
+      "weighted_count": 3.0,
+      "raw_count": 3
     },
     {
       "title": "Security",
@@ -294,28 +304,18 @@
       "raw_count": 3
     },
     {
-      "title": "Administration / Office",
-      "weighted_count": 2.0,
-      "raw_count": 2
+      "title": "Real Estate / Property",
+      "weighted_count": 2.2,
+      "raw_count": 3
     },
     {
-      "title": "Construction",
+      "title": "Administration / Office",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
       "title": "Legal",
       "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Transport",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Marketing",
-      "weighted_count": 1.2,
       "raw_count": 2
     },
     {
@@ -329,14 +329,24 @@
       "raw_count": 1
     },
     {
+      "title": "Marketing",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "title": "Skilled Trades",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
       "title": "Manufacturing / Production",
       "weighted_count": 0.85,
       "raw_count": 1
     },
     {
       "title": "Allied Health",
-      "weighted_count": 0.5,
-      "raw_count": 1
+      "weighted_count": 0.7,
+      "raw_count": 2
     },
     {
       "title": "Consulting",
