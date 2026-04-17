@@ -8,12 +8,12 @@
     {
       "family_id": "software_engineering",
       "label": "Software Engineering",
-      "matches": ["software engineer", "developer", "backend", "frontend", "full stack", "web developer", "application developer", "software architect", "enterprise architect"]
+      "matches": ["software engineer", "developer", "backend", "frontend", "full stack", "web developer", "application developer", "software architect", "enterprise architect", "qa engineer", "test engineer", "qa", "solution architect"]
     },
     {
       "family_id": "data_ai",
       "label": "Data / AI",
-      "matches": ["data engineer", "data scientist", "machine learning", "ai", "analytics", "bi", "data analyst"]
+      "matches": ["data engineer", "data scientist", "machine learning", "ai", "analytics", "bi", "data analyst", "quality analyst", "confirmations analyst"]
     },
     {
       "family_id": "devops_cloud",
@@ -21,9 +21,14 @@
       "matches": ["devops", "sre", "cloud", "platform engineer", "infrastructure", "kubernetes", "aws", "azure", "network architect", "infrastructure architect", "platform architect", "technical author"]
     },
     {
-      "family_id": "security",
-      "label": "Security",
-      "matches": ["security", "cyber", "infosec", "appsec", "soc", "security architect"]
+      "family_id": "cybersecurity",
+      "label": "Cybersecurity / InfoSec",
+      "matches": ["cyber", "infosec", "appsec", "soc", "security architect", "security engineer", "penetration tester"]
+    },
+    {
+      "family_id": "physical_security",
+      "label": "Physical Security",
+      "matches": ["security guard", "physical security", "loss prevention", "facility security", "security officer"]
     },
 
     {
@@ -39,7 +44,7 @@
     {
       "family_id": "insurance",
       "label": "Insurance",
-      "matches": ["insurance", "underwriter", "claims", "actuary", "actuarial"]
+      "matches": ["insurance", "underwriter", "claims", "actuary", "actuarial", "reinsurance analyst", "resinurance analyst"]
     },
     {
       "family_id": "legal",
@@ -54,7 +59,7 @@
     {
       "family_id": "operations_project_mgmt",
       "label": "Operations / Project Management",
-      "matches": ["project manager", "team leader", "operations manager", "commissioning", "contracts manager", "head of", "manager"]
+      "matches": ["project manager", "team leader", "operations manager", "commissioning", "contracts manager", "head of", "manager", "director", "project engineer"]
     },
 
 
@@ -85,7 +90,7 @@
     {
       "family_id": "administration",
       "label": "Administration / Office",
-      "matches": ["administrator", "admin", "office manager", "executive assistant", "pa", "secretary", "team assistant"]
+      "matches": ["administrator", "admin", "office manager", "executive assistant", "pa", "secretary", "team assistant", "ea to", "receptionist"]
     },
 
 
@@ -98,7 +103,7 @@
     {
       "family_id": "logistics_supply_chain",
       "label": "Logistics / Supply Chain",
-      "matches": ["logistics", "supply chain", "procurement", "warehouse", "inventory", "transport"]
+      "matches": ["logistics", "supply chain", "procurement", "warehouse", "inventory", "transport", "courier", "postperson"]
     },
     {
       "family_id": "manufacturing",
@@ -157,7 +162,7 @@
     {
       "family_id": "mechanical_engineering",
       "label": "Mechanical Engineering",
-      "matches": ["mechanical engineer", "mep engineer", "hvac", "thermodynamics"]
+      "matches": ["mechanical engineer", "mep engineer", "hvac", "thermodynamics", "windows engineer"]
     },
     {
       "family_id": "energy_utilities",
@@ -203,7 +208,7 @@
     {
       "family_id": "creative_media",
       "label": "Creative / Media",
-      "matches": ["media", "journalist", "editor", "video", "film", "content creator"]
+      "matches": ["media", "journalist", "editor", "video", "film", "content creator", "designer", "reporter", "av "]
     },
 
   
@@ -216,12 +221,12 @@
     {
       "family_id": "skilled_trades",
       "label": "Skilled Trades",
-      "matches": ["plumber", "carpenter", "welder", "tradesperson", "fitter"]
+      "matches": ["plumber", "carpenter", "welder", "tradesperson", "fitter", "technician", "white goods", "field service", "water hygiene", "jointing", "mechanical technician"]
     },
     {
       "family_id": "real_estate_property",
       "label": "Real Estate / Property",
-      "matches": ["surveyor", "valuation", "lettings", "property manager", "estate agent"]
+      "matches": ["surveyor", "valuation", "lettings", "property manager", "estate agent", "housing", "corporate real estate"]
     }
 
   ],
