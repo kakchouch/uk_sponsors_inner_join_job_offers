@@ -1,248 +1,188 @@
 {
   "overview": {
-    "total_jobs": 672,
-    "matched_jobs": 293,
-    "high_confidence_jobs": 125,
-    "weighted_matched_jobs": 194.71,
-    "weighted_high_confidence_jobs": 124.76,
-    "match_rate": 0.2897,
-    "high_confidence_rate": 0.1857
+    "total_jobs": 236,
+    "matched_jobs": 89,
+    "high_confidence_jobs": 71,
+    "weighted_matched_jobs": 77.05,
+    "weighted_high_confidence_jobs": 71.0,
+    "match_rate": 0.3265,
+    "high_confidence_rate": 0.3008
   },
   "locations": [
     {
       "location": "London, UK",
-      "weighted_count": 77.21,
-      "raw_count": 115
-    },
-    {
-      "location": "The City, Central London",
-      "weighted_count": 22.55,
-      "raw_count": 41
+      "weighted_count": 19.2,
+      "raw_count": 20
     },
     {
       "location": "London",
-      "weighted_count": 20.85,
-      "raw_count": 33
-    },
-    {
-      "location": "Manchester",
-      "weighted_count": 10.2,
-      "raw_count": 13
-    },
-    {
-      "location": "Belfast, Northern Ireland",
-      "weighted_count": 9.0,
-      "raw_count": 9
-    },
-    {
-      "location": "Bristol, South West England",
-      "weighted_count": 8.55,
-      "raw_count": 15
+      "weighted_count": 17.5,
+      "raw_count": 22
     },
     {
       "location": "Manchester, Greater Manchester",
-      "weighted_count": 8.2,
-      "raw_count": 10
-    },
-    {
-      "location": "Bristol",
-      "weighted_count": 6.6,
-      "raw_count": 9
-    },
-    {
-      "location": "Leeds",
-      "weighted_count": 3.7,
-      "raw_count": 5
-    },
-    {
-      "location": "Brighton, East Sussex",
-      "weighted_count": 3.5,
+      "weighted_count": 4.0,
       "raw_count": 4
     },
     {
-      "location": "Glasgow",
+      "location": "Belfast, Northern Ireland",
       "weighted_count": 3.0,
-      "raw_count": 4
-    },
-    {
-      "location": "Southampton",
-      "weighted_count": 2.5,
-      "raw_count": 4
-    },
-    {
-      "location": "Southampton, Hampshire",
-      "weighted_count": 2.35,
       "raw_count": 3
     },
     {
-      "location": "Leeds, West Yorkshire",
-      "weighted_count": 1.7,
-      "raw_count": 3
-    },
-    {
-      "location": "Portsmouth",
-      "weighted_count": 1.2,
-      "raw_count": 3
-    },
-    {
-      "location": "Portsmouth, Hampshire",
-      "weighted_count": 1.2,
+      "location": "Bristol, South West England",
+      "weighted_count": 3.0,
       "raw_count": 3
     },
     {
       "location": "Glasgow City Centre, Glasgow",
-      "weighted_count": 1.0,
+      "weighted_count": 3.0,
+      "raw_count": 3
+    },
+    {
+      "location": "Manchester",
+      "weighted_count": 2.85,
+      "raw_count": 3
+    },
+    {
+      "location": "Bolton, Greater Manchester",
+      "weighted_count": 2.2,
+      "raw_count": 3
+    },
+    {
+      "location": "Easton, Bristol",
+      "weighted_count": 2.0,
       "raw_count": 2
     },
     {
       "location": "Glasgow, Scotland",
-      "weighted_count": 1.0,
+      "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "location": "Canary Wharf, East London",
+      "location": "Greater Manchester",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "location": "Liverpool, Merseyside",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "location": "South West London, London",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "location": "Bromley, South East London",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Central London",
+      "location": "Dukinfield, Greater Manchester",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Redcliffe, Bristol",
+      "location": "Glasgow Prestwick Intnl Airport, Prestwick",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Salford, Greater Manchester",
+      "location": "Kirkby, Liverpool",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "South West London",
+      "location": "Langbank, Port Glasgow",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Victoria, South West London",
+      "location": "Richmond, West London",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Waterloo, South East London",
+      "location": "South East London",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Barbican, Central London",
+      "location": "St. Judes, Bristol",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "location": "The City, Central London",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "location": "Barrs Court, Bristol",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "Brighton",
+      "location": "Bristol",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "Fenchurch St, Central London",
+      "location": "Croxteth, Liverpool",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "H M Naval Base, Portsmouth",
+      "location": "Newham, East London",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "Liverpool",
+      "location": "Ocean Village, Southampton",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "Stockport, Greater Manchester",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "location": "Broadgate, Central London",
+      "location": "Fulham, South West London",
       "weighted_count": 0.2,
       "raw_count": 1
     },
     {
-      "location": "Londonderry, Derry",
+      "location": "Leeds, West Yorkshire",
+      "weighted_count": 0.2,
+      "raw_count": 1
+    },
+    {
+      "location": "Liverpool",
+      "weighted_count": 0.2,
+      "raw_count": 1
+    },
+    {
+      "location": "North London",
       "weighted_count": 0.2,
       "raw_count": 1
     }
   ],
   "employers": [
     {
-      "company": "NG Bailey",
-      "weighted_count": 7.0,
-      "raw_count": 7
+      "company": "Hays",
+      "weighted_count": 27.0,
+      "raw_count": 27
     },
     {
-      "company": "AJ Bell",
-      "weighted_count": 6.0,
-      "raw_count": 6
+      "company": "eFinancialCareers",
+      "weighted_count": 12.0,
+      "raw_count": 12
     },
     {
-      "company": "Morgan McKinley",
-      "weighted_count": 5.0,
-      "raw_count": 5
+      "company": "HAYS",
+      "weighted_count": 9.0,
+      "raw_count": 9
     },
     {
-      "company": "Wise",
-      "weighted_count": 5.0,
-      "raw_count": 5
-    },
-    {
-      "company": "Algolia",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Chevalier Tech Limited",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Gravitas Recruitment Group  Ltd",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Harvey Nash",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Unity Software",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Accenture",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "company": "Bazaarvoice Ltd",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "company": "Ripple",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "company": "Smartbox Assistive Technology",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "company": "VERTICAL AEROSPACE GROUP LTD",
+      "company": "BAE Systems",
       "weighted_count": 3.0,
       "raw_count": 3
     },
@@ -252,197 +192,52 @@
       "raw_count": 2
     },
     {
-      "company": "FDM Group",
+      "company": "Creative Support Ltd",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Hunter Bond",
+      "company": "Evri",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Quanta",
+      "company": "NG Bailey",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Robert Half",
+      "company": "Ribbons and Reeves Limited",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Thales",
+      "company": "Witherslack Group",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Thales UK Limited",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "Verifone",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "Vix Technology",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "Wave Talent",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "X4 Group",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "ripple",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "company": "BlackRock",
-      "weighted_count": 1.84,
-      "raw_count": 2
-    },
-    {
-      "company": "Aflac Northern Ireland",
+      "company": "BDO",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Anaplan",
+      "company": "Gail's",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Anduril Industries",
+      "company": "Goodman Masson",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Axle Energy",
+      "company": "Jazz Pharmaceuticals",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Barings",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Bloxd",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "CACI",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Cisco International Limited",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Dataiku",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Figma",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Flatiron Health",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Flight Centre",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Graphcore",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Great Yellow",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Information Tech Consultants",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Intuit",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "London Stock Exchange Group",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "London and Quadrant Housing Trust",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Low Carbon Contracts Company",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "MBDA UK",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Made Tech",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Max Fordham LLP",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Natwest Group",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Omnea",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Ping Identity",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "PortSwigger",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Quantcast",
+      "company": "MLC Partners",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -452,477 +247,162 @@
       "raw_count": 1
     },
     {
-      "company": "STACKSTUDIO DIGITAL LTD.",
+      "company": "Southwark Council",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Saab UK",
+      "company": "Teleperformance",
       "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Salt Search",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Searchable",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Smarkets",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Softwire Technology Limited",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Spectrum IT",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "TP ICAP Group Services Ltd",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "TransitionZero",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Tumelo",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "mkodo",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "unosquare",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Barclays UK",
-      "weighted_count": 0.92,
       "raw_count": 1
     }
   ],
   "titles": [
     {
-      "title": "Software Engineer",
-      "weighted_count": 94.99,
-      "raw_count": 143
+      "title": "Other",
+      "weighted_count": 23.8,
+      "raw_count": 28
     },
     {
-      "title": "Senior Embedded Software Engineer",
-      "weighted_count": 9.75,
-      "raw_count": 17
+      "title": "Finance / Accounting",
+      "weighted_count": 23.0,
+      "raw_count": 24
     },
     {
-      "title": "Principal Software Engineer (Payments)",
-      "weighted_count": 9.62,
-      "raw_count": 11
-    },
-    {
-      "title": "Software Engineering Manager",
-      "weighted_count": 6.3,
-      "raw_count": 12
-    },
-    {
-      "title": "Full Stack Software Engineer",
-      "weighted_count": 4.9,
-      "raw_count": 9
-    },
-    {
-      "title": "Software Engineer - Fullstack Developer with Python and Angular",
-      "weighted_count": 4.2,
-      "raw_count": 7
-    },
-    {
-      "title": "Software Engineer - Search Platform",
-      "weighted_count": 3.35,
+      "title": "Banking / Financial Services",
+      "weighted_count": 4.0,
       "raw_count": 4
     },
     {
-      "title": "Frontend Software Engineer",
-      "weighted_count": 3.2,
-      "raw_count": 4
-    },
-    {
-      "title": "Firmware Engineer",
-      "weighted_count": 3.0,
-      "raw_count": 4
-    },
-    {
-      "title": "Infrastructure Software Engineer",
-      "weighted_count": 3.0,
-      "raw_count": 4
-    },
-    {
-      "title": "Software Engineer (Python/React)",
-      "weighted_count": 2.4,
+      "title": "Data / AI",
+      "weighted_count": 3.9,
       "raw_count": 6
     },
     {
-      "title": "Geotechnical Engineer",
-      "weighted_count": 2.0,
-      "raw_count": 2
+      "title": "Education / Teaching",
+      "weighted_count": 3.6,
+      "raw_count": 6
     },
     {
-      "title": "Pre Construction Manager",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Senior BIM Coordinator - MEP",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Software Engineer - Manchester",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Software Engineer, Platform Services Abstraction",
-      "weighted_count": 2.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Senior AI Software Engineer - AI Lab",
-      "weighted_count": 1.7,
-      "raw_count": 4
-    },
-    {
-      "title": "Senior Software Engineer-Robotics",
-      "weighted_count": 1.5,
+      "title": "Security",
+      "weighted_count": 3.0,
       "raw_count": 3
     },
     {
-      "title": "Backend Engineer",
-      "weighted_count": 1.5,
-      "raw_count": 2
-    },
-    {
-      "title": "Software Engineer (Prop Trading Firm)",
-      "weighted_count": 1.2,
+      "title": "Software Engineering",
+      "weighted_count": 3.0,
       "raw_count": 3
     },
     {
-      "title": "QA Engineer (New Delivery Projects)",
+      "title": "Administration / Office",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "title": "Construction",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "title": "Legal",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "title": "Transport",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "title": "Marketing",
       "weighted_count": 1.2,
       "raw_count": 2
     },
     {
-      "title": "Electrical Design Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Software Engineer (Azure Certified / C# .Net)",
-      "weighted_count": 1.0,
-      "raw_count": 2
-    },
-    {
-      "title": "Software Engineer (Systematic Hedge Fund)",
-      "weighted_count": 1.0,
-      "raw_count": 2
-    },
-    {
-      "title": "AI Enablement Engineer",
+      "title": "HR / Recruitment",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "title": "Artificial Intelligence Engineer",
+      "title": "Insurance",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "title": "Avionic System Development & Test Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Azure Cloud Engineer (AVD) - Software Solution - Fully remote",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Cost Engineer - MEP",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Data Architect",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Flutter Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Manager 2, Software Engineering - Credit Karma - Intuit",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Manager Software Engineer - London Stock Exchange Group",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Quality Assurance Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "SENIOR DATA ANALYST AND SOFTWARE DEVELOPER – EDINBURGH OR LONDON",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Second Line Support Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Actuation Systems Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Software Engineer - Business Expense Management",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Software Engineer - Business KYC",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Software Engineer - UI, Connectors Platform",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Software Engineer, Banking Connectivity",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Site Reliability Engineer",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Software Engineer - Quant - Barings",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Software Team Lead",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Data Engineer",
-      "weighted_count": 0.9,
-      "raw_count": 3
-    },
-    {
-      "title": "Principal Software Engineer - Verification",
+      "title": "Manufacturing / Production",
       "weighted_count": 0.85,
       "raw_count": 1
     },
     {
-      "title": "Q&A Test Engineer",
-      "weighted_count": 0.85,
-      "raw_count": 1
-    },
-    {
-      "title": "Lead Full Stack Software Developer",
-      "weighted_count": 0.7,
-      "raw_count": 2
-    },
-    {
-      "title": "2x Senior Software Engineers (SQL Server)",
+      "title": "Allied Health",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "title": "Azure Platform Engineer",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Client Implementation Engineer",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Cloud Infrastructure Architect",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "IT Support Engineer",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Lead Software Developer - Dynamics 365 & Power Platform",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Lead Software Engineer - Outside IR35",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Manufacturing Engineer",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "SC DevOps Engineer",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Senior Software Engineer - AI Adoption Product",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Software Engineer - Post Trade Systems - Macquarie Group",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Staff Software Engineer - Sustainability",
-      "weighted_count": 0.5,
-      "raw_count": 1
-    },
-    {
-      "title": "Algorithm Engineer",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "title": "Full Stack Engineer /Software Engineer",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "title": "Systems Trials Engineer",
+      "title": "Consulting",
       "weighted_count": 0.2,
       "raw_count": 1
     }
   ],
   "routes": [
     {
-      "route": "Skilled Worker",
-      "weighted_count": 129.45,
-      "raw_count": 212
-    },
-    {
       "route": "Global Business Mobility: Senior or Specialist Worker",
-      "weighted_count": 47.26,
-      "raw_count": 59
+      "weighted_count": 48.0,
+      "raw_count": 49
     },
     {
-      "route": "Global Business Mobility: Graduate Trainee",
-      "weighted_count": 5.5,
-      "raw_count": 7
-    },
-    {
-      "route": "Religious Worker",
-      "weighted_count": 5.0,
-      "raw_count": 5
-    },
-    {
-      "route": "Global Business Mobility: UK Expansion Worker",
-      "weighted_count": 3.0,
-      "raw_count": 4
-    },
-    {
-      "route": "Global Business Mobility: Service Supplier",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "route": "International Sportsperson",
-      "weighted_count": 1.0,
-      "raw_count": 2
-    },
-    {
-      "route": "Creative Worker",
-      "weighted_count": 0.5,
-      "raw_count": 1
+      "route": "Skilled Worker",
+      "weighted_count": 29.05,
+      "raw_count": 40
     }
   ],
   "seniority": [
     {
       "level": "Standard",
-      "weighted_count": 110.06,
-      "raw_count": 166
-    },
-    {
-      "level": "Senior",
-      "weighted_count": 52.5,
-      "raw_count": 76
+      "weighted_count": 35.05,
+      "raw_count": 42
     },
     {
       "level": "Leadership",
-      "weighted_count": 28.15,
-      "raw_count": 46
+      "weighted_count": 30.6,
+      "raw_count": 34
+    },
+    {
+      "level": "Senior",
+      "weighted_count": 10.2,
+      "raw_count": 11
     },
     {
       "level": "Entry",
-      "weighted_count": 4.0,
-      "raw_count": 5
+      "weighted_count": 1.2,
+      "raw_count": 2
     }
   ],
   "scores": [
     {
       "label": "1.00 exact_normalized",
-      "weighted_count": 122.0,
-      "raw_count": 122
+      "weighted_count": 71.0,
+      "raw_count": 71
     },
     {
       "label": "0.50 recruiter_or_ambiguous",
-      "weighted_count": 53.0,
-      "raw_count": 106
+      "weighted_count": 3.0,
+      "raw_count": 6
     },
     {
       "label": "0.20 substring_only",
-      "weighted_count": 11.0,
-      "raw_count": 55
+      "weighted_count": 2.2,
+      "raw_count": 11
     },
     {
       "label": "0.85 fuzzy_strong",
-      "weighted_count": 5.95,
-      "raw_count": 7
+      "weighted_count": 0.85,
+      "raw_count": 1
     },
     {
       "label": "0.92 alias_table",
-      "weighted_count": 2.76,
-      "raw_count": 3
+      "weighted_count": 0.0,
+      "raw_count": 0
     }
   ]
 }

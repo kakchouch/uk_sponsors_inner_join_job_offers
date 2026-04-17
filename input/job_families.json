@@ -1,0 +1,189 @@
+{
+  "version": "2026-04",
+  "description": "Job family mapping with strong non-tech coverage (UK market oriented)",
+  "families": [
+
+
+
+    {
+      "family_id": "software_engineering",
+      "label": "Software Engineering",
+      "matches": ["software engineer", "developer", "backend", "frontend", "full stack", "web developer", "application developer"]
+    },
+    {
+      "family_id": "data_ai",
+      "label": "Data / AI",
+      "matches": ["data engineer", "data scientist", "machine learning", "ai", "analytics", "bi", "data analyst"]
+    },
+    {
+      "family_id": "devops_cloud",
+      "label": "DevOps / Cloud",
+      "matches": ["devops", "sre", "cloud", "platform engineer", "infrastructure", "kubernetes", "aws", "azure"]
+    },
+    {
+      "family_id": "security",
+      "label": "Security",
+      "matches": ["security", "cyber", "infosec", "appsec", "soc"]
+    },
+
+    {
+      "family_id": "finance_accounting",
+      "label": "Finance / Accounting",
+      "matches": ["accountant", "finance", "financial analyst", "controller", "audit", "tax", "payroll"]
+    },
+    {
+      "family_id": "banking_financial_services",
+      "label": "Banking / Financial Services",
+      "matches": ["investment banking", "trader", "trading", "quant", "asset management", "wealth", "risk analyst"]
+    },
+    {
+      "family_id": "insurance",
+      "label": "Insurance",
+      "matches": ["insurance", "underwriter", "claims", "actuary", "actuarial"]
+    },
+    {
+      "family_id": "legal",
+      "label": "Legal",
+      "matches": ["lawyer", "solicitor", "legal", "paralegal", "compliance", "regulatory"]
+    },
+    {
+      "family_id": "consulting",
+      "label": "Consulting",
+      "matches": ["consultant", "advisory", "strategy consultant", "management consultant"]
+    },
+
+
+
+    {
+      "family_id": "sales",
+      "label": "Sales",
+      "matches": ["sales", "account executive", "business development", "bdm", "sales manager"]
+    },
+    {
+      "family_id": "marketing",
+      "label": "Marketing",
+      "matches": ["marketing", "seo", "sem", "growth", "brand", "content", "digital marketing"]
+    },
+    {
+      "family_id": "customer_success_support",
+      "label": "Customer Support / Success",
+      "matches": ["customer support", "customer service", "support agent", "call centre", "customer success"]
+    },
+
+
+
+    {
+      "family_id": "hr_recruitment",
+      "label": "HR / Recruitment",
+      "matches": ["hr", "human resources", "recruiter", "talent", "people partner"]
+    },
+    {
+      "family_id": "administration",
+      "label": "Administration / Office",
+      "matches": ["administrator", "admin", "office manager", "executive assistant", "pa", "secretary"]
+    },
+
+
+
+    {
+      "family_id": "operations",
+      "label": "Operations",
+      "matches": ["operations", "ops manager", "business operations", "process manager"]
+    },
+    {
+      "family_id": "logistics_supply_chain",
+      "label": "Logistics / Supply Chain",
+      "matches": ["logistics", "supply chain", "procurement", "warehouse", "inventory", "transport"]
+    },
+    {
+      "family_id": "manufacturing",
+      "label": "Manufacturing / Production",
+      "matches": ["manufacturing", "production", "factory", "assembly", "plant"]
+    },
+
+
+
+    {
+      "family_id": "healthcare_medical",
+      "label": "Healthcare / Medical",
+      "matches": ["doctor", "gp", "physician", "medical", "consultant doctor"]
+    },
+    {
+      "family_id": "nursing_care",
+      "label": "Nursing / Care",
+      "matches": ["nurse", "care assistant", "care worker", "healthcare assistant", "support worker"]
+    },
+    {
+      "family_id": "allied_health",
+      "label": "Allied Health",
+      "matches": ["physiotherapist", "radiographer", "pharmacist", "therapist", "occupational therapist"]
+    },
+
+
+
+    {
+      "family_id": "education_teaching",
+      "label": "Education / Teaching",
+      "matches": ["teacher", "teaching", "school", "primary teacher", "secondary teacher"]
+    },
+    {
+      "family_id": "higher_education",
+      "label": "Higher Education / Research",
+      "matches": ["lecturer", "professor", "researcher", "academic"]
+    },
+
+
+
+    {
+      "family_id": "construction",
+      "label": "Construction",
+      "matches": ["construction", "site manager", "building", "contractor"]
+    },
+    {
+      "family_id": "civil_engineering",
+      "label": "Civil Engineering",
+      "matches": ["civil engineer", "structural engineer", "geotechnical", "bim", "quantity surveyor"]
+    },
+
+    {
+      "family_id": "retail",
+      "label": "Retail",
+      "matches": ["retail", "store manager", "shop assistant", "sales assistant"]
+    },
+    {
+      "family_id": "hospitality",
+      "label": "Hospitality",
+      "matches": ["hotel", "hospitality", "chef", "restaurant", "waiter", "barista"]
+    },
+
+
+    {
+      "family_id": "public_sector",
+      "label": "Public Sector / Government",
+      "matches": ["civil service", "government", "public sector", "council"]
+    },
+    {
+      "family_id": "non_profit",
+      "label": "Non-Profit / NGO",
+      "matches": ["charity", "non profit", "ngo", "voluntary"]
+    },
+
+
+
+    {
+      "family_id": "creative_media",
+      "label": "Creative / Media",
+      "matches": ["media", "journalist", "editor", "video", "film", "content creator"]
+    },
+
+  
+
+    {
+      "family_id": "transport",
+      "label": "Transport",
+      "matches": ["driver", "delivery driver", "transport", "rail", "aviation"]
+    }
+
+  ],
+  "fallback_family_id": "other"
+}

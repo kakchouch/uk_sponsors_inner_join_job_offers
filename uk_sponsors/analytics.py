@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from collections import Counter
 from datetime import datetime, timezone
-from difflib import SequenceMatcher
+from functools import lru_cache
 from importlib import import_module
 from pathlib import Path
+import json
 import re
 from typing import Any, Callable, Iterable
 
@@ -17,21 +18,9 @@ DEFAULT_MARKET_ANALYTICS_MARKDOWN_OUTPUT = (
 )
 DEFAULT_CHARTS_OUTPUT_DIR = OUTPUT_ROOT / "site" / "static" / "charts"
 DEFAULT_SITE_ANALYTICS_OUTPUT = OUTPUT_ROOT / "site" / "content" / "analytics.md"
+DEFAULT_JOB_FAMILIES_INPUT = Path("input") / "job_families.json"
 
 HIGH_CONFIDENCE_SCORE = 0.92
-
-TITLE_GROUP_THRESHOLD = 0.78
-
-TITLE_STOPWORDS = {
-    "a",
-    "an",
-    "and",
-    "for",
-    "of",
-    "the",
-    "to",
-    "with",
-}
 
 SENIORITY_PATTERNS: list[tuple[str, tuple[str, ...]]] = [
     (
@@ -76,6 +65,58 @@ SCORE_LABELS: list[tuple[float, str, str]] = [
 MATCH_TYPE_PRIORITY = {
     match_type: index for index, (_, match_type, _) in enumerate(SCORE_LABELS)
 }
+
+
+@lru_cache(maxsize=1)
+def _load_job_family_config(
+    path: Path = DEFAULT_JOB_FAMILIES_INPUT,
+) -> tuple[list[tuple[str, tuple[str, ...]]], str]:
+    default_fallback_label = "Other"
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return [], default_fallback_label
+
+    if not isinstance(payload, dict):
+        return [], default_fallback_label
+
+    fallback_value = payload.get("fallback_family_id")
+    fallback_label = _string_value(fallback_value, default=default_fallback_label)
+
+    fallback_label = fallback_label.replace("_", " ").strip().title()
+
+    families_payload = payload.get("families", [])
+    if not isinstance(families_payload, list):
+        return [], fallback_label
+
+    family_rules: list[tuple[str, tuple[str, ...]]] = []
+    for family in families_payload:
+        if not isinstance(family, dict):
+            continue
+
+        label = _string_value(
+            family.get("label") or family.get("family_id"),
+            default="",
+        )
+        if not label:
+            continue
+
+        raw_patterns = family.get("matches", [])
+        if not isinstance(raw_patterns, list):
+            continue
+
+        patterns = tuple(
+            pattern.casefold()
+            for pattern in (_string_value(item, default="") for item in raw_patterns)
+            if pattern
+        )
+        if not patterns:
+            continue
+
+        family_rules.append((label, patterns))
+
+    return family_rules, fallback_label
 
 
 def _coerce_metadata_and_rows(
@@ -261,52 +302,6 @@ def _build_dataset(
     return all_matches, high_confidence_matches
 
 
-def _normalize_title_tokens(title: str) -> list[str]:
-    cleaned = re.sub(r"[^a-z0-9]+", " ", title.casefold())
-    return [
-        token for token in cleaned.split() if token and token not in TITLE_STOPWORDS
-    ]
-
-
-def _strip_seniority_tokens(tokens: list[str]) -> list[str]:
-    seniority_tokens = {
-        "apprentice",
-        "associate",
-        "chief",
-        "cto",
-        "director",
-        "entry",
-        "graduate",
-        "head",
-        "intern",
-        "junior",
-        "lead",
-        "manager",
-        "principal",
-        "senior",
-        "specialist",
-        "sr",
-        "staff",
-        "trainee",
-        "vp",
-    }
-    stripped = [token for token in tokens if token not in seniority_tokens]
-    return stripped or tokens
-
-
-def _title_similarity(left_tokens: list[str], right_tokens: list[str]) -> float:
-    left = " ".join(left_tokens)
-    right = " ".join(right_tokens)
-    if not left or not right:
-        return 0.0
-
-    left_set = set(left_tokens)
-    right_set = set(right_tokens)
-    overlap = len(left_set & right_set) / max(1, min(len(left_set), len(right_set)))
-    ratio = SequenceMatcher(None, left, right).ratio()
-    return max(overlap, ratio)
-
-
 def _weighted_rows(
     weighted_values: dict[str, float],
     raw_counts: Counter[str],
@@ -325,79 +320,20 @@ def _weighted_rows(
     ]
 
 
-def _choose_cluster_label(
-    weighted_variants: dict[str, float],
-    raw_variants: Counter[str],
-) -> str:
-    return sorted(
-        weighted_variants,
-        key=lambda label: (
-            -weighted_variants[label],
-            -raw_variants[label],
-            len(label),
-            label,
-        ),
-    )[0]
+def _extract_job_family(title: str) -> str:
+    families, fallback_label = _load_job_family_config()
+    normalized_title = title.casefold()
+    for label, patterns in families:
+        if any(pattern in normalized_title for pattern in patterns):
+            return label
+    return fallback_label
 
 
-def _cluster_titles(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    clusters: list[dict[str, Any]] = []
-
-    for row in rows:
-        raw_title = _extract_title(row)
-        tokens = _normalize_title_tokens(raw_title)
-        family_tokens = _strip_seniority_tokens(tokens)
-        if not family_tokens:
-            family_tokens = tokens
-
-        best_cluster: dict[str, Any] | None = None
-        best_score = 0.0
-        for cluster in clusters:
-            similarity = _title_similarity(
-                family_tokens,
-                cluster["family_tokens"],
-            )
-            if similarity >= TITLE_GROUP_THRESHOLD and similarity > best_score:
-                best_cluster = cluster
-                best_score = similarity
-
-        weight = _extract_weight(row)
-
-        if best_cluster is None:
-            clusters.append(
-                {
-                    "family_tokens": family_tokens,
-                    "weighted_count": weight,
-                    "raw_count": 1,
-                    "weighted_variants": {raw_title: weight},
-                    "raw_variants": Counter([raw_title]),
-                }
-            )
-            continue
-
-        best_cluster["weighted_count"] += weight
-        best_cluster["raw_count"] += 1
-        best_cluster["weighted_variants"][raw_title] = (
-            best_cluster["weighted_variants"].get(raw_title, 0.0) + weight
-        )
-        best_cluster["raw_variants"][raw_title] += 1
-
-    title_rows = []
-    for cluster in clusters:
-        title_rows.append(
-            {
-                "title": _choose_cluster_label(
-                    cluster["weighted_variants"],
-                    cluster["raw_variants"],
-                ),
-                "weighted_count": round(cluster["weighted_count"], 4),
-                "raw_count": cluster["raw_count"],
-            }
-        )
-
-    return sorted(
-        title_rows,
-        key=lambda item: (-item["weighted_count"], -item["raw_count"], item["title"]),
+def _group_titles_by_family(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return _build_weighted_breakdown(
+        rows,
+        lambda row: _extract_job_family(_extract_title(row)),
+        "title",
     )
 
 
@@ -603,7 +539,7 @@ def build_market_analytics(matches: Any) -> dict[str, Any]:
             lambda row: _string_value(_coerce_offer(row).get("company")),
             "company",
         ),
-        "titles": _cluster_titles(all_matches),
+        "titles": _group_titles_by_family(all_matches),
         "routes": _build_weighted_breakdown(all_matches, _extract_route, "route"),
         "seniority": _build_weighted_breakdown(
             all_matches,
