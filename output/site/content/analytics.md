@@ -1,14 +1,14 @@
 +++
 title = "Market Analytics"
 description = "Deduplicated, quality-score-weighted market analytics for the latest sponsor-matched UK job run."
-lastmod = "2026-04-17T09:51:07.966723+00:00"
-last_research_at = "2026-04-17T09:51:07.966723+00:00"
+lastmod = "2026-04-17T09:58:32.431504+00:00"
+last_research_at = "2026-04-17T09:58:32.431504+00:00"
 +++
 
 # Market Analytics
 
-Last research run (UTC): 2026-04-17T09:51:07.966723+00:00
-Generated at: 2026-04-17T09:51:07.966723+00:00
+Last research run (UTC): 2026-04-17T09:58:32.431504+00:00
+Generated at: 2026-04-17T09:58:32.431504+00:00
 
 ## Scope
 
