@@ -606,6 +606,13 @@ def fetch_arbeitnow(
         try:
             payload = fetch_page(next_url, {}, current_page)
         except SourceCollectionError as error:
+            if error.status_code == 403:
+                LOGGER.info(
+                    "Stopping %s pagination at page %s after HTTP 403",
+                    source.id,
+                    current_page,
+                )
+                break
             incomplete_reason = build_source_incomplete_reason(error)
             LOGGER.warning(
                 "Keeping partial %s results: %s", source.id, incomplete_reason
