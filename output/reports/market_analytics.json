@@ -1,33 +1,23 @@
 {
   "overview": {
-    "total_jobs": 278,
-    "matched_jobs": 117,
-    "high_confidence_jobs": 88,
-    "weighted_matched_jobs": 100.25,
-    "weighted_high_confidence_jobs": 88.0,
-    "match_rate": 0.3606,
-    "high_confidence_rate": 0.3165
+    "total_jobs": 367,
+    "matched_jobs": 104,
+    "high_confidence_jobs": 71,
+    "weighted_matched_jobs": 83.15,
+    "weighted_high_confidence_jobs": 71.0,
+    "match_rate": 0.2266,
+    "high_confidence_rate": 0.1935
   },
   "locations": [
     {
       "location": "London, UK",
-      "weighted_count": 14.85,
-      "raw_count": 15
+      "weighted_count": 26.4,
+      "raw_count": 29
     },
     {
       "location": "London",
-      "weighted_count": 14.75,
-      "raw_count": 17
-    },
-    {
-      "location": "Belfast, Northern Ireland",
-      "weighted_count": 10.7,
-      "raw_count": 12
-    },
-    {
-      "location": "Bristol, South West England",
-      "weighted_count": 8.7,
-      "raw_count": 10
+      "weighted_count": 7.4,
+      "raw_count": 9
     },
     {
       "location": "Glasgow, Scotland",
@@ -35,13 +25,13 @@
       "raw_count": 7
     },
     {
-      "location": "Bristol",
-      "weighted_count": 4.5,
+      "location": "Belfast, Northern Ireland",
+      "weighted_count": 5.0,
       "raw_count": 5
     },
     {
-      "location": "Leeds, West Yorkshire",
-      "weighted_count": 4.5,
+      "location": "Bristol, South West England",
+      "weighted_count": 4.05,
       "raw_count": 5
     },
     {
@@ -50,34 +40,39 @@
       "raw_count": 4
     },
     {
-      "location": "The City, Central London",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "location": "Hillhead, Glasgow City Centre",
-      "weighted_count": 2.5,
+      "location": "Liverpool, Merseyside",
+      "weighted_count": 3.2,
       "raw_count": 4
     },
     {
-      "location": "Liverpool",
-      "weighted_count": 2.5,
+      "location": "The City, Central London",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "location": "South East London, London",
+      "weighted_count": 1.2,
       "raw_count": 3
     },
     {
-      "location": "Leeds",
-      "weighted_count": 2.0,
+      "location": "East London",
+      "weighted_count": 1.2,
       "raw_count": 2
     },
     {
-      "location": "Southampton, Hampshire",
-      "weighted_count": 2.0,
+      "location": "Glasgow",
+      "weighted_count": 1.2,
       "raw_count": 2
     },
     {
-      "location": "Central London",
-      "weighted_count": 1.5,
+      "location": "Brighton",
+      "weighted_count": 1.05,
       "raw_count": 2
+    },
+    {
+      "location": "Altrincham, Greater Manchester",
+      "weighted_count": 1.0,
+      "raw_count": 1
     },
     {
       "location": "Baguley, Manchester",
@@ -85,47 +80,37 @@
       "raw_count": 1
     },
     {
-      "location": "Bolton, Greater Manchester",
+      "location": "Glasgow City Centre, Glasgow",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Central London, London",
+      "location": "Kirkby, Liverpool",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "East London",
+      "location": "Langbank, Port Glasgow",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Firswood, Manchester",
+      "location": "Leeds",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Hyde Park, Leeds",
+      "location": "Leeds, West Yorkshire",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Kensal Town, West London",
+      "location": "Liverpool",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Liverpool, Merseyside",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "location": "North London, London",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "location": "North West London, London",
+      "location": "Manchester Science Park, Manchester",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -135,27 +120,37 @@
       "raw_count": 1
     },
     {
-      "location": "Trafford Park, Manchester",
+      "location": "Stanley, Liverpool",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Wimbledon, South West London",
+      "location": "Stockport, Greater Manchester",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "location": "Plymouth",
+      "location": "Withington, Manchester",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "location": "West End, West London",
       "weighted_count": 0.85,
       "raw_count": 1
     },
     {
-      "location": "Glasgow",
+      "location": "Manchester",
       "weighted_count": 0.7,
       "raw_count": 2
     },
     {
-      "location": "Croxteth, Liverpool",
+      "location": "Avonmouth, Bristol",
+      "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "location": "Central London",
       "weighted_count": 0.5,
       "raw_count": 1
     },
@@ -165,94 +160,99 @@
       "raw_count": 1
     },
     {
-      "location": "Hilsea, Portsmouth",
+      "location": "Fenchurch St, Central London",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "St. James, Bristol",
+      "location": "Nursling, Southampton",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "location": "Brighton",
+      "location": "Sydenham, Belfast",
+      "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "location": "Wandsworth, South West London",
+      "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "location": "Harrow, London",
+      "weighted_count": 0.4,
+      "raw_count": 2
+    },
+    {
+      "location": "Portsmouth",
+      "weighted_count": 0.4,
+      "raw_count": 2
+    },
+    {
+      "location": "Formby, Liverpool",
       "weighted_count": 0.2,
       "raw_count": 1
     },
     {
-      "location": "Brighton, East Sussex",
+      "location": "H M Naval Base, Portsmouth",
       "weighted_count": 0.2,
       "raw_count": 1
     },
     {
-      "location": "Bromley, South East London",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "location": "Kingston Upon Thames, South West London",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "location": "Manchester",
-      "weighted_count": 0.2,
-      "raw_count": 1
-    },
-    {
-      "location": "Portsmouth, Hampshire",
+      "location": "Westminster, South West London",
       "weighted_count": 0.2,
       "raw_count": 1
     }
   ],
   "employers": [
     {
-      "company": "HAYS",
-      "weighted_count": 25.0,
-      "raw_count": 25
-    },
-    {
       "company": "Hays",
-      "weighted_count": 20.0,
-      "raw_count": 20
+      "weighted_count": 40.0,
+      "raw_count": 40
     },
     {
       "company": "Ambition Europe Limited",
-      "weighted_count": 6.0,
-      "raw_count": 6
+      "weighted_count": 3.0,
+      "raw_count": 3
+    },
+    {
+      "company": "HAYS",
+      "weighted_count": 3.0,
+      "raw_count": 3
+    },
+    {
+      "company": "Etihad Airways",
+      "weighted_count": 2.0,
+      "raw_count": 2
+    },
+    {
+      "company": "Evri",
+      "weighted_count": 2.0,
+      "raw_count": 2
     },
     {
       "company": "NG Bailey",
-      "weighted_count": 5.0,
-      "raw_count": 5
+      "weighted_count": 2.0,
+      "raw_count": 2
     },
     {
-      "company": "Ribbons and Reeves Limited",
-      "weighted_count": 5.0,
-      "raw_count": 5
-    },
-    {
-      "company": "Witherslack Group",
-      "weighted_count": 4.0,
-      "raw_count": 4
+      "company": "Teleperformance",
+      "weighted_count": 2.0,
+      "raw_count": 2
     },
     {
       "company": "eFinancialCareers",
-      "weighted_count": 4.0,
-      "raw_count": 4
-    },
-    {
-      "company": "Network Plus",
       "weighted_count": 2.0,
       "raw_count": 2
     },
     {
-      "company": "Tradewind Recruitment",
-      "weighted_count": 2.0,
-      "raw_count": 2
+      "company": "AKT II",
+      "weighted_count": 1.0,
+      "raw_count": 1
     },
     {
-      "company": "Adler & Allan Ltd",
+      "company": "Adecco",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -262,12 +262,12 @@
       "raw_count": 1
     },
     {
-      "company": "Birketts LLP",
+      "company": "Creative Support Ltd",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Fieldfisher",
+      "company": "Dreams Ltd",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -277,52 +277,47 @@
       "raw_count": 1
     },
     {
-      "company": "Gail's",
+      "company": "Honest Burgers",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "HomeServe",
+      "company": "Hydes Brewery",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "NonStop Consulting Ltd",
+      "company": "Network Plus",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Otis",
+      "company": "Pure Gym Limited",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Pulsant",
+      "company": "Robert Half",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Robert Walters",
+      "company": "Simpson Judge Ltd",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Salt Search",
+      "company": "Tiger Recruitment",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Teleperformance",
+      "company": "Times24 UK Limited",
       "weighted_count": 1.0,
       "raw_count": 1
     },
     {
-      "company": "Wagamama",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "company": "Yusen logistics",
+      "company": "Witherslack Group",
       "weighted_count": 1.0,
       "raw_count": 1
     }
@@ -330,23 +325,23 @@
   "titles": [
     {
       "title": "Finance / Accounting",
-      "weighted_count": 21.2,
-      "raw_count": 22
+      "weighted_count": 27.0,
+      "raw_count": 28
     },
     {
       "title": "Operations / Project Management",
-      "weighted_count": 20.8,
-      "raw_count": 25
+      "weighted_count": 13.4,
+      "raw_count": 16
     },
     {
       "title": "Other",
-      "weighted_count": 18.0,
-      "raw_count": 22
+      "weighted_count": 9.1,
+      "raw_count": 16
     },
     {
       "title": "Data / AI",
-      "weighted_count": 6.0,
-      "raw_count": 7
+      "weighted_count": 8.1,
+      "raw_count": 12
     },
     {
       "title": "Banking / Financial Services",
@@ -354,47 +349,42 @@
       "raw_count": 5
     },
     {
-      "title": "Education / Teaching",
-      "weighted_count": 5.0,
-      "raw_count": 5
-    },
-    {
-      "title": "Administration / Office",
+      "title": "Construction",
       "weighted_count": 4.0,
       "raw_count": 4
     },
     {
-      "title": "Cybersecurity / InfoSec",
-      "weighted_count": 3.5,
-      "raw_count": 4
-    },
-    {
-      "title": "Legal",
-      "weighted_count": 3.0,
-      "raw_count": 3
-    },
-    {
-      "title": "Sales",
+      "title": "Transport",
       "weighted_count": 2.5,
       "raw_count": 3
     },
     {
-      "title": "Skilled Trades",
+      "title": "Sales",
+      "weighted_count": 2.05,
+      "raw_count": 3
+    },
+    {
+      "title": "Cybersecurity / InfoSec",
       "weighted_count": 1.5,
-      "raw_count": 3
+      "raw_count": 2
     },
     {
-      "title": "Transport",
-      "weighted_count": 1.5,
-      "raw_count": 3
+      "title": "Education / Teaching",
+      "weighted_count": 1.45,
+      "raw_count": 4
     },
     {
-      "title": "Allied Health",
-      "weighted_count": 1.4,
-      "raw_count": 3
+      "title": "Administration / Office",
+      "weighted_count": 1.0,
+      "raw_count": 1
     },
     {
-      "title": "Electrical Engineering",
+      "title": "Consulting",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "title": "Customer Support / Success",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -404,7 +394,12 @@
       "raw_count": 1
     },
     {
-      "title": "Insurance",
+      "title": "Legal",
+      "weighted_count": 1.0,
+      "raw_count": 1
+    },
+    {
+      "title": "Nursing / Care",
       "weighted_count": 1.0,
       "raw_count": 1
     },
@@ -414,36 +409,36 @@
       "raw_count": 1
     },
     {
-      "title": "Software Engineering",
-      "weighted_count": 1.0,
-      "raw_count": 1
-    },
-    {
-      "title": "Healthcare / Medical",
+      "title": "Mechanical Engineering",
       "weighted_count": 0.85,
       "raw_count": 1
     },
     {
-      "title": "Logistics / Supply Chain",
+      "title": "Higher Education / Research",
       "weighted_count": 0.5,
       "raw_count": 1
     },
     {
-      "title": "Marketing",
+      "title": "Skilled Trades",
       "weighted_count": 0.5,
+      "raw_count": 1
+    },
+    {
+      "title": "Allied Health",
+      "weighted_count": 0.2,
       "raw_count": 1
     }
   ],
   "routes": [
     {
       "route": "Global Business Mobility: Senior or Specialist Worker",
-      "weighted_count": 50.0,
-      "raw_count": 52
+      "weighted_count": 55.5,
+      "raw_count": 59
     },
     {
       "route": "Skilled Worker",
-      "weighted_count": 49.25,
-      "raw_count": 64
+      "weighted_count": 26.65,
+      "raw_count": 44
     },
     {
       "route": "Global Business Mobility: Graduate Trainee",
@@ -454,17 +449,17 @@
   "seniority": [
     {
       "level": "Standard",
-      "weighted_count": 51.5,
+      "weighted_count": 44.35,
       "raw_count": 61
     },
     {
       "level": "Leadership",
-      "weighted_count": 37.8,
-      "raw_count": 42
+      "weighted_count": 26.4,
+      "raw_count": 29
     },
     {
       "level": "Senior",
-      "weighted_count": 9.75,
+      "weighted_count": 11.2,
       "raw_count": 12
     },
     {
@@ -476,23 +471,23 @@
   "scores": [
     {
       "label": "1.00 exact_normalized",
-      "weighted_count": 88.0,
-      "raw_count": 88
+      "weighted_count": 71.0,
+      "raw_count": 71
     },
     {
       "label": "0.50 recruiter_or_ambiguous",
-      "weighted_count": 7.5,
-      "raw_count": 15
+      "weighted_count": 6.0,
+      "raw_count": 12
+    },
+    {
+      "label": "0.20 substring_only",
+      "weighted_count": 3.6,
+      "raw_count": 18
     },
     {
       "label": "0.85 fuzzy_strong",
       "weighted_count": 2.55,
       "raw_count": 3
-    },
-    {
-      "label": "0.20 substring_only",
-      "weighted_count": 2.2,
-      "raw_count": 11
     },
     {
       "label": "0.92 alias_table",
