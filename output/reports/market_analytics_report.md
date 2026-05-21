@@ -1,7 +1,7 @@
 # Market Analytics
 
-Last research run (UTC): 2026-05-18T07:06:57.578538+00:00
-Generated at: 2026-05-18T07:06:57.578538+00:00
+Last research run (UTC): 2026-05-21T07:02:54.601098+00:00
+Generated at: 2026-05-21T07:02:54.601098+00:00
 
 ## Scope
 
@@ -9,19 +9,19 @@ Generated at: 2026-05-18T07:06:57.578538+00:00
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 206
-- Unique matched jobs: 135
+- Raw matched rows before deduplication: 244
+- Unique matched jobs: 122
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 301
-- Unique matched jobs: 135
-- High-confidence unique jobs: 111
-- Weighted matched jobs: 118.55
-- Weighted high-confidence jobs: 111.00
-- Weighted match rate: 39.39%
-- Weighted high-confidence rate: 36.88%
+- Total jobs fetched: 276
+- Unique matched jobs: 122
+- High-confidence unique jobs: 93
+- Weighted matched jobs: 102.70
+- Weighted high-confidence jobs: 93.00
+- Weighted match rate: 37.21%
+- Weighted high-confidence rate: 33.70%
 
 ## Charts
 
@@ -55,70 +55,70 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Location | Weighted score | Raw jobs |
 |---|---|---|
-| London | 54.60 | 61 |
-| London, UK | 15.00 | 15 |
-| Belfast, Northern Ireland | 8.00 | 8 |
-| Bristol, South West England | 4.00 | 4 |
-| Southampton, Hampshire | 4.00 | 4 |
-| Glasgow, Scotland | 3.00 | 3 |
-| Manchester, Greater Manchester | 3.00 | 3 |
-| Bristol | 2.00 | 3 |
-| Langbank, Port Glasgow | 2.00 | 2 |
-| Leeds, West Yorkshire | 2.00 | 2 |
+| London, UK | 17.70 | 19 |
+| London | 10.20 | 16 |
+| Belfast, Northern Ireland | 8.70 | 10 |
+| Glasgow, Scotland | 7.00 | 7 |
+| Leeds | 6.70 | 8 |
+| Manchester | 6.20 | 7 |
+| Bristol | 5.50 | 6 |
+| Glasgow | 5.00 | 5 |
+| Bristol, South West England | 3.20 | 4 |
+| Langbank, Port Glasgow | 3.00 | 3 |
 
 ## Top Employers (High Confidence)
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| eFinancialCareers | 47.00 | 47 |
-| Hays | 36.00 | 36 |
-| BAE Systems | 4.00 | 4 |
-| HAYS | 4.00 | 4 |
-| NG Bailey | 4.00 | 4 |
+| Hays | 42.00 | 42 |
+| Sky | 19.00 | 19 |
+| eFinancialCareers | 8.00 | 8 |
+| BAE Systems | 6.00 | 6 |
+| BDO UK | 3.00 | 3 |
 | Kier Group | 3.00 | 3 |
 | Teleperformance | 3.00 | 3 |
-| Etihad Airways | 2.00 | 2 |
+| HAYS | 2.00 | 2 |
 | Witherslack Group | 2.00 | 2 |
-| Network Plus | 1.00 | 1 |
+| DX Network Services | 1.00 | 1 |
 
 ## Top Job Title Families
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Finance / Accounting | 25.50 | 26 |
-| Other | 20.35 | 25 |
-| Operations / Project Management | 18.30 | 22 |
-| Cybersecurity / InfoSec | 13.40 | 15 |
-| Banking / Financial Services | 7.00 | 7 |
-| Data / AI | 7.00 | 7 |
-| Administration / Office | 4.20 | 5 |
-| Software Engineering | 4.00 | 4 |
-| Legal | 3.00 | 3 |
-| Skilled Trades | 2.50 | 3 |
+| Finance / Accounting | 34.70 | 37 |
+| Other | 19.40 | 22 |
+| Operations / Project Management | 11.30 | 16 |
+| Data / AI | 7.70 | 9 |
+| Banking / Financial Services | 4.00 | 4 |
+| Logistics / Supply Chain | 4.00 | 4 |
+| Cybersecurity / InfoSec | 3.40 | 5 |
+| Insurance | 3.00 | 3 |
+| Administration / Office | 2.40 | 4 |
+| Construction | 2.00 | 2 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 60.55 | 75 |
-| Global Business Mobility: Senior or Specialist Worker | 57.00 | 59 |
-| Global Business Mobility: Graduate Trainee | 1.00 | 1 |
+| Global Business Mobility: Senior or Specialist Worker | 76.50 | 77 |
+| Skilled Worker | 25.70 | 44 |
+| Creative Worker | 0.50 | 1 |
 
 ## Title Seniority
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 57.25 | 66 |
-| Leadership | 42.30 | 46 |
-| Senior | 18.60 | 21 |
-| Entry | 0.40 | 2 |
+| Standard | 61.20 | 71 |
+| Leadership | 29.70 | 36 |
+| Senior | 11.60 | 14 |
+| Entry | 0.20 | 1 |
 
 ## Match Quality Breakdown
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 111.00 | 111 |
-| 0.50 recruiter_or_ambiguous | 3.50 | 7 |
+| 1.00 exact_normalized | 93.00 | 93 |
+| 0.50 recruiter_or_ambiguous | 6.50 | 13 |
 | 0.20 substring_only | 3.20 | 16 |
-| 0.85 fuzzy_strong | 0.85 | 1 |
+| 0.85 fuzzy_strong | 0.00 | 0 |
 | 0.92 alias_table | 0.00 | 0 |
