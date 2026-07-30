@@ -1,7 +1,7 @@
 # Market Analytics
 
-Last research run (UTC): 2026-07-27T04:30:12.904340+00:00
-Generated at: 2026-07-27T04:30:12.904340+00:00
+Last research run (UTC): 2026-07-30T04:20:19.395071+00:00
+Generated at: 2026-07-30T04:20:19.395071+00:00
 
 ## Scope
 
@@ -9,19 +9,19 @@ Generated at: 2026-07-27T04:30:12.904340+00:00
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 138
-- Unique matched jobs: 86
+- Raw matched rows before deduplication: 102
+- Unique matched jobs: 66
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 316
-- Unique matched jobs: 86
-- High-confidence unique jobs: 43
-- Weighted matched jobs: 58.81
-- Weighted high-confidence jobs: 42.76
-- Weighted match rate: 18.61%
-- Weighted high-confidence rate: 13.53%
+- Total jobs fetched: 321
+- Unique matched jobs: 66
+- High-confidence unique jobs: 29
+- Weighted matched jobs: 44.70
+- Weighted high-confidence jobs: 29.00
+- Weighted match rate: 13.93%
+- Weighted high-confidence rate: 9.03%
 
 ## Charts
 
@@ -55,71 +55,70 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Location | Weighted score | Raw jobs |
 |---|---|---|
-| London | 23.95 | 33 |
-| Bristol, South West England | 2.00 | 2 |
-| Firswood, Manchester | 2.00 | 2 |
-| Glasgow | 2.00 | 2 |
-| Poplar, East London | 1.84 | 2 |
-| City of London | 1.70 | 2 |
-| Bristol | 1.50 | 2 |
-| Glasgow, Scotland | 1.12 | 2 |
-| Chew Stoke, Bristol | 1.00 | 1 |
-| Collyhurst, Manchester | 1.00 | 1 |
+| London | 14.95 | 24 |
+| Glasgow | 4.00 | 4 |
+| London, UK | 2.85 | 4 |
+| Stockland Bristol, Bridgwater | 2.00 | 2 |
+| Belfast, Northern Ireland | 1.90 | 5 |
+| Southampton | 1.70 | 3 |
+| East London | 1.50 | 2 |
+| Manchester, Greater Manchester | 1.50 | 2 |
+| Leeds | 1.20 | 2 |
+| Altrincham, Greater Manchester | 1.00 | 1 |
 
 ## Top Employers (High Confidence)
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| Uber eats | 7.00 | 7 |
-| eFinancialCareers | 6.00 | 6 |
-| Robert Walters | 4.00 | 4 |
+| Uber eats | 6.00 | 6 |
+| eFinancialCareers | 4.00 | 4 |
+| DX Network Services | 3.00 | 3 |
 | Robert Half | 3.00 | 3 |
-| Barclays | 2.76 | 3 |
-| DX Network Services | 2.00 | 2 |
-| Network Plus | 2.00 | 2 |
-| Sky | 2.00 | 2 |
 | Sphere Digital Recruitment | 2.00 | 2 |
 | Teleperformance Ltd | 2.00 | 2 |
+| Davies Group | 1.00 | 1 |
+| Handle Recruitment | 1.00 | 1 |
+| Otis | 1.00 | 1 |
+| Robert Walters | 1.00 | 1 |
 
 ## Top Job Title Families
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Other | 11.95 | 15 |
-| Operations / Project Management | 9.17 | 11 |
-| Finance / Accounting | 7.70 | 10 |
-| Data / AI | 7.37 | 12 |
-| Administration / Office | 5.60 | 8 |
-| Cybersecurity / InfoSec | 3.20 | 4 |
+| Other | 10.55 | 12 |
+| Finance / Accounting | 6.70 | 9 |
+| Operations / Project Management | 5.40 | 8 |
+| Data / AI | 4.75 | 8 |
+| Logistics / Supply Chain | 3.00 | 3 |
+| Cybersecurity / InfoSec | 2.70 | 4 |
+| Administration / Office | 2.40 | 5 |
+| Software Engineering | 2.20 | 5 |
 | Customer Support / Success | 2.00 | 2 |
-| Transport | 1.40 | 4 |
-| Software Engineering | 1.20 | 3 |
-| Creative / Media | 1.20 | 2 |
+| Transport | 1.00 | 2 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 33.05 | 56 |
-| Global Business Mobility: Senior or Specialist Worker | 20.76 | 23 |
-| Creative Worker | 4.00 | 6 |
-| Global Business Mobility: Graduate Trainee | 1.00 | 1 |
+| Skilled Worker | 24.50 | 38 |
+| Global Business Mobility: Senior or Specialist Worker | 18.00 | 24 |
+| Creative Worker | 2.00 | 3 |
+| Charity Worker | 0.20 | 1 |
 
 ## Title Seniority
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 35.54 | 53 |
-| Leadership | 18.92 | 24 |
-| Senior | 3.95 | 7 |
-| Entry | 0.40 | 2 |
+| Standard | 28.45 | 40 |
+| Leadership | 14.15 | 21 |
+| Senior | 2.10 | 5 |
 
 ## Match Quality Breakdown
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 40.00 | 40 |
-| 0.50 recruiter_or_ambiguous | 7.00 | 14 |
-| 0.20 substring_only | 4.80 | 24 |
-| 0.85 fuzzy_strong | 4.25 | 5 |
-| 0.92 alias_table | 2.76 | 3 |
+| 1.00 exact_normalized | 29.00 | 29 |
+| 0.50 recruiter_or_ambiguous | 9.50 | 19 |
+| 0.85 fuzzy_strong | 3.40 | 4 |
+| 0.20 substring_only | 2.80 | 14 |
+| 0.92 alias_table | 0.00 | 0 |
