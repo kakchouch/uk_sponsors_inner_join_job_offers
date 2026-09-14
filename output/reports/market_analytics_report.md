@@ -1,7 +1,7 @@
 # Market Analytics
 
-Last research run (UTC): 2026-09-10T08:10:10.674804+00:00
-Generated at: 2026-09-10T08:10:10.674804+00:00
+Last research run (UTC): 2026-09-14T08:57:49.540610+00:00
+Generated at: 2026-09-14T08:57:49.540610+00:00
 
 ## Scope
 
@@ -9,19 +9,19 @@ Generated at: 2026-09-10T08:10:10.674804+00:00
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 275
-- Unique matched jobs: 175
+- Raw matched rows before deduplication: 217
+- Unique matched jobs: 150
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 419
-- Unique matched jobs: 175
-- High-confidence unique jobs: 73
-- Weighted matched jobs: 109.79
-- Weighted high-confidence jobs: 72.84
-- Weighted match rate: 26.20%
-- Weighted high-confidence rate: 17.38%
+- Total jobs fetched: 367
+- Unique matched jobs: 150
+- High-confidence unique jobs: 61
+- Weighted matched jobs: 90.85
+- Weighted high-confidence jobs: 61.00
+- Weighted match rate: 24.75%
+- Weighted high-confidence rate: 16.62%
 
 ## Charts
 
@@ -55,71 +55,70 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Location | Weighted score | Raw jobs |
 |---|---|---|
-| London | 41.50 | 70 |
-| Manchester | 9.70 | 13 |
-| Firswood, Manchester | 4.00 | 4 |
-| Bristol | 3.50 | 4 |
-| London, Greater London, United Kingdom | 3.00 | 6 |
-| Rusholme, Manchester | 3.00 | 3 |
-| London, UK | 2.30 | 7 |
-| London - The River Building HQ | 2.00 | 4 |
-| Easton, Bristol | 2.00 | 2 |
-| London Office | 2.00 | 2 |
+| London | 33.75 | 52 |
+| East London | 3.60 | 14 |
+| Liverpool | 3.50 | 4 |
+| London, UK | 3.40 | 6 |
+| Leeds | 3.20 | 4 |
+| London - The River Building HQ | 3.00 | 6 |
+| Firswood, Manchester | 3.00 | 3 |
+| London Office | 3.00 | 3 |
+| London, England, United Kingdom | 2.20 | 3 |
+| Leeds, West Yorkshire | 2.00 | 2 |
 
 ## Top Employers (High Confidence)
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| Network Plus | 8.00 | 8 |
-| Flock | 7.00 | 7 |
-| Uber eats | 6.00 | 6 |
-| BAE Systems | 4.00 | 4 |
-| Aspire People Limited | 3.00 | 3 |
-| Kier Group | 3.00 | 3 |
-| Robert Half | 3.00 | 3 |
-| Teleperformance | 3.00 | 3 |
-| 9Fin | 2.00 | 2 |
-| Ambition Europe Limited | 2.00 | 2 |
+| Network Plus | 5.00 | 5 |
+| Nebius | 4.00 | 4 |
+| Allica Bank | 3.00 | 3 |
+| Tradewind Recruitment | 3.00 | 3 |
+| Adecco | 2.00 | 2 |
+| Aspire People Limited | 2.00 | 2 |
+| BAE Systems | 2.00 | 2 |
+| FDM Group | 2.00 | 2 |
+| Mixpanel | 2.00 | 2 |
+| Uber Eats | 2.00 | 2 |
 
 ## Top Job Title Families
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Other | 26.50 | 39 |
-| Operations / Project Management | 20.70 | 32 |
-| Software Engineering | 7.10 | 12 |
-| Finance / Accounting | 6.92 | 8 |
-| Data / AI | 6.62 | 14 |
-| Administration / Office | 5.60 | 9 |
-| Sales | 5.30 | 11 |
-| Education / Teaching | 4.60 | 7 |
-| Nursing / Care | 3.60 | 6 |
-| Customer Support / Success | 3.50 | 4 |
+| Other | 22.30 | 33 |
+| Operations / Project Management | 19.85 | 32 |
+| Administration / Office | 8.50 | 9 |
+| Data / AI | 6.50 | 11 |
+| Education / Teaching | 6.20 | 15 |
+| Finance / Accounting | 5.00 | 10 |
+| Hospitality | 2.80 | 7 |
+| Nursing / Care | 2.60 | 5 |
+| Sales | 2.20 | 3 |
+| Transport | 2.20 | 3 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 68.75 | 118 |
-| Global Business Mobility: Senior or Specialist Worker | 36.04 | 51 |
-| Global Business Mobility: Graduate Trainee | 4.00 | 4 |
-| Creative Worker | 1.00 | 2 |
+| Skilled Worker | 60.85 | 111 |
+| Global Business Mobility: Senior or Specialist Worker | 28.00 | 37 |
+| Global Business Mobility: Graduate Trainee | 2.00 | 2 |
 
 ## Title Seniority
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 55.10 | 93 |
-| Leadership | 40.84 | 61 |
-| Senior | 12.35 | 19 |
-| Entry | 1.50 | 2 |
+| Standard | 41.10 | 70 |
+| Leadership | 31.05 | 49 |
+| Senior | 15.30 | 26 |
+| Entry | 3.40 | 5 |
 
 ## Match Quality Breakdown
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 71.00 | 71 |
-| 0.50 recruiter_or_ambiguous | 26.50 | 53 |
-| 0.20 substring_only | 9.60 | 48 |
-| 0.92 alias_table | 1.84 | 2 |
+| 1.00 exact_normalized | 61.00 | 61 |
+| 0.50 recruiter_or_ambiguous | 19.00 | 38 |
+| 0.20 substring_only | 10.00 | 50 |
 | 0.85 fuzzy_strong | 0.85 | 1 |
+| 0.92 alias_table | 0.00 | 0 |
