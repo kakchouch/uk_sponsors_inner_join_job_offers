@@ -1,7 +1,7 @@
 # Market Analytics
 
-Last research run (UTC): 2026-09-28T09:48:28.495923+00:00
-Generated at: 2026-09-28T09:48:28.495923+00:00
+Last research run (UTC): 2026-10-01T10:10:03.739685+00:00
+Generated at: 2026-10-01T10:10:03.739685+00:00
 
 ## Scope
 
@@ -9,19 +9,19 @@ Generated at: 2026-09-28T09:48:28.495923+00:00
 - Analytics are computed on unique jobs deduplicated by title + company + location.
 - Every analytics entry, chart, and category table is weighted by the match quality score.
 - A 1.00 exact match contributes 1.00 to analytics totals, while lower-confidence rows contribute proportionally less.
-- Raw matched rows before deduplication: 337
-- Unique matched jobs: 213
+- Raw matched rows before deduplication: 239
+- Unique matched jobs: 165
 - Search locations: London, Glasgow, Manchester, Leeds, Liverpool, Bristol, Southampton, Brighton, Plymouth, Portsmouth, Belfast
 
 ## Overview
 
-- Total jobs fetched: 463
-- Unique matched jobs: 213
-- High-confidence unique jobs: 89
-- Weighted matched jobs: 138.52
-- Weighted high-confidence jobs: 88.92
-- Weighted match rate: 29.92%
-- Weighted high-confidence rate: 19.21%
+- Total jobs fetched: 441
+- Unique matched jobs: 165
+- High-confidence unique jobs: 67
+- Weighted matched jobs: 104.07
+- Weighted high-confidence jobs: 66.92
+- Weighted match rate: 23.60%
+- Weighted high-confidence rate: 15.17%
 
 ## Charts
 
@@ -55,72 +55,73 @@ All charts below use quality-score-weighted totals rather than raw row counts.
 
 | Location | Weighted score | Raw jobs |
 |---|---|---|
-| London | 51.45 | 82 |
-| London, UK | 8.55 | 10 |
-| Manchester | 7.50 | 8 |
-| Bristol; Edinburgh; London | 5.00 | 5 |
-| London, England, United Kingdom | 4.10 | 10 |
-| Belfast, Northern Ireland | 3.50 | 4 |
-| South East London | 3.00 | 11 |
-| Firswood, Manchester | 3.00 | 3 |
-| Glasgow | 2.50 | 5 |
-| Liverpool | 2.50 | 3 |
+| London | 31.85 | 53 |
+| South East London | 10.00 | 10 |
+| London, UK | 4.10 | 7 |
+| Manchester | 3.55 | 5 |
+| South East London, London | 3.25 | 5 |
+| East London | 3.00 | 3 |
+| UK - London | 3.00 | 3 |
+| Leeds | 2.60 | 7 |
+| Belfast, Northern Ireland | 2.50 | 3 |
+| Charing Cross, Central London | 2.00 | 2 |
 
 ## Top Employers (High Confidence)
 
 | Company | Weighted score | Raw jobs |
 |---|---|---|
-| Uber eats | 10.00 | 10 |
-| Kaluza | 7.00 | 7 |
-| Network Plus | 5.00 | 5 |
-| Harris Federation | 4.00 | 4 |
-| Roku | 4.00 | 4 |
-| Tradewind Recruitment | 4.00 | 4 |
-| Goodman Masson | 3.00 | 3 |
-| Ambition Europe Limited | 2.00 | 2 |
-| Aspire People Limited | 2.00 | 2 |
-| Hackajob Ltd | 2.00 | 2 |
+| Tradewind Recruitment | 13.00 | 13 |
+| Hackajob Ltd | 4.00 | 4 |
+| Network Plus | 4.00 | 4 |
+| Airwallex | 3.00 | 3 |
+| Adecco | 2.00 | 2 |
+| Forvis Mazars LLP | 2.00 | 2 |
+| Mphasis UK Ltd | 2.00 | 2 |
+| Robert Walters | 2.00 | 2 |
+| Scopely | 2.00 | 2 |
+| celonis | 2.00 | 2 |
 
 ## Top Job Title Families
 
 | Title Family | Weighted score | Raw jobs |
 |---|---|---|
-| Other | 33.00 | 48 |
-| Operations / Project Management | 23.52 | 36 |
-| Data / AI | 13.50 | 20 |
-| Administration / Office | 10.50 | 16 |
-| Software Engineering | 10.20 | 15 |
-| Finance / Accounting | 7.40 | 11 |
-| Education / Teaching | 6.40 | 12 |
-| Cybersecurity / InfoSec | 5.25 | 8 |
-| Skilled Trades | 5.20 | 8 |
-| Sales | 3.70 | 5 |
+| Operations / Project Management | 22.87 | 31 |
+| Other | 14.60 | 24 |
+| Data / AI | 10.80 | 18 |
+| Education / Teaching | 6.65 | 10 |
+| Administration / Office | 6.45 | 9 |
+| Skilled Trades | 6.20 | 9 |
+| Finance / Accounting | 5.40 | 8 |
+| Sales | 4.90 | 9 |
+| Creative / Media | 3.70 | 5 |
+| Software Engineering | 3.20 | 6 |
 
 ## Visa Routes
 
 | Route | Weighted score | Raw jobs |
 |---|---|---|
-| Skilled Worker | 92.40 | 155 |
-| Global Business Mobility: Senior or Specialist Worker | 38.92 | 48 |
-| Creative Worker | 5.20 | 8 |
-| Charity Worker | 1.00 | 1 |
-| Global Business Mobility: Graduate Trainee | 1.00 | 1 |
+| Skilled Worker | 75.95 | 126 |
+| Global Business Mobility: Senior or Specialist Worker | 21.42 | 29 |
+| Creative Worker | 3.20 | 6 |
+| Global Business Mobility: Graduate Trainee | 2.00 | 2 |
+| Scale-up | 1.00 | 1 |
+| Government Authorised Exchange | 0.50 | 1 |
 
 ## Title Seniority
 
 | Seniority | Weighted score | Raw jobs |
 |---|---|---|
-| Standard | 72.90 | 111 |
-| Leadership | 35.12 | 55 |
-| Senior | 28.10 | 39 |
-| Entry | 2.40 | 8 |
+| Standard | 54.65 | 89 |
+| Leadership | 35.77 | 51 |
+| Senior | 12.40 | 22 |
+| Entry | 1.25 | 3 |
 
 ## Match Quality Breakdown
 
 | Label | Weighted score | Raw jobs |
 |---|---|---|
-| 1.00 exact_normalized | 88.00 | 88 |
-| 0.50 recruiter_or_ambiguous | 37.00 | 74 |
-| 0.20 substring_only | 9.20 | 46 |
-| 0.85 fuzzy_strong | 3.40 | 4 |
+| 1.00 exact_normalized | 66.00 | 66 |
+| 0.50 recruiter_or_ambiguous | 19.50 | 39 |
+| 0.20 substring_only | 10.00 | 50 |
+| 0.85 fuzzy_strong | 7.65 | 9 |
 | 0.92 alias_table | 0.92 | 1 |
